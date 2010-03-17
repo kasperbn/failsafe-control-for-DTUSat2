@@ -1,0 +1,78 @@
+/* RESET */
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-size: 12px;
+	font-family: verdana;
+	line-height: 1.5em;
+}
+
+/* DEFAULTS */
+h1 {font-size: 2em;}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.6em;}
+h4 {font-size: 1.4em;}
+h5 {font-size: 1.2em;}
+
+table#layout {
+	border-spacing: 0;
+	empty-cells: show;
+	width: 100%;
+	height: 100%;
+}
+table#layout td {padding: 10px;vertical-align: top;}
+
+div, p, ul {
+	margin-bottom: 12px;
+}
+
+/* LAYOUT */
+#header #heading {width: 0px;}
+#header #account {text-align: right;}
+#main {height: 100%}
+#navigation {width: 0px;}
+#navigation ul {margin-left: 12px;}
+#log {}
+
+/* COLORS, FONTS & SIZES */
+#header td {background: #000; color:#fff;border-bottom: 2px solid #ccc;}
+#header h1 {font-size: 1.2em;}
+#navigation {background: #eee; border-right: 2px solid #ccc;}
+#main {}
+#log {border-top: 2px solid #ccc;}
+#log ul li * {font-family: mono;}
+#log ul li .time {color: #555;}
+#log ul li .message {font-weight: bold;}
+#log ul li .request {font-weight: bold;}
+#log ul li .response_success {font-weight: bold;color: #080;}
+#log ul li .response_error {font-weight: bold;color: #c00;}
+#log ul li ul#details {display:none;}
+
+a {color:#333;text-decoration: none;}
+a:hover {color:#333;text-decoration: underline;}
+
+form div label {font-weight: bold;display:block;}
+form div p {color: #777;font-style: italic;display:inline;}
+
+#request_response {
+	border: 2px solid #cc0;
+	background: #ffa;
+	padding : 5px;
+}
+
+
+
+table.list {
+		border-spacing: 0;
+	empty-cells: show;
+}
+table.list th{
+	padding: 5px;
+	background: #aaa;
+}
+table.list td{
+	border-bottom: 1px solid #ddd;
+}
+
+

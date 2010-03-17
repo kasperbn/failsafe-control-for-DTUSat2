@@ -1,0 +1,21 @@
+<%if flash[:request]%>
+<div id="request_response">
+	<strong>REQUEST</strong><br />
+	<%= flash[:request]%>
+	<br />
+	<strong>RESPONSE</strong><br />
+	<%= flash[:response].gsub("\n","<br />")%>
+</div>
+<%end%>
+
+<h2><%=@command%></h2>
+<p><%= DESCRIPTIONS[@command]%></p>
+
+<form action="/commands/execute">
+
+	<input type="hidden" name="command" value="<%=@command.downcase%>" />
+	<%= render :partial => @command.downcase rescue ""%>
+	<div>
+		<input type="submit" value="Send Command to DTUSat2" />
+	</div>
+</form>

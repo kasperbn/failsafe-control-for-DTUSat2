@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>DTUSat2 Failsafe GUI</title>
+		<%= stylesheet_link_tag 'screen'%>
+	</head>
+	<body>
+		<table>
+			<tr id="header">
+				<td id="heading" colspan="2">
+					<h1>DTUSat2&nbsp;Failsafe&nbsp;GUI</h1>
+				</td>
+				<td id="account">
+					Hans Henrik Løvengreen
+				</td>	
+			</tr>
+			<tr>
+				<td id="navigation" rowspan="2">
+<!--					<h3>Commands</h3>
+					<ul>
+						<%COMMANDS.each do |command, code|%>
+						<li><%= link_to command, :controller => 'commands', :action => 'show', :command => command %></li>
+						<%end%>
+					</ul>
+					-->
+					<h3>Scripts</h3>
+					<ul>
+						<li><%= link_to "View all scripts", scripts_path %></li>
+						<li><%= link_to "Add script", new_script_path %></li>
+					</ul>
+				</td>
+				<td id="main" colspan="2">
+					<%= yield %>
+				</td>
+			</tr>
+			<tr>
+				<td id="log" colspan="2">
+					<h1>Log</h1>
+					<ul>
+						<li>
+							<span class="toggle_details">Details</span>
+							<span class="time">[19/02 2010 10:33]</span> 
+							<span class="response_success">Received 'OK' from DTUSat2</span>
+							<ul id="details">
+								<li>User: [Hans Henrik Løvengreen]</li>
+								<li>IP: 192.168.1.2</li>
+								<li>Interface: GUI</li>
+							</ul>
+						</li>	
+						<li>
+							<span class="toggle_details">Details</span>
+							<span class="time">[19/02 2010 10:32]</span> 
+							<span class="request">Executed 'RESET'</span>
+							<ul id="details">
+								<li>User: [Hans Henrik Løvengreen]</li>
+								<li>IP: 192.168.1.2</li>
+								<li>Interface: GUI</li>
+							</ul>
+						</li>		
+						<li>
+							<span class="toggle_details">Details</span>
+							<span class="time">[19/02 2010 10:31]</span> 
+							<span class="response_error">Received 'ERROR' from DTUSat2</span>
+							<ul id="details">
+								<li>User: [Hans Henrik Løvengreen]</li>
+								<li>IP: 192.168.1.2</li>
+								<li>Interface: GUI</li>
+							</ul>
+						</li>	
+						<li>
+							<span class="toggle_details">Details</span>
+							<span class="time">[19/02 2010 10:30]</span> 
+							<span class="request">Executed 'CALL_FUNCTION(0x00001)'</span>
+							<ul id="details">
+								<li>User: [Hans Henrik Løvengreen]</li>
+								<li>IP: 192.168.1.2</li>
+								<li>Interface: GUI</li>
+							</ul>
+						</li>
+						<li>
+							<span class="toggle_details">Details</span>
+							<span class="time">[19/02 2010 10:29]</span> 
+							<span class="message">Logged in</span>
+							<ul id="details">
+								<li>User: [Hans Henrik Løvengreen]</li>
+								<li>IP: 192.168.1.2</li>
+								<li>Interface: GUI</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
