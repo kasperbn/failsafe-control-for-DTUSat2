@@ -1,0 +1,28 @@
+<%form_for @user do |f|%>
+	<p>
+		<%= f.label :username, 'Brugernavn'%>
+		<%= f.text_field :username%>
+	</p>
+
+	<p>
+		<%= f.label :password%>
+		<%= f.text_field :password%>
+	</p>
+
+	<p>
+		<%= f.label :latitude%>
+		<%= f.text_field :latitude%>
+		<span>Default</span>
+	</p>
+
+	<p>
+		<%= f.label :longitude%>
+		<%= f.text_field :longitude%>
+		<span>Default</span>
+	</p>
+
+	<p>
+		&nbsp;<br />
+		<%= f.submit 'Gem'%>
+	</p>
+<%end%>

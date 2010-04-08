@@ -1,0 +1,23 @@
+<table>
+	<tr>
+		<th>Tid</th>
+		<th>Bruger</th>
+		<th>Elevation</th>
+		<th>Azimuth</th>
+		<th>Latitude</th>
+		<th>Longitude</th>
+		<th>Optaget som lydfil?</th>
+	</tr>
+
+	<%@observations.each do |observation|%>
+	<tr>
+		<td><%= t(observation.time) %></td>
+		<td><%=observation.user.username%></td>
+		<td><%= observation.elevation %></td>
+		<td><%= observation.azimuth %></td>
+		<td><%= observation.latitude %></td>
+		<td><%= observation.longitude %></td>
+		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
+	</tr>
+	<%end%>
+</table>

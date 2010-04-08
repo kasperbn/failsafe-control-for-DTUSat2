@@ -1,0 +1,321 @@
+Script started on 2010-03-22T14:01:00 CET
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ exitgstreamer-properties &[14Puname -agstreamer-properties &exit[K[Kexitgstreamer-properties &[14Puname -agstreamer-properties &exit[K[Kscript/generate controller login
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/login
+      exists  test/functional/
+      create  test/unit/helpers/
+      create  app/controllers/login_controller.rb
+      create  test/functional/login_controller_test.rb
+      create  app/helpers/login_helper.rb
+      create  test/unit/helpers/login_helper_test.rb
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ script&[K/generate resource observation
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/observations
+      exists  test/functional/
+      exists  test/unit/
+      exists  test/unit/helpers/
+  dependency  model
+      exists    app/models/
+      exists    test/unit/
+      exists    test/fixtures/
+      create    app/models/observation.rb
+      create    test/unit/observation_test.rb
+      create    test/fixtures/observations.yml
+      create    db/migrate
+      create    db/migrate/20100322130431_create_observations.rb
+      create  app/controllers/observations_controller.rb
+      create  test/functional/observations_controller_test.rb
+      create  app/helpers/observations_helper.rb
+      create  test/unit/helpers/observations_helper_test.rb
+       route  map.resources :observations
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ script/generate resource observation[Kscript/generate resource observation[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1@d[1@e[1@s[1@t[1@r[1@o[1@y[C[1@ [1@c[1@o[1@n[1@t[1@r[1@o[1@ll resource observation [A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce resource observationn[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr resource observation[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cesource observation[K[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csource observation [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P observation[1Pobservation[1Pbservation[1Pservation[1Pervation[1Prvation[1Pvation[1Pation[1Ption[1Pion[1Pon[1Pn[Klogin
+          rm  test/unit/helpers/login_helper_test.rb
+          rm  app/helpers/login_helper.rb
+          rm  test/functional/login_controller_test.rb
+          rm  app/controllers/login_controller.rb
+    notempty  test/unit/helpers
+    notempty  test/unit
+    notempty  test
+    notempty  test/functional
+    notempty  test
+    notempty  app/views/login
+    notempty  app/views
+    notempty  app
+    notempty  app/helpers
+    notempty  app
+    notempty  app/controllers
+    notempty  app
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ script/s[Kgenerate resource sessions
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/sessions
+      exists  test/functional/
+      exists  test/unit/
+      exists  test/unit/helpers/
+  dependency  model
+      exists    app/models/
+      exists    test/unit/
+      exists    test/fixtures/
+      create    app/models/sessions.rb
+      create    test/unit/sessions_test.rb
+      create    test/fixtures/sessions.yml
+      exists    db/migrate
+      create    db/migrate/20100322130858_create_sessions.rb
+      create  app/controllers/sessions_controller.rb
+      create  test/functional/sessions_controller_test.rb
+      create  app/helpers/sessions_helper.rb
+      create  test/unit/helpers/sessions_helper_test.rb
+       route  map.resources :sessions
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ cp .[K] [K[K~ [K/pro/home/kbn/projects/callas/vendor/plugins/ auto_migrations/ vendor/plugins/[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C/home/kbn/projects/callas/vendor/plugins/[1@a[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[Cr/home/kbn/projects/callas/vendor/plugins[1@/[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C /home/kbn/projects/callas/vendor/plugin[1@s[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C[C/home/kbn/projects/callas/vendor/plugins[1P[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C/home/kbn/projects/callas/vendor/plugins/[1P[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[Chome/kbn/projects/callas/vendor/plugins/a[1P[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C-/home/kbn/projects/callas/vendor/plugins/[1@a[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[Cr/home/kbn/projects/callas/vendor/plugins[1@/[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C /home/kbn/projects/callas/vendor/plugin[1@s[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [C[C[C[C[C[C
+
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ rake -T
+(in /home/kbn/code/dtusat-gym)
+rake db:abort_if_pending_migrations       # Raises an error if there are pend...
+rake db:auto:migrate                      # Use schema.rb to auto-migrate
+rake db:charset                           # Retrieves the charset for the cur...
+rake db:collation                         # Retrieves the collation for the c...
+rake db:create                            # Create the database defined in co...
+rake db:create:all                        # Create all the local databases de...
+rake db:drop                              # Drops the database for the curren...
+rake db:drop:all                          # Drops all the local databases def...
+rake db:fixtures:identify                 # Search for a fixture given a LABE...
+rake db:fixtures:load                     # Load fixtures into the current en...
+rake db:migrate                           # Migrate the database through scri...
+rake db:migrate:down                      # Runs the "down" for a given migra...
+rake db:migrate:redo                      # Rollbacks the database one migrat...
+rake db:migrate:reset                     # Resets your database using your m...
+rake db:migrate:up                        # Runs the "up" for a given migrati...
+rake db:reset                             # Drops and recreates the database ...
+rake db:rollback                          # Rolls the schema back to the prev...
+rake db:schema:dump                       # Create a db/schema.rb file that c...
+rake db:schema:load                       # Load a schema.rb file into the da...
+rake db:schema:to_migration               # Create migration from schema.rb
+rake db:schema:to_migration_with_reset    # Create migration from schema.rb a...
+rake db:seed                              # Load the seed data from db/seeds.rb
+rake db:sessions:clear                    # Clear the sessions table
+rake db:sessions:create                   # Creates a sessions migration for ...
+rake db:setup                             # Create the database, load the sch...
+rake db:structure:dump                    # Dump the database structure to a ...
+rake db:test:clone                        # Recreate the test database from t...
+rake db:test:clone_structure              # Recreate the test databases from ...
+rake db:test:load                         # Recreate the test database from t...
+rake db:test:prepare                      # Check for pending migrations and ...
+rake db:test:purge                        # Empty the test database
+rake db:version                           # Retrieves the current schema vers...
+rake doc:app                              # Build the RDOC HTML Files
+rake doc:clobber_app                      # Remove rdoc products
+rake doc:clobber_plugins                  # Remove plugin documentation
+rake doc:clobber_rails                    # Remove rdoc products
+rake doc:guides                           # Generate Rails guides
+rake doc:plugins                          # Generate documentation for all in...
+rake doc:plugins:auto_migrations          # Generate documentation for the au...
+rake doc:rails                            # Build the RDOC HTML Files
+rake doc:reapp                            # Force a rebuild of the RDOC files
+rake doc:rerails                          # Force a rebuild of the RDOC files
+rake gems                                 # List the gems that this rails app...
+rake gems:build                           # Build any native extensions for u...
+rake gems:build:force                     # Force the build of all gems
+rake gems:install                         # Installs all required gems.
+rake gems:refresh_specs                   # Regenerate gem specifications in ...
+rake gems:unpack                          # Unpacks all required gems into ve...
+rake gems:unpack:dependencies             # Unpacks all required gems and the...
+rake log:clear                            # Truncates all *.log files in log/...
+rake middleware                           # Prints out your Rack middleware s...
+rake notes                                # Enumerate all annotations
+rake notes:custom                         # Enumerate a custom annotation, sp...
+rake notes:fixme                          # Enumerate all FIXME annotations
+rake notes:optimize                       # Enumerate all OPTIMIZE annotations
+rake notes:todo                           # Enumerate all TODO annotations
+rake rails:freeze:edge                    # Lock to latest Edge Rails, for a ...
+rake rails:freeze:gems                    # Lock this application to the curr...
+rake rails:template                       # Applies the template supplied by ...
+rake rails:unfreeze                       # Unlock this application from free...
+rake rails:update                         # Update both configs, scripts and ...
+rake rails:update:application_controller  # Rename application.rb to applicat...
+rake rails:update:configs                 # Update config/boot.rb from your c...
+rake rails:update:generate_dispatchers    # Generate dispatcher files in RAIL...
+rake rails:update:javascripts             # Update your javascripts from your...
+rake rails:update:scripts                 # Add new scripts to the applicatio...
+rake routes                               # Print out all defined routes in m...
+rake secret                               # Generate a crytographically secur...
+rake stats                                # Report code statistics (KLOCs, et...
+rake test                                 # Run all unit, functional and inte...
+rake test:benchmark                       # Run tests for benchmarkdb:test:pr...
+rake test:functionals                     # Run tests for functionalsdb:test:...
+rake test:integration                     # Run tests for integrationdb:test:...
+rake test:plugins                         # Run tests for pluginsenvironment ...
+rake test:profile                         # Run tests for profiledb:test:prep...
+rake test:recent                          # Run tests for recentdb:test:prepa...
+rake test:uncommitted                     # Run tests for uncommitteddb:test:...
+rake test:units                           # Run tests for unitsdb:test:prepar...
+rake time:zones:all                       # Displays names of all time zones ...
+rake time:zones:local                     # Displays names of time zones reco...
+rake time:zones:us                        # Displays names of US time zones r...
+rake tmp:cache:clear                      # Clears all files and directories ...
+rake tmp:clear                            # Clear session, cache, and socket ...
+rake tmp:create                           # Creates tmp directories for sessi...
+rake tmp:pids:clear                       # Clears all files in tmp/pids
+rake tmp:sessions:clear                   # Clears all files in tmp/sessions
+rake tmp:sockets:clear                    # Clears all files in tmp/sockets
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ rake db:migarte
+(in /home/kbn/code/dtusat-gym)
+rake aborted!
+Don't know how to build task 'db:migarte'
+
+(See full trace by running task with --trace)
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ rake db:migarte[K[K[K[Krate
+(in /home/kbn/code/dtusat-gym)
+rake aborted!
+undefined local variable or method `new_session_path' for main:Object
+
+(See full trace by running task with --trace)
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ rake db:migrate --trace
+(in /home/kbn/code/dtusat-gym)
+** Invoke db:migrate (first_time)
+** Invoke environment (first_time)
+** Execute environment
+rake aborted!
+undefined local variable or method `new_session_path' for main:Object
+/home/kbn/code/dtusat-gym/config/routes.rb:6
+/var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:226:in `draw'
+/home/kbn/code/dtusat-gym/config/routes.rb:1
+/var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:145:in `load_without_new_constant_marking'
+/var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:145:in `load'
+/var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:145:in `load'
+/var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+/var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:286:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+/var/lib/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:266:in `reload!'
+/var/lib/gems/1.8/gems/rails-2.3.5/lib/initializer.rb:537:in `initialize_routing'
+/var/lib/gems/1.8/gems/rails-2.3.5/lib/initializer.rb:188:in `process'
+/var/lib/gems/1.8/gems/rails-2.3.5/lib/initializer.rb:113:in `send'
+/var/lib/gems/1.8/gems/rails-2.3.5/lib/initializer.rb:113:in `run'
+/home/kbn/code/dtusat-gym/config/environment.rb:9
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+/var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+/var/lib/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+/var/lib/gems/1.8/gems/rails-2.3.5/lib/tasks/misc.rake:4
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `call'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `execute'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `each'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `execute'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:597:in `invoke_with_call_chain'
+/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:590:in `invoke_with_call_chain'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:607:in `invoke_prerequisites'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:604:in `each'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:604:in `invoke_prerequisites'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:596:in `invoke_with_call_chain'
+/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:590:in `invoke_with_call_chain'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:583:in `invoke'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2051:in `invoke_task'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `each'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2023:in `top_level'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2001:in `run'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling'
+/var/lib/gems/1.8/gems/rake-0.8.7/lib/rake.rb:1998:in `run'
+/var/lib/gems/1.8/gems/rake-0.8.7/bin/rake:31
+/var/lib/gems/1.8/bin/rake:19:in `load'
+/var/lib/gems/1.8/bin/rake:19
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [K]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [16P(reverse-i-search)`':[C]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ rake db:migrate --trace[K --trace
+(in /home/kbn/code/dtusat-gym)
+** Invoke db:migrate (first_time)
+** Invoke environment (first_time)
+** Execute environment
+** Execute db:migrate
+==  CreateObservations: migrating =============================================
+-- create_table("observations", {})
+   -> 0.0017s
+==  CreateObservations: migrated (0.0024s) ====================================
+
+==  CreateSessions: migrating =================================================
+-- create_table("sessions", {})
+   -> 0.0015s
+==  CreateSessions: migrated (0.0024s) ========================================
+
+** Invoke db:schema:dump (first_time)
+** Invoke environment 
+** Execute db:schema:dump
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ rake db:migrate --trace[Karte-T[Kcp -r /home/kbn/projects/callas/vendor/plugins/auto_migrations/ vendor/pluginns/[A]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ [43Pscript/generate resource sessions
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pdestroy controller logingenerate resource sessions[1P[1P[1P[1P[1P[1P[1P[1P[1@d[1@e[1@s[1@t[1@r[1@o[1@y
+       route  map.resources :sessions
+          rm  test/unit/helpers/sessions_helper_test.rb
+          rm  app/helpers/sessions_helper.rb
+          rm  test/functional/sessions_controller_test.rb
+          rm  app/controllers/sessions_controller.rb
+  dependency  model
+    notempty    db/migrate
+    notempty    db
+          rm    db/migrate/20100322130858_create_sessions.rb
+          rm    test/fixtures/sessions.yml
+          rm    test/unit/sessions_test.rb
+          rm    app/models/sessions.rb
+    notempty    test/fixtures
+    notempty    test
+    notempty    test/unit
+    notempty    test
+    notempty    app/models
+    notempty    app
+    notempty  test/unit/helpers
+    notempty  test/unit
+    notempty  test
+    notempty  test/unit
+    notempty  test
+    notempty  test/functional
+    notempty  test
+    notempty  app/views/sessions
+    notempty  app/views
+    notempty  app
+    notempty  app/helpers
+    notempty  app
+    notempty  app/controllers
+    notempty  app
+    notempty  app/models
+    notempty  app
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ script/destroy resource sessions[K[1P[1P[1P[1P[1P[1P[1P[1@g[1@e[1@n[1@e[1@r[1@a[1@t[1@e
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/sessions
+      exists  test/functional/
+      exists  test/unit/
+      exists  test/unit/helpers/
+  dependency  model
+      exists    app/models/
+      exists    test/unit/
+      exists    test/fixtures/
+      create    app/models/session.rb
+      create    test/unit/session_test.rb
+      create    test/fixtures/sessions.yml
+      exists    db/migrate
+      create    db/migrate/20100322131927_create_sessions.rb
+      create  app/controllers/sessions_controller.rb
+      create  test/functional/sessions_controller_test.rb
+      create  app/helpers/sessions_helper.rb
+      create  test/unit/helpers/sessions_helper_test.rb
+       route  map.resources :sessions
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ gym[K[K[Kscript/genereate[K[K[K[Kate model user
+      exists  app/models/
+      exists  test/unit/
+      exists  test/fixtures/
+      create  app/models/user.rb
+      create  test/unit/user_test.rb
+      create  test/fixtures/users.yml
+      exists  db/migrate
+      create  db/migrate/20100322150531_create_users.rb
+]0;kbn@kbn-macbookpro: ~/code/dtusat-gymkbn@kbn-macbookpro:~/code/dtusat-gym$ exot[K[Kit
+exit
+
+Script done on 2010-03-22T23:10:00 CET

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>DTUSat | Indrapportering af satellitkoordinater</title>
+	<link rel="stylesheet" href="/stylesheets/screen.css" type="text/css" />
+	</head>
+<body>
+
+<div class="wrap">
+	<div class="header">
+		<div class="title">
+			<h1><a href="#">DTUSat</a></h1>
+			<h2>Indrapportering af satellitkoordinater</h2>
+		</div>
+	</div>
+
+	<%if logged_in?%>
+	<div class="nav">
+		<ul>
+			<li><%= link_to "<strong>#{current_user.username}</strong>" , edit_user_path(current_user)%></li>
+			<li class='seperator'>&nbsp;</li>
+
+			<li><%= link_to 'Vis alle observationer', observations_path%></li>
+			<li><%= link_to 'Ny observation', new_observation_path%></li>
+			<li class='seperator'>&nbsp;</li>
+
+		<%if admin?%>
+			<li><%= link_to 'Vis brugere', users_path%></li>
+			<li><%= link_to 'Ny bruger', new_user_path%></li>
+			<li class='seperator'>&nbsp;</li>
+		<%end%>
+
+			<li><%= link_to 'Log ud', logout_path%></li>
+		</ul>
+	</div>
+	<%end%>
+
+
+	<div class="content">
+		<%flash.each do |f|%><div class='flash-<%=f[0]%>'><%=f[1]%></div><%end%>
+		<%= yield %>
+	</div>
+	<div class="footer"><p><a href="http://www.dtusat.dtu.dk/">DTUSat's Hjemmeside</a></p>
+	</div>
+</div>
+
+</body>
+</html>
