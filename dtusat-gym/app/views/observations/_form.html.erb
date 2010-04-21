@@ -1,5 +1,7 @@
 <%form_for @observation do |f|%>
 
+	<%= form_errors(@observation)%>
+
 	<p>
 		<%= f.label :time, 'Tid'%>
 		<%= f.datetime_select :time%>
@@ -23,13 +25,8 @@
 	</p>
 
 	<p>
-		<%= f.label :latitude%>
-		<%= f.text_field :latitude%>
-	</p>
-
-	<p>
-		<%= f.label :longitude%>
-		<%= f.text_field :longitude%>
+		<%= f.label :position%>
+		<%= f.text_field :position%>
 	</p>
 
 	<p>

@@ -15,7 +15,7 @@ class ObservationsController < ApplicationController
 		@observation = if admin?
 			Observation.new
 		else
-			Observation.new :latitude => current_user.latitude, :longitude => current_user.longitude
+			Observation.new :position => current_user.position
 		end
 	end
 

@@ -1,4 +1,7 @@
 <%form_for @user do |f|%>
+
+	<%= form_errors(@user)%>
+
 	<p>
 		<%= f.label :username, 'Brugernavn'%>
 		<%= f.text_field :username%>
@@ -15,14 +18,8 @@
 	</p>
 
 	<p>
-		<%= f.label :latitude%>
-		<%= f.text_field :latitude%>
-		<span>Default</span>
-	</p>
-
-	<p>
-		<%= f.label :longitude%>
-		<%= f.text_field :longitude%>
+		<%= f.label :position%>
+		<%= f.text_field :position%>
 		<span>Default</span>
 	</p>
 

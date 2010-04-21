@@ -20,8 +20,7 @@
 		<%if admin? || params[:filter] == 'all'%><th>Bruger</th><%end%>
 		<th>Elevation</th>
 		<th>Azimuth</th>
-		<th>Latitude</th>
-		<th>Longitude</th>
+		<th>Position</th>
 		<th>Optaget som lydfil?</th>
 		<th></th>
 	</tr>
@@ -34,8 +33,7 @@
 		<%end%>
 		<td><%= observation.elevation %></td>
 		<td><%= observation.azimuth %></td>
-		<td><%= observation.latitude %></td>
-		<td><%= observation.longitude %></td>
+		<td><%= observation.position %></td>
 		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
 		<td><%= link_to 'Slet', observation, :method => 'DELETE', :confirm => 'Er du sikker?' if admin? || observation.user_id == current_user.id%></td>
 	</tr>

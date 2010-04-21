@@ -6,8 +6,7 @@
 	<tr>
 		<th>Brugernavn</th>
 		<th>E-mail</th>
-		<th>Latitude</th>
-		<th>Longitude</th>
+		<th>Position</th>
 		<th>Sidst logget ind</th>
 		<th></th>
 	</tr>
@@ -16,8 +15,7 @@
 	<tr>
 		<td><%= link_to user.username, edit_user_path(user) %></td>
 		<td><%= user.email %></td>
-		<td><%= user.latitude %></td>
-		<td><%= user.longitude %></td>
+		<td><%= user.position %></td>
 		<td><%= t(user.latest_session.created_at) rescue 'Aldrig' %></td>
 		<td><%= link_to 'Slet', user_path(user), :method => 'DELETE', :confirm => 'Alle brugerens observationer vil også blive slettet. Er du sikker?' unless user.username == 'admin'%></td>
 	</tr>
