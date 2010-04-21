@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 	# Login-GUI
 	def new
 		if logged_in?
-			redirect_to params[:redirect_to] || current_user
+			redirect_to params[:redirect_to] || observations_path
 		end
 		@session = Session.new
 

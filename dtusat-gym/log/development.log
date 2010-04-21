@@ -22556,3 +22556,670 @@ Rendering observations/index
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
 Completed in 36ms (View: 20, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#export (for 127.0.0.1 at 2010-04-21 15:19:18) [GET]
+Redirected to http://localhost:6270/sessions/new
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/observations/export]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 15:19:18) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  app/controllers/sessions_controller.rb:10:in `new'
+  app/controllers/sessions_controller.rb:10:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (88.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 15:19:20) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  app/controllers/sessions_controller.rb:10:in `new'
+  app/controllers/sessions_controller.rb:10:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 15:19:22) [GET]
+Redirected to http://localhost:6270/sessions/new
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/observations]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 15:19:22) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  app/controllers/sessions_controller.rb:10:in `new'
+  app/controllers/sessions_controller.rb:10:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (91.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-21 15:19:25) [GET]
+
+NoMethodError (undefined method `deleted_at=' for nil:NilClass):
+  app/controllers/sessions_controller.rb:27:in `destroy'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 15:19:32) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  app/controllers/sessions_controller.rb:10:in `new'
+  app/controllers/sessions_controller.rb:10:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 15:19:56) [GET]
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://localhost:6270/users/1
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-21 15:19:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionController::UnknownAction (No action responded to show. Actions: admin?, create, current_session, current_user, destroy, edit, form_errors, index, logged_in?, new, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 15:19:57) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://localhost:6270/users/1
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-21 15:19:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionController::UnknownAction (No action responded to show. Actions: admin?, create, current_session, current_user, destroy, edit, form_errors, index, logged_in?, new, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 15:19:59) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Redirected to http://localhost:6270/users/1
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-21 15:19:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionController::UnknownAction (No action responded to show. Actions: admin?, create, current_session, current_user, destroy, edit, form_errors, index, logged_in?, new, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-04-21 15:20:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (5.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 90ms (View: 78, DB: 0) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-04-21 15:20:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (3.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 20ms (View: 7, DB: 0) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 15:20:50) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 78ms (View: 63, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#export (for 127.0.0.1 at 2010-04-21 15:20:52) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering observations/export
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split) on line #20 of app/views/observations/export.html.erb:
+17: 		<td><%=observation.user.username%></td>
+18: 		<td><%= observation.elevation %></td>
+19: 		<td><%= observation.azimuth %></td>
+20: 		<%observation.position.split.each do |p|%>
+21: 		<td><%= p %></td>
+22: 		<%end%>
+23: 		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
+
+    app/views/observations/export.html.erb:20
+    app/views/observations/export.html.erb:14:in `each'
+    app/views/observations/export.html.erb:14
+    app/controllers/observations_controller.rb:61:in `export'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 15:20:58) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 102ms (View: 85, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#export (for 127.0.0.1 at 2010-04-21 15:21:04) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering observations/export
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split) on line #20 of app/views/observations/export.html.erb:
+17: 		<td><%=observation.user.username%></td>
+18: 		<td><%= observation.elevation %></td>
+19: 		<td><%= observation.azimuth %></td>
+20: 		<%observation.position.split.each do |p|%>
+21: 		<td><%= p %></td>
+22: 		<%end%>
+23: 		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
+
+    app/views/observations/export.html.erb:20
+    app/views/observations/export.html.erb:14:in `each'
+    app/views/observations/export.html.erb:14
+    app/controllers/observations_controller.rb:61:in `export'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ObservationsController#export (for 127.0.0.1 at 2010-04-21 15:21:46) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering observations/export
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split) on line #20 of app/views/observations/export.html.erb:
+17: 		<td><%=observation.user.username%></td>
+18: 		<td><%= observation.elevation %></td>
+19: 		<td><%= observation.azimuth %></td>
+20: 		<%observation.position.split.each do |p|%>
+21: 		<td><%= p %></td>
+22: 		<%end%>
+23: 		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
+
+    app/views/observations/export.html.erb:20
+    app/views/observations/export.html.erb:14:in `each'
+    app/views/observations/export.html.erb:14
+    app/controllers/observations_controller.rb:61:in `export'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ObservationsController#export (for 127.0.0.1 at 2010-04-21 15:21:55) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering observations/export
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split) on line #20 of app/views/observations/export.html.erb:
+17: 		<td><%=observation.user.username%></td>
+18: 		<td><%= observation.elevation %></td>
+19: 		<td><%= observation.azimuth %></td>
+20: 		<%observation.position.split.each do |p|%>
+21: 		<td><%= p %></td>
+22: 		<%end%>
+23: 		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
+
+    app/views/observations/export.html.erb:20
+    app/views/observations/export.html.erb:14:in `each'
+    app/views/observations/export.html.erb:14
+    app/controllers/observations_controller.rb:61:in `export'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (97.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ObservationsController#export (for 127.0.0.1 at 2010-04-21 15:21:57) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.6ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering observations/export
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split) on line #20 of app/views/observations/export.html.erb:
+17: 		<td><%=observation.user.username%></td>
+18: 		<td><%= observation.elevation %></td>
+19: 		<td><%= observation.azimuth %></td>
+20: 		<%observation.position.split.each do |p|%>
+21: 		<td><%= p %></td>
+22: 		<%end%>
+23: 		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
+
+    app/views/observations/export.html.erb:20
+    app/views/observations/export.html.erb:14:in `each'
+    app/views/observations/export.html.erb:14
+    app/controllers/observations_controller.rb:61:in `export'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ObservationsController#edit (for 127.0.0.1 at 2010-04-21 15:22:31) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.3ms)[0m   [0mSELECT * FROM "observations" WHERE ("observations"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering observations/edit
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (23.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 108ms (View: 34, DB: 1) | 200 OK [http://localhost/observations/4/edit]
+
+
+Processing ObservationsController#update (for 127.0.0.1 at 2010-04-21 15:22:36) [PUT]
+  Parameters: {"observation"=>{"position"=>"23.123 43.12 54.23 A", "elevation"=>"asd", "beacon_recorded"=>"1", "time(1i)"=>"2010", "azimuth"=>"", "time(2i)"=>"4", "time(3i)"=>"8", "time(4i)"=>"12", "user_id"=>"2", "time(5i)"=>"52"}, "commit"=>"Gem", "authenticity_token"=>"tUBXLo5JgRs2/VYKcsEfrtVbWUdhyxC4HW/F8DwvQwo=", "id"=>"4"}
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.3ms)[0m   [0mSELECT * FROM "observations" WHERE ("observations"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Update (0.3ms)[0m   [0;1mUPDATE "observations" SET "updated_at" = '2010-04-21 13:22:36', "position" = '23.123 43.12 54.23 A' WHERE "id" = 4[0m
+Redirected to http://localhost:6270/observations
+Completed in 118ms (DB: 1) | 302 Found [http://localhost/observations/4]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 15:22:36) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.5ms)[0m   [0;1mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 40ms (View: 19, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#edit (for 127.0.0.1 at 2010-04-21 15:22:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.3ms)[0m   [0;1mSELECT * FROM "observations" WHERE ("observations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering observations/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (15.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 100ms (View: 20, DB: 1) | 200 OK [http://localhost/observations/1/edit]
+
+
+Processing ObservationsController#update (for 127.0.0.1 at 2010-04-21 15:22:44) [PUT]
+  Parameters: {"observation"=>{"position"=>"23.123 43.12 54.23 L", "elevation"=>"123", "beacon_recorded"=>"1", "time(1i)"=>"2010", "azimuth"=>"234", "time(2i)"=>"4", "time(3i)"=>"8", "time(4i)"=>"12", "user_id"=>"2", "time(5i)"=>"24"}, "commit"=>"Gem", "authenticity_token"=>"tUBXLo5JgRs2/VYKcsEfrtVbWUdhyxC4HW/F8DwvQwo=", "id"=>"1"}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.3ms)[0m   [0;1mSELECT * FROM "observations" WHERE ("observations"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Update (0.2ms)[0m   [0mUPDATE "observations" SET "updated_at" = '2010-04-21 13:22:44', "position" = '23.123 43.12 54.23 L' WHERE "id" = 1[0m
+Redirected to http://localhost:6270/observations
+Completed in 104ms (DB: 1) | 302 Found [http://localhost/observations/1]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 15:22:44) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 35ms (View: 19, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#export (for 127.0.0.1 at 2010-04-21 15:22:46) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.7ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering observations/export
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 101ms (View: 10, DB: 2) | 200 OK [http://localhost/observations/export]

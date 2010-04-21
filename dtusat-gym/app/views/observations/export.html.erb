@@ -4,8 +4,10 @@
 		<th>Bruger</th>
 		<th>Elevation</th>
 		<th>Azimuth</th>
-		<th>Latitude</th>
-		<th>Longitude</th>
+		<th>Position 1</th>
+		<th>Position 2</th>
+		<th>Position 3</th>
+		<th>Position 4</th>
 		<th>Optaget som lydfil?</th>
 	</tr>
 
@@ -15,8 +17,9 @@
 		<td><%=observation.user.username%></td>
 		<td><%= observation.elevation %></td>
 		<td><%= observation.azimuth %></td>
-		<td><%= observation.latitude %></td>
-		<td><%= observation.longitude %></td>
+		<%observation.position.split.each do |p|%>
+			<td><%= p %></td>
+		<%end%>
 		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
 	</tr>
 	<%end%>
