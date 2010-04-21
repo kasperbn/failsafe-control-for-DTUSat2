@@ -1,0 +1,83 @@
+* {
+	margin:0;
+	padding:0;
+	font-family:Verdana,sans-serif;
+	font-size:11px;
+	list-style:none;
+}
+
+window {
+	width: 800px;
+	height: 600px;
+	background: #eee;
+}
+
+.wrap {
+	padding: 0px 20px 20px 20px;
+}
+
+.h1 {font-size: 2em;}
+.h2 {font-size: 1.2em; color: #555;}
+.h3 {font-size: 1.5em; color: #555;}
+
+a {color:blue;text-decoration:none;}
+a:hover {text-decoration: underline;}
+
+.header,.nav,.content,.footer {padding: 10px;}
+.content {padding-bottom:0px;padding-right:0px;}
+
+.header {
+	padding: 10px 0px;
+	border-bottom: 1px solid #222;
+	background: url('chrome://dtusat/content/logo.jpg') no-repeat right center;
+}
+.nav {width:135px;}
+.nav {background:#222;}
+.nav > description {display:block;border-bottom:1px solid #333;color:#fff;padding:4px;}
+.nav > description.seperator {padding:4px;}
+.nav > description:hover {text-decoration: none; background:#555;cursor:pointer;}
+
+.content p, .content h3, .content div {margin-bottom: 11px;}
+.footer {clear:both;text-align:center;}
+
+form label {display:block;}
+form p span {color:#777;font-style:italic;}
+
+statusbar {
+	padding: 3px;
+	border-top:1px solid #ccc;
+}
+
+statusbar progressmeter {margin-right: 5px;}
+statusbar statusbarpanel:first-child {margin-left: 5px;}
+#progress {display:none;}
+
+
+.flash-error {
+	display:block;
+	padding:5px;
+	background: #faa;
+	border:1px solid red;
+}
+
+
+.flash-success {
+	display:block;
+	padding:5px;
+	background: #afa;
+	border:1px solid green;
+}
+
+table.list {width:100%;border-spacing:0px;}
+table.list th,table.list td {padding: 3px;}
+table.list th {text-align: left; background: #ccc;border-bottom:1px solid #888;}
+table.list td {border-bottom:1px solid #ccc;}
+
+.login {
+	width: 300px;
+	padding: 20px;
+	margin: 20px auto;
+	background: #ddd;
+	border: 5px solid #ccc;
+}
+.login p, .login div, .login p, .login h2 {margin-bottom: 10px;}

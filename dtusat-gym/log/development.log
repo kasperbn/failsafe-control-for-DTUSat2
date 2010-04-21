@@ -21238,3 +21238,571 @@ Rendered users/_form (3.0ms)
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 111) [0m
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
 Completed in 22ms (View: 7, DB: 1) | 200 OK [http://localhost/users/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-09 09:32:13) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 187ms (View: 119, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-09 09:32:25) [POST]
+  Parameters: {"commit"=>"Login", "session"=>{"username"=>"admin", "password"=>"n"}, "authenticity_token"=>"gwQN/7B9pu3uq+D+pKH0CelJzXQnJOw2gLjq2pXK6w0="}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'admin' AND password = 'n') LIMIT 1[0m
+  [4;35;1mSession Create (0.4ms)[0m   [0mINSERT INTO "sessions" ("created_at", "token", "updated_at", "deleted_at", "user_id") VALUES('2010-04-09 07:32:25', NULL, '2010-04-09 07:32:25', NULL, 1)[0m
+Redirected to http://localhost:3000/observations
+Completed in 162ms (DB: 1) | 302 Found [http://localhost/sessions]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-09 09:32:25) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (1.0ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 275ms (View: 192, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-09 09:32:46) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSession Load (0.7ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mSession Load (0.4ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.6ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 8) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 71ms (View: 52, DB: 3) | 200 OK [http://localhost/users]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-09 09:32:49) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.6ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 96ms (View: 21, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-09 09:32:53) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 8) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 11, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-09 09:32:55) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 49ms (View: 32, DB: 1) | 200 OK [http://localhost/users/new]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-09 09:33:13) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.5ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 95ms (View: 79, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-04-09 09:34:41) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 112) [0m
+Redirected to http://localhost:3000/sessions/new
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/sessions/logout]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-09 09:34:41) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/sessions/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (123.1ms)[0m   [0;1mALTER TABLE "users" ADD "email" varchar(255)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" varchar(255), "longitude" varchar(255), "elevation" varchar(255), "azimuth" varchar(255), "time" datetime, "beacon_recorded" boolean, "user_id" integer, "created_at" datetime, "updated_at" datetime, "deleted_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("observations")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "observations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" varchar(255), "longitude" varchar(255), "elevation" varchar(255), "azimuth" varchar(255), "time" datetime, "beacon_recorded" boolean, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_observations")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_observations"[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("observations")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (137.7ms)[0m   [0mINSERT INTO schema_migrations VALUES ('20100421123022')[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-21 14:31:28) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 239ms (View: 96, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-21 14:31:32) [POST]
+  Parameters: {"commit"=>"Login", "session"=>{"username"=>"admin", "password"=>"n"}, "authenticity_token"=>"tUBXLo5JgRs2/VYKcsEfrtVbWUdhyxC4HW/F8DwvQwo="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'admin' AND password = 'n') LIMIT 1[0m
+  [4;35;1mSession Create (0.4ms)[0m   [0mINSERT INTO "sessions" ("created_at", "token", "updated_at", "deleted_at", "user_id") VALUES('2010-04-21 12:31:32', NULL, '2010-04-21 12:31:32', NULL, 1)[0m
+Redirected to http://localhost:6270/observations
+Completed in 201ms (DB: 1) | 302 Found [http://localhost/sessions]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 14:31:32) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.9ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 402ms (View: 318, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-21 14:31:36) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSession Load (0.5ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 8) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 38ms (View: 16, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-21 14:31:38) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (10.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 93ms (View: 15, DB: 11) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-21 14:31:39) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 8) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 32ms (View: 16, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-21 14:31:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionController::UnknownAction (No action responded to show. Actions: admin?, create, current_session, current_user, destroy, edit, form_errors, index, logged_in?, new, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-04-21 14:31:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionController::UnknownAction (No action responded to show. Actions: admin?, create, current_session, current_user, destroy, edit, form_errors, index, logged_in?, new, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-21 14:32:08) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSession Load (0.5ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 8) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 32ms (View: 16, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-04-21 14:32:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (3.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/users/2/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-04-21 14:32:21) [PUT]
+  Parameters: {"commit"=>"Gem", "authenticity_token"=>"tUBXLo5JgRs2/VYKcsEfrtVbWUdhyxC4HW/F8DwvQwo=", "id"=>"2", "user"=>{"latitude"=>"23.342345", "username"=>"gym1", "longitude"=>"53.123123", "password"=>"n", "email"=>"contact@gym1.dk"}}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'gym1' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-04-21 12:32:21', "email" = 'contact@gym1.dk' WHERE "id" = 2[0m
+Redirected to http://localhost:6270/observations
+Completed in 161ms (DB: 1) | 302 Found [http://localhost/users/2]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 14:32:21) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.5ms)[0m   [0;1mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 39ms (View: 21, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-04-21 14:32:24) [GET]
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSession Load (0.4ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 8) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 26ms (View: 11, DB: 2) | 200 OK [http://localhost/users]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-04-21 14:32:31) [GET]
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.5ms)[0m   [0;1mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 35ms (View: 20, DB: 2) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#edit (for 127.0.0.1 at 2010-04-21 14:32:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.3ms)[0m   [0;1mSELECT * FROM "observations" WHERE ("observations"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering observations/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (38.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 159ms (View: 74, DB: 1) | 200 OK [http://localhost/observations/4/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-04-21 14:32:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (3.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 113) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 7, DB: 0) | 200 OK [http://localhost/users/1/edit]

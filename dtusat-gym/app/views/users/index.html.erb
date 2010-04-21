@@ -5,6 +5,7 @@
 <table class='list'>
 	<tr>
 		<th>Brugernavn</th>
+		<th>E-mail</th>
 		<th>Latitude</th>
 		<th>Longitude</th>
 		<th>Sidst logget ind</th>
@@ -13,7 +14,8 @@
 
 	<%@users.each do |user|%>
 	<tr>
-		<td><%= link_to user.username, user %></td>
+		<td><%= link_to user.username, edit_user_path(user) %></td>
+		<td><%= user.email %></td>
 		<td><%= user.latitude %></td>
 		<td><%= user.longitude %></td>
 		<td><%= t(user.latest_session.created_at) rescue 'Aldrig' %></td>
