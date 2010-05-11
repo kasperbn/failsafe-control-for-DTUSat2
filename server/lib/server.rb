@@ -1,7 +1,7 @@
 require 'singleton'
-require File.dirname(__FILE__)+"/fs_logger"
-require File.dirname(__FILE__)+"/translate"
-require File.dirname(__FILE__)+"/client_session"
+require ROOT_DIR+"/lib/fs_logger"
+require ROOT_DIR+"/lib/translate"
+require ROOT_DIR+"/lib/client_session"
 
 class Server
   include Singleton

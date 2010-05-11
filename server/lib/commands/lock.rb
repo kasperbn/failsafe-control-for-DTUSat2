@@ -2,6 +2,7 @@ module Commands
   class Lock < AbstractCommand
     def execute
       Server.instance.token = generate_token
+			response(0, Server.instance.token)
     end
 
     private

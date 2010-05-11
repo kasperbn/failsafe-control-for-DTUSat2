@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'json'
+
 class FSTerm2
 
 	VERSION = '1.0'
@@ -11,25 +14,28 @@ class FSTerm2
 
 	def self.author_version
 		puts "FSTerm2 Version #{VERSION} - Interactive Mode"
-		puts "Kasper Bjørn Nielsen (s052808@student.dtu.dk)"
 	end
 
 	def interactive_loop
-		@token = nil
-		FSTerm2.author_version
-		if @auto_lock
-			@command = 'lock'
-			@response = execute(@command)
-			@token = remember_or_forget_token
+		begin
+			@token = nil
+			FSTerm2.author_version
+			if @auto_lock
+				@command = 'lock'
+				@response = execute(@command)#.gsub("\n",'')
+				remember_or_forget_token
+			end
+			loop do
+				@command = wait_for_user_input
+				break if exit?
+				@command = prepend_token
+				@response = execute(@command)
+				remember_or_forget_token
+			end
+			unlock_on_clean_exit if @auto_lock
+		rescue Errno::EPIPE => e
+			puts "Connection to server was lost"
 		end
-		loop do
-			@command = wait_for_user_input
-			break if exit?
-			@command = prepend_token
-			@response = execute(@command)
-			@token = remember_or_forget_token
-		end
-		unlock_on_clean_exit if @auto_lock
 	end
 
 	def wait_for_user_input
@@ -51,11 +57,11 @@ class FSTerm2
 	end
 
 	def remember_or_forget_token
-		if @command =~ /^lock/ && !(@response =~ /^You must lock the server/ || @response =~ /^Server is locked/)
+		@token = if @command =~ /^lock/ && !(@response =~ /^You must lock the server/ || @response =~ /^Server is locked/)
 			puts "Token remembered and will be send automatically before any command."
-			return @response
+			@response['body']
 		elsif @response =~ /^Server has been unlocked/
-			return nil
+			nil
 		else
 			@token
 		end
@@ -70,11 +76,19 @@ class FSTerm2
 	end
 
 	def execute(request,verbose=true)
-		puts "Request:  '#{request}'" if verbose
+		# Send request
 		@connection.puts request
-		response = @connection.gets.gsub(/\n/,'') # Remove newline
-		puts "Response: '#{response}'" if verbose
+
+		# Read until zero byte
+		response = @connection.gets("\0").delete("\0")
+
+		# Parse string response to json
+		response = JSON.parse(response)
+
+		# Print to screen
+		puts "< STATUS: #{response['status']}" if verbose
+		puts "#{response['body']}" if verbose
+
 		response
 	end
-
 end

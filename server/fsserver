@@ -1,8 +1,11 @@
 #!/usr/bin/ruby
 require 'socket'
 require 'optparse'
-require File.dirname(__FILE__)+"/lib/fs_logger"
-require File.dirname(__FILE__)+"/lib/server"
+
+ROOT_DIR = File.dirname(__FILE__)
+
+require ROOT_DIR+"/lib/fs_logger"
+require ROOT_DIR+"/lib/server"
 
 options = {:host => '0.0.0.0', :port => 3000, :logfile => STDOUT}
 op = OptionParser.new do |opts|

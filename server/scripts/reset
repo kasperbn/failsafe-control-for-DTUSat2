@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
-if `../client/fsterm2 reset` =~ /Reset/
+token = ARGV[0]
+
+if `fsterm2 #{token} reset` =~ /Reset/
   puts "Reset succeeded"
 else
   puts "Reset failed"

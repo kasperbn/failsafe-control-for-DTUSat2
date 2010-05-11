@@ -3,7 +3,6 @@ require 'socket'
 require 'optparse'
 require File.dirname(__FILE__) + '/lib/fsterm2'
 
-
 options = {:host => '0.0.0.0', :port => 3000, :interactive => false, :auto_lock => false}
 op = OptionParser.new do |opts|
   opts.banner = "Usage: fsterm2 [options] <lock | token command [command_args ... ]>"
@@ -32,11 +31,15 @@ if !options[:interactive] && ARGV.size < 1
 	exit
 end
 
-TCPSocket.open(options[:host],options[:port]) do |s|
-	f = FSTerm2.new(s, options[:auto_lock])
-	if options[:interactive]
-		f.interactive_loop
-	else
-		f.single_command(ARGV.join(' '))
+begin
+	TCPSocket.open(options[:host],options[:port]) do |s|
+		f = FSTerm2.new(s, options[:auto_lock])
+		if options[:interactive]
+			f.interactive_loop
+		else
+			f.single_command(ARGV.join(' '))
+		end
 	end
+rescue Errno::ECONNREFUSED => e
+	puts 'Could not connect to server'
 end

@@ -2,7 +2,7 @@ module Commands
   class Unlock < AbstractCommand
     def execute
       Server.instance.token = nil
-      "Server has been unlocked"
+      response(0, "Server has been unlocked")
     end
   end
 end
