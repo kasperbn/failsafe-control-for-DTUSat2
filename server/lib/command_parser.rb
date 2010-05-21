@@ -27,15 +27,13 @@ class CommandParser
       eval("Commands::#{command.camelize}.new(*arguments)")
     rescue NameError => e
     	if command.nil?
-		   error(UNKNOWN_COMMAND.translate(token))
+				error(UNKNOWN_COMMAND.translate(token))
 	    else
-		   error(UNKNOWN_COMMAND.translate(command))
+				error(UNKNOWN_COMMAND.translate(command))
 	    end
     rescue ArgumentError => e
       error(WRONG_ARGUMENTS.translate(command))
     end
-
-    puts "parsed as #{command_obj}"
 
     return token, command_obj
   end
