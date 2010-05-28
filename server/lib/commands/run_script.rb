@@ -5,13 +5,13 @@ module Commands
     def initialize(script, *args)
     	@script = script
     	@args = args
-    	@token = Server.instance.token
+    	@token = TokenHandler.instance.token
     end
 
     def execute
-     	Dir.glob(File.dirname(__FILE__) + "/../../scripts/*").each do |f|
+     	Dir.glob(ROOT_DIR+"/scripts/*").each do |f|
     		if File.basename(f) == @script
-    			body = `#{File.expand_path(f)} #{@token} #{@args.join(' ')}` #.gsub("\n",'__NEWLINE__').gsub("\'",'__SINGLETICK__')
+    			body = `#{File.expand_path(f)} #{@token} #{@args.join(' ')}`
 					return response($?.exitstatus, body)
     		end
     	end

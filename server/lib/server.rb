@@ -40,9 +40,19 @@ module EMServer
 	def receive_data(data)
 		log "Request  (#{@client}): #{data}"
 		token, command = CommandParser.new(data).parse
-		response = check_lock_and_execute_command(token,command)
-		log "Response (#{@client}): #{response}"
-		send_data response+"\0"
+
+		# Execute in separate thread so we can listen for more incoming requests
+		operation = proc {
+			check_lock_and_execute_command(token,command)
+		}
+
+		callback = proc {|response|
+			log "Response (#{@client}): #{response}"
+			send_data(response+"\0")
+		}
+
+		# Defer it!
+		EventMachine.defer(operation,callback)
 	end
 
 	def unbind

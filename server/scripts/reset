@@ -1,8 +1,17 @@
 #!/usr/bin/ruby
+require 'optparse'
+op = OptionParser.new do |opts|
+  opts.banner = "Usage: reset"
+  opts.separator "Description: Reset the sattelite"
+end
+op.parse!
+
 token = ARGV[0]
 
-if `fsterm2 #{token} reset` =~ /Reset/
+if `fsclient #{token} reset` =~ /Reset/
   puts "Reset succeeded"
+	exit(0)
 else
   puts "Reset failed"
+	exit(1)
 end
