@@ -60,9 +60,10 @@ public class ExternalPanel extends JPanel {
 				for(int i=0;i<scripts.length();i++) {
 					JSONObject script;
 					script = (JSONObject) scripts.get(i);
-					newList.add(new ScriptPanel(script.getString("name"), script.getString("help")));
+					newList.add(new ExternalScriptPanel(script.getString("name"), script.getString("help")));
 				}
 				listPanel.add(newList, BorderLayout.NORTH);
+				FSController.getInstance().fsGuiPanel.repaint();
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

@@ -1,12 +1,13 @@
 #!/usr/bin/ruby
 require 'optparse'
 
-options = {:host => '0.0.0.0', :port => 3000, :logfile => STDOUT}
+options = {:host => '0.0.0.0', :port => 3000, :logfile => STDOUT, :timeout => 30}
 op = OptionParser.new do |opts|
   opts.banner = "Usage: fsserver [options]"
-  opts.on("--host=HOST", String, "Server host") {|h| options[:host] = h}
-  opts.on("--port=PORT", Integer, "Server port") {|p| options[:port] = p}
-  opts.on("--logfile=LOGFILE", String, "Logfile to be used") {|l| options[:logfile] = l}
+  opts.on("--host=HOST", String, "Server host ('0.0.0.0' is default)") {|h| options[:host] = h}
+  opts.on("--port=PORT", Integer, "Server port (3000 is default)") {|p| options[:port] = p}
+  opts.on("--timeout=TIMEOUT", Integer, "Token timeout in seconds (30 is default)") {|t| options[:timeout] = t}
+  opts.on("--logfile=LOGFILE", String, "Logfile to be used (stdout is default)") {|l| options[:logfile] = l}
 
   opts.separator ""
   opts.separator "Common options:"
@@ -17,7 +18,7 @@ op = OptionParser.new do |opts|
   end
 
   opts.on_tail("--version", "Show version") do
-		puts "FSDaemon Version #{Server::VERSION}"
+		puts "FSServer Version 1.0"
 		puts "Kasper Bjørn Nielsen (s052808@student.dtu.dk)"
     exit
   end
@@ -33,4 +34,4 @@ $LOG = FSLogger.new(options[:logfile])
 
 # Run server
 require ROOT_DIR+"/lib/server"
-Server.instance.start(options[:host], options[:port])
+Server.instance.start(options[:host], options[:port], options[:timeout])

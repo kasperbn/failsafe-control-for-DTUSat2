@@ -1,5 +1,6 @@
 package dtusat;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
@@ -56,7 +57,7 @@ public class FSSocket extends Observable {
 
 	public FSResponse execute(String command) {
 		String s = "";
-		String request = (command == "lock") ? command : token+command;
+		String request = (command == "lock") ? command : token+" "+command;
 		controller.log("> "+request);
 		out.println(request);
 		try {

@@ -1,17 +1,26 @@
 #!/usr/bin/ruby
 require 'optparse'
+require 'rubygems'
+require 'json'
+require 'open3'
+
 op = OptionParser.new do |opts|
-  opts.banner = "Usage: reset"
+  opts.banner = "Usage: reset token"
   opts.separator "Description: Reset the sattelite"
 end
 op.parse!
 
 token = ARGV[0]
 
-if `fsclient #{token} reset` =~ /Reset/
+stdin, stdout, stderr = Open3.popen3("fsclient", token, "reset")
+raw = stdout.readlines.join
+
+response = JSON.parse(raw);
+
+if response["status"] == 0
   puts "Reset succeeded"
-	exit(0)
 else
   puts "Reset failed"
-	exit(1)
 end
+
+exit(response["status"])

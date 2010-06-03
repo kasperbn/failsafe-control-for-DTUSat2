@@ -6,9 +6,9 @@ class TokenHandler
   include Loggable
 
 	TOKEN_HAS_BEEN_RESET = "Token has been reset after $0 seconds of inactivity"
-	TOKEN_TIMEOUT = 30
 
 	attr_reader :token
+	attr_accessor :timeout
 
 	def initialize
 		@token = nil
@@ -36,7 +36,7 @@ class TokenHandler
 	end
 
 	def reset_timer
-		@timer = TOKEN_TIMEOUT
+		@timer = @timeout
 	end
 
   private
@@ -47,7 +47,7 @@ class TokenHandler
 				sleep(1)
 				@timer -= 1
 				if @timer < 1
-					log TOKEN_HAS_BEEN_RESET.translate(TOKEN_TIMEOUT)
+					log TOKEN_HAS_BEEN_RESET.translate(@timeout)
 					self.token = nil
 				end
 			end

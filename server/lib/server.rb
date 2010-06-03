@@ -15,7 +15,8 @@ class Server
 	VERSION = '1.0'
 	LISTENING_ON = "Listening on $0"
 
-  def start(host, port)
+  def start(host, port, timeout)
+		TokenHandler.instance.timeout = timeout
 		EM.run do
 			EM.start_server host, port, EMServer
 			log LISTENING_ON.translate("#{host}:#{port}")

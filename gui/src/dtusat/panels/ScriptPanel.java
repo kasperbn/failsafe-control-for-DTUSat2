@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +33,8 @@ public class ScriptPanel extends JPanel {
 	
 	public ScriptPanel(String name, String help) {
 		this.name = name;
-		this.help = help;		
+		this.help = help;
+		
 		setLayout(new BorderLayout());
 		setBorder(new TitledBorder(name));
 		
@@ -46,6 +48,7 @@ public class ScriptPanel extends JPanel {
 		helpTextArea.setEditable(false);
 		helpTextArea.setBackground(this.getBackground());
 		helpTextArea.setMargin(new Insets(5,5,5,5));
+		helpTextArea.setFont(Font.decode("monospaced"));
 		descriptionPanel.add(helpTextArea);
 		
 		// Execution Panel
@@ -64,12 +67,10 @@ public class ScriptPanel extends JPanel {
 		
 	}
 	
-	private String getArguments() {
-		String r = argumentsTextField.getText();
-		return (r == "") ? "" : " "+r;
+	protected String getArguments() {
+		return argumentsTextField.getText();
 	}
 	
 	public void execute() {
-		FSController.getInstance().getSocket().execute("run_script "+name+getArguments());
 	}
 }

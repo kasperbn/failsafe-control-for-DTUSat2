@@ -1,3 +1,5 @@
+require 'open3'
+
 module Commands
   class RunScript < AbstractCommand
 		attr_accessor :token
@@ -11,7 +13,11 @@ module Commands
     def execute
      	Dir.glob(ROOT_DIR+"/scripts/*").each do |f|
     		if File.basename(f) == @script
-    			body = `#{File.expand_path(f)} #{@token} #{@args.join(' ')}`
+
+					cmd = File.expand_path(f)
+					stdin, stdout, stderr = Open3.popen3(cmd, token, *@args)
+					body = stdout.readlines.join
+
 					return response($?.exitstatus, body)
     		end
     	end
