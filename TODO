@@ -1,1 +1,20 @@
-GUI
+TODO:
+
++ JTree
++ Notify client of token timeouts. Indikér om man er låst eller ej.
++ Async log messages på scripts
++ Autolock
+- Pause-command
+- Ant-fil
+- Jar-fil
+
+Command sequences
+- Gem scripts
+- Forklaring af argumenter.
+- Export to script
+- Move up and down buttons
+- put delete and move buttons to the right
+
+Afhænger af Hans Henrik:
+- Health panel skal laves om
+- Upload script

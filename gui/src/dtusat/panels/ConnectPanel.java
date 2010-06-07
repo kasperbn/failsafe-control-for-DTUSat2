@@ -7,14 +7,18 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class ConnectPanel extends JPanel implements ActionListener {
 	
 	public FSController controller;
 	JTextField hostTextField, portTextField;
+	private JCheckBox autoLockCheckBox;
 	
 	public ConnectPanel() {
 		
@@ -34,6 +38,13 @@ public class ConnectPanel extends JPanel implements ActionListener {
 		hostTextField = new JTextField("localhost", 15);
 		portTextField = new JTextField("3000", 15);
 		
+		autoLockCheckBox = new JCheckBox("Autolock", controller.auto_lock);
+		autoLockCheckBox.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				controller.auto_lock = autoLockCheckBox.isSelected();	
+			}
+		});
+		
 		JButton connectButton = new JButton("Connect");
 		connectButton.addActionListener(this);
 		
@@ -48,6 +59,7 @@ public class ConnectPanel extends JPanel implements ActionListener {
 		buttonPanel.add(connectAndLockButton);
 		boxPanel.add(hostPanel);
 		boxPanel.add(portPanel);
+		boxPanel.add(autoLockCheckBox);
 		boxPanel.add(buttonPanel);
 		add(boxPanel);
 	}

@@ -6,11 +6,14 @@ require 'json'
 class Client
 	include Singleton
 
-	attr_accessor :auto_lock, :interactive
+	attr_accessor :auto_lock, :interactive, :data_only
 
-	def start(host, port, auto_lock = false, interactive = false)
+	def start(host, port, auto_lock, interactive, data_only)
 		@auto_lock = auto_lock
 		@interactive = interactive
+		@data_only = data_only
+		@requests = {}
+
 		EventMachine::run do
 			EventMachine::connect host, port, EMClient
 		end
@@ -21,6 +24,7 @@ module EMClient
   def post_init
   	@auto_lock = Client.instance.auto_lock
   	@interactive = Client.instance.interactive
+  	@data_only = Client.instance.data_only
 
 		unless @interactive
 			@exit = true
@@ -45,8 +49,13 @@ module EMClient
 		@response = JSON.parse(data)
 
 		# Print to screen
-		puts data if @verbose
-
+		if @verbose
+			if @data_only
+				puts @response["data"]
+			else
+				puts data
+			end
+		end
 		# Remember token?
 		@token = remember_or_forget_token(@request, @response)
 
@@ -92,8 +101,8 @@ module EMClient
 	def remember_or_forget_token(request, response)
 		if(request =~ /^lock/ && response['status'] == 0)
 			puts "Token remembered and will be send automatically before any command."
-			response['body']
-		elsif response['body'] =~ /^Server has been unlocked/
+			response['data']
+		elsif response['data'] =~ /^Server has been unlocked/
 			nil
 		else
 			@token
@@ -102,6 +111,13 @@ module EMClient
 
 	def execute(request,verbose=true)
 		@verbose = verbose
-		send_data request
+		send_data({:id => generate_unique_id, :data => request}.to_json)
+	end
+
+	def generate_unique_id(len=6)
+		chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+		id = ""
+		1.upto(len) { |i| id << chars[rand(chars.size-1)] }
+		id
 	end
 end

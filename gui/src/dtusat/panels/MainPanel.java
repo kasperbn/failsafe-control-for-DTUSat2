@@ -12,11 +12,15 @@ import java.util.Calendar;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JToolBar;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import dtusat.FSController;
 import dtusat.FSSocket;
@@ -29,22 +33,32 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 	public JPanel logPanel, buttonPanel; 
 	public JTextArea logArea;
 	FSController controller;
-	JButton disconnectButton, lockButton, unlockButton;
+	JButton lockButton, unlockButton;
 	private JScrollPane logScrollPane;
+	public JLabel lockStatus;
+	private JCheckBox autoLockCheckBox;
 	
 	public MainPanel() {	
 		controller = FSController.getInstance();
 		
 		setLayout(new BorderLayout());
 	
-		// Toolbar
+		// Toolbars
 		toolBar = new JToolBar();
 		add(toolBar, BorderLayout.PAGE_START);
-
-		// Disconnect
-		disconnectButton = new JButton("Disconnect", new ImageIcon("src/dtusat/icons/disconnect.png"));
-		disconnectButton.addActionListener(this);
-		toolBar.add(disconnectButton);
+		
+		// Lock status
+		lockStatus = new JLabel();
+		showUnLockedStatus();
+		toolBar.add(lockStatus);
+	
+		autoLockCheckBox = new JCheckBox("Autolock", controller.auto_lock);
+		autoLockCheckBox.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				controller.auto_lock = autoLockCheckBox.isSelected();	
+			}
+		});
+		toolBar.add(autoLockCheckBox);
 		
 		// Lock
 		lockButton = new JButton("Lock", new ImageIcon("src/dtusat/icons/lock.png"));
@@ -70,9 +84,16 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 		
 	}	
 
-	public void showDisconnectButton() { disconnectButton.setVisible(true); }
-	public void hideDisconnectButton() { disconnectButton.setVisible(false); }
-
+	public void showLockedStatus() {
+		lockStatus.setIcon(new ImageIcon("src/dtusat/icons/green.png"));
+		lockStatus.setText("Server is locked");
+	}
+	
+	public void showUnLockedStatus() {
+		lockStatus.setIcon(new ImageIcon("src/dtusat/icons/red.png"));
+		lockStatus.setText("Server is unlocked");	
+	}
+	
 	public void showLockButtons() {
 		lockButton.setVisible(true);
 		unlockButton.setVisible(true);
@@ -98,8 +119,6 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		String e = event.getActionCommand();
 		
-		if(e == "Disconnect")
-			controller.getSocket().disconnect();
 		if(e == "Lock")
 			controller.lock();
 		if(e == "Unlock")

@@ -1,13 +1,16 @@
 module Commands
   class ListScripts < AbstractCommand
-    def execute
-     	body = Dir.glob(ROOT_DIR+"/scripts/*").map do |f|
-    		{
-    			:name => File.basename(f),
-    			:help => `#{File.expand_path(f)} --help`
-    		}
+
+    def execute(caller, id)
+			list = Dir.glob("scripts/**/*").select do |f|
+				File.executable?(f) && !File.directory?(f)
+    	end.sort.map do |f|
+  			{
+					:path => f,
+					:help => `#{File.expand_path(f)} --help`
+				}
     	end
-			response(0,body)
+			response(:status => STATUS_OK, :data => list)
     end
   end
 end

@@ -9,21 +9,19 @@ import java.io.OutputStreamWriter;
 import dtusat.FSController;
 import dtusat.Logger;
 
-public class InternalScriptPanel extends ScriptPanel {
+public class LocalScriptPanel extends ScriptPanel {
 
-	String path;
 	Logger logger;
 	
-	public InternalScriptPanel(String name, String help, String path) {
-		super(name, help);
-		this.path = path;
+	public LocalScriptPanel(String name, String path, String help) {
+		super(name, path, help);
 		logger = FSController.getInstance();
 	}
 
 	public void execute() {
+		outputArea.setText("");
 		try {
 			String token = FSController.getInstance().getSocket().token;
-			
 			
 			String[] args = getArguments().split(" ");
 			String[] argList = new String[2+args.length];
@@ -39,11 +37,10 @@ public class InternalScriptPanel extends ScriptPanel {
 			int status = child.exitValue();
 			 
 			String line;
-			String body = "";
-			while ((line = out.readLine()) != null)
-				body += line;
 			
-			logger.log("{\"body\":\""+body+"\", \"status\":"+status+"}");
+			while ((line = out.readLine()) != null) {
+				outputArea.append(line);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {

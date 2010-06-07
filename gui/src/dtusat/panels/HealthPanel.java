@@ -58,6 +58,6 @@ public class HealthPanel extends JPanel {
 				e.printStackTrace();
 			}
 		}
-		FSController.getInstance().fsGuiPanel.repaint();
+		FSController.getInstance().mainPanel.repaint();
 	}
 }

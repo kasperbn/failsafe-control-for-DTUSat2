@@ -1,0 +1,34 @@
+#!/usr/bin/ruby
+require 'optparse'
+require 'rubygems'
+require 'json'
+require 'open3'
+
+op = OptionParser.new do |opts|
+  opts.banner = "Usage: download token start_address length"
+  opts.separator "Description: Downloads the data from the memory in the given range"
+  opts.separator "Arguments:"
+  opts.separator "\tstart_address (decimal)"
+  opts.separator "\tlength (decimal)"
+end
+op.parse!
+
+if ARGV.length != 3
+	puts "Not enough arguments"
+	exit(1)
+end
+
+token = ARGV[0]
+start_address = ARGV[1]
+length = ARGV[2]
+
+stdin, stdout, stderr = Open3.popen3("fsclient", token, "download", start_address, length)
+raw = stdout.readlines.join
+response = JSON.parse(raw);
+
+if response['status'] == 0
+	puts "Download OK"
+else
+	puts "Download Failed"
+end
+exit(response['status']);

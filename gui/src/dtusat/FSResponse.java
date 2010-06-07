@@ -6,35 +6,50 @@ import org.json.JSONObject;
 
 public class FSResponse {
 	
+	public String type;
+	public String id;
 	public int status;
 	private String raw;
 	private JSONObject parsed;
+	public boolean partial;
 	
 	public FSResponse(String raw) {
 		this.raw = raw;
 		
 		try {
 			parsed = new JSONObject(raw);
-			this.status = parsed.getInt("status");
+			this.type = parsed.getString("type");
+			
+			if(type.equals("response")) {
+				this.status = parsed.getInt("status");
+				this.id = parsed.getString("id");
+			}
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			this.partial = parsed.getBoolean("partial");
+		} catch (JSONException e1) {
+			this.partial = false;
+		}
 	}
 	
-	public String bodyAsString() {
+	public String dataAsString() {
 		String r = null;
 		try {
-			r = parsed.getString("body");
+			r = parsed.getString("data");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 		return r;
 	}
 	
-	public JSONArray bodyAsArray() {
+	public JSONArray dataAsArray() {
 		JSONArray res = null;
 		try {
-			res = parsed.getJSONArray("body");
+			res = parsed.getJSONArray("data");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

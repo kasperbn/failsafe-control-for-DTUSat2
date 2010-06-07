@@ -13,13 +13,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import dtusat.FSController;
+import dtusat.FSResponse;
+import dtusat.FSCallback;
 
-public class CustomPanel extends JPanel {
+public class CommandSequencesPanel extends JPanel {
 	private JPanel commandList;
 	private JPanel commandPanel;
 	private FSController controller;
 
-	public CustomPanel() {
+	public CommandSequencesPanel() {
 		controller = FSController.getInstance();
 		
 		setLayout(new BorderLayout());
@@ -51,13 +53,13 @@ public class CustomPanel extends JPanel {
 		controller.log("===== BEGIN command sequence");
 		for(Component c : commandList.getComponents()) {
 			CommandPanel cp = (CommandPanel) c;
-			controller.getSocket().execute(cp.getFullCommand());
+			controller.getSocket().send(cp.getFullCommand());
 		}
 		controller.log("===== END command sequence");
 	}
 
 	protected void addCommandPanel() {
 		commandList.add(new CommandPanel());
-		FSController.getInstance().fsGuiPanel.repaint();
+		FSController.getInstance().mainPanel.repaint();
 	}
 }

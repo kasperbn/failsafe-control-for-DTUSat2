@@ -1,4 +1,4 @@
-require 'open3'
+require 'pty'
 
 module Commands
   class RunScript < AbstractCommand
@@ -10,18 +10,26 @@ module Commands
     	@token = TokenHandler.instance.token
     end
 
-    def execute
-     	Dir.glob(ROOT_DIR+"/scripts/*").each do |f|
-    		if File.basename(f) == @script
+    def execute(caller, id)
+     	Dir.glob(ROOT_DIR+"/scripts/**/*").each do |f|
 
-					cmd = File.expand_path(f)
-					stdin, stdout, stderr = Open3.popen3(cmd, token, *@args)
-					body = stdout.readlines.join
+				cmd = File.expand_path(f)
+    		if cmd == File.expand_path(@script)
 
-					return response($?.exitstatus, body)
+					PTY.spawn(cmd, token, *@args) do |sr, sw, spid|
+						begin
+							loop do
+								caller.send(response(:id => id, :status => STATUS_OK, :data => sr.readline, :partial => true).to_json)
+							end
+						rescue => e
+							# Done
+						end
+					end
+
+					return response(:status => STATUS_OK, :data => "End of script")
     		end
     	end
-    	error("Unknown script")
+    	response(:status => STATUS_ERROR, :data => "Unknown script")
     end
   end
 end

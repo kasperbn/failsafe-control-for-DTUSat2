@@ -44,8 +44,7 @@ unless((1..5).include?(ray_size.to_i))
 	exit(3)
 end
 
-fsclient = File.dirname(__FILE__) + "/../client/fsclient"
-
+fsclient = File.dirname(__FILE__) + "/../../client/fsclient"
 stdin, stdout, stderr = Open3.popen3(fsclient, token, "reset")
 raw = stdout.readlines.join
 

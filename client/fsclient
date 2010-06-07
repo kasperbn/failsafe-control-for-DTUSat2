@@ -1,11 +1,12 @@
 #!/usr/bin/ruby
 require 'optparse'
-options = {:host => '0.0.0.0', :port => 3000, :interactive => false, :auto_lock => false}
+options = {:host => '0.0.0.0', :port => 3000, :interactive => false, :auto_lock => false, :data_only => false}
 op = OptionParser.new do |opts|
   opts.banner = "Usage: fsclient [options] <lock | token command [command_args ... ]>"
   opts.on("--host=HOST", String, "Server host (default is 0.0.0.0)") {|h| options[:host] = h}
   opts.on("--port=PORT", Integer, "Server port (default is 3000)") {|p| options[:port] = p}
   opts.on("-i","--interactive", "Interactive mode") {|i| options[:interactive] = true}
+  opts.on("-d","--data-only", "Only print data parameter") {|i| options[:data_only] = true}
   opts.on("-a","--auto-lock", "Auto lock in interactive mode") {|i| options[:auto_lock] = true}
 
   opts.separator ""
@@ -28,4 +29,4 @@ ROOT_DIR = File.dirname(__FILE__)
 
 # Start the client
 require ROOT_DIR + '/lib/client'
-Client.instance.start(options[:host], options[:port], options[:auto_lock], options[:interactive])
+Client.instance.start(options[:host], options[:port], options[:auto_lock], options[:interactive], options[:data_only])

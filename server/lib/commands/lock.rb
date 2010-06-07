@@ -1,8 +1,8 @@
 module Commands
   class Lock < AbstractCommand
-    def execute
+    def execute(caller, id)
       TokenHandler.instance.token = generate_token
-			response(0, TokenHandler.instance.token)
+			response(:status => STATUS_OK, :data => TokenHandler.instance.token)
     end
 
     private

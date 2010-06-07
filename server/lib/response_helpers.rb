@@ -3,16 +3,12 @@ require 'json'
 
 module ResponseHelpers
 
-	def ok(body)
-		response(0,body)
+	def message(params = {})
+		params
 	end
 
-	def error(body)
-		response(1,body)
-	end
-
-	def response(status, body)
-		{:status => status, :body => body}.to_json
+	def response(params = {})
+		message(params.merge({:type => 'response'}))
 	end
 
 end

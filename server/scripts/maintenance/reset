@@ -14,11 +14,13 @@ token = ARGV[0]
 
 stdin, stdout, stderr = Open3.popen3("fsclient", token, "reset")
 raw = stdout.readlines.join
-
 response = JSON.parse(raw);
 
 if response["status"] == 0
-  puts "Reset succeeded"
+	5.times do |n|
+		sleep(1)
+	  puts "Reset succeeded. #{20*(n+1)}% done!"
+  end
 else
   puts "Reset failed"
 end

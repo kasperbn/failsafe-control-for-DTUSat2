@@ -22,7 +22,7 @@ token = ARGV[0]
 filepath = ARGV[1]
 address = ARGV[2]
 
-stdin, stdout, stderr = Open3.popen3("fsclient", token, "upload")
+stdin, stdout, stderr = Open3.popen3("fsclient", token, "upload", filepath, address)
 raw = stdout.readlines.join
 
 response = JSON.parse(raw);
