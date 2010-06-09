@@ -14,11 +14,11 @@ import javax.swing.JTextField;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class ConnectPanel extends JPanel implements ActionListener {
+public class ConnectPanel extends JPanel {
 	
 	public FSController controller;
 	JTextField hostTextField, portTextField;
-	private JCheckBox autoLockCheckBox;
+	public JCheckBox autoLockCheckBox;
 	
 	public ConnectPanel() {
 		
@@ -38,43 +38,30 @@ public class ConnectPanel extends JPanel implements ActionListener {
 		hostTextField = new JTextField("localhost", 15);
 		portTextField = new JTextField("3000", 15);
 		
-		autoLockCheckBox = new JCheckBox("Autolock", controller.auto_lock);
+		autoLockCheckBox = new JCheckBox("Autolock", controller.isAutoLocked);
 		autoLockCheckBox.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
-				controller.auto_lock = autoLockCheckBox.isSelected();	
+				controller.setAutoLocked(autoLockCheckBox.isSelected());
 			}
 		});
 		
 		JButton connectButton = new JButton("Connect");
-		connectButton.addActionListener(this);
-		
-		JButton connectAndLockButton = new JButton("Connect and lock");
-		connectAndLockButton.addActionListener(this);
+		connectButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				controller.getSocket().connect(hostTextField.getText(), portTextField.getText());				
+			}
+		});
 		
 		hostPanel.add(hostLabel);
 		hostPanel.add(hostTextField);
 		portPanel.add(portLabel);
 		portPanel.add(portTextField);
 		buttonPanel.add(connectButton);
-		buttonPanel.add(connectAndLockButton);
 		boxPanel.add(hostPanel);
 		boxPanel.add(portPanel);
 		boxPanel.add(autoLockCheckBox);
 		boxPanel.add(buttonPanel);
 		add(boxPanel);
-	}
-
-	public void actionPerformed(ActionEvent ae) {
-		String e = ae.getActionCommand();
-		
-		if(e == "Connect") {
-			controller.getSocket().connect(hostTextField.getText(), portTextField.getText());
-		} 
-		if(e == "Connect and lock") {
-			controller.getSocket().connect(hostTextField.getText(), portTextField.getText());
-			controller.lock();
-		}
-		
 	}
 
 }

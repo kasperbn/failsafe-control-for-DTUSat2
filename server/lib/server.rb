@@ -104,7 +104,7 @@ module EMServer
 				if command.is_a?(Commands::Unlock) # Attempt to unlock
 					command.execute(self, id)
 				elsif command.is_a?(Commands::Lock) # Attempt to lock
-					response(:status => STATUS_ERROR, :data => MESSAGE_ALREADY_LOCKED.translate(TokenHandler.instance.token))
+					response(:status => STATUS_ALREADY_LOCKED, :data => MESSAGE_ALREADY_LOCKED.translate(TokenHandler.instance.token))
 				else
 					if(command.is_a?(Hash)) # Command is already formatted as an parse error
 						command

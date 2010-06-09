@@ -9,8 +9,8 @@ public interface FSSocketObserver {
 	
 	public void log(String string);
 
-	public void registerCallback(String id, FSCallback callback);
+	public void onRegisterCallback(String id, FSCallback callback);
 
-	public void handleIncomingData(String s);
+	public void onIncomingData(String s);
 
 }

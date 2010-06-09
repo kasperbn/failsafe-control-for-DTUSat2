@@ -36,7 +36,8 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 	JButton lockButton, unlockButton;
 	private JScrollPane logScrollPane;
 	public JLabel lockStatus;
-	private JCheckBox autoLockCheckBox;
+	public JCheckBox autoLockCheckBox;
+	private JLabel connectedStatus;
 	
 	public MainPanel() {	
 		controller = FSController.getInstance();
@@ -46,16 +47,22 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 		// Toolbars
 		toolBar = new JToolBar();
 		add(toolBar, BorderLayout.PAGE_START);
+	
+		// Connected status
+		connectedStatus = new JLabel();
+		showDisconnectedStatus();
+		toolBar.add(connectedStatus);
 		
 		// Lock status
 		lockStatus = new JLabel();
 		showUnLockedStatus();
 		toolBar.add(lockStatus);
 	
-		autoLockCheckBox = new JCheckBox("Autolock", controller.auto_lock);
+		// Autolock
+		autoLockCheckBox = new JCheckBox("Autolock", controller.isAutoLocked);
 		autoLockCheckBox.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
-				controller.auto_lock = autoLockCheckBox.isSelected();	
+				controller.setAutoLocked(autoLockCheckBox.isSelected());	
 			}
 		});
 		toolBar.add(autoLockCheckBox);
@@ -84,14 +91,24 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 		
 	}	
 
+	public void showConnectedStatus() {
+		connectedStatus.setIcon(new ImageIcon("src/dtusat/icons/green.png"));
+		connectedStatus.setText("Connected");
+	}
+	
+	public void showDisconnectedStatus() {
+		connectedStatus.setIcon(new ImageIcon("src/dtusat/icons/red.png"));
+		connectedStatus.setText("Disconnected");
+	}
+	
 	public void showLockedStatus() {
 		lockStatus.setIcon(new ImageIcon("src/dtusat/icons/green.png"));
-		lockStatus.setText("Server is locked");
+		lockStatus.setText("Locked");
 	}
 	
 	public void showUnLockedStatus() {
 		lockStatus.setIcon(new ImageIcon("src/dtusat/icons/red.png"));
-		lockStatus.setText("Server is unlocked");	
+		lockStatus.setText("Unlocked");	
 	}
 	
 	public void showLockButtons() {
@@ -105,7 +122,6 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 	}
 	
 	public void log(String msg) {
-		//logArea.append(msg+"\n");
 		logArea.setText(msg+"\n"+logArea.getText());
 		logArea.setSelectionStart(0);
 		logArea.setSelectionEnd(0);
@@ -114,14 +130,14 @@ public class MainPanel extends JPanel implements Logger, ActionListener {
 	public void setTopPanel(Component component) {
 		splitPane.setLeftComponent(component);
 		splitPane.setDividerLocation(0.66);
+		splitPane.updateUI();
 	}
 
 	public void actionPerformed(ActionEvent event) {
-		String e = event.getActionCommand();
-		
-		if(e == "Lock")
+		Object source = event.getSource();
+		if(source == lockButton)
 			controller.lock();
-		if(e == "Unlock")
+		if(source == unlockButton)
 			controller.unlock();
 	}
 

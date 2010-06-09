@@ -10,6 +10,7 @@ module MessagesAndStatuses
 	STATUS_ERROR = 1
 	STATUS_IS_LOCKED = 2
 	STATUS_MUST_LOCK = 3
+	STATUS_ALREADY_LOCKED = 4
 
 	# Command Parser
 	MESSAGE_WRONG_ARGUMENTS = "Wrong number of arguments for command: $0"

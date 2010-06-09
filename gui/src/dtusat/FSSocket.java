@@ -41,6 +41,7 @@ public class FSSocket extends Observable {
 			out = new PrintWriter(socket.getOutputStream(), true);
 			
 			socketReader = new FSSocketReader(in, observer);
+			
 			inThread = new Thread(socketReader);
 			inThread.start();
 			
@@ -58,6 +59,8 @@ public class FSSocket extends Observable {
 		try {
 			socket.close();
 			observer.onDisconnected();
+			socketReader.stop();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -68,15 +71,23 @@ public class FSSocket extends Observable {
 	}
 	
 	public void request(String command, FSCallback callback) {
-		String data = (command == "lock") ? command : token+" "+command;
+		String data = (token == "") ? command : token+" "+command;
 		String id = generateUniqueId();
 		String request = "{\"id\":\""+id+"\", \"data\":\""+data+"\"}";
 		
 		if(callback != null)
-			observer.registerCallback(id, callback);
+			observer.onRegisterCallback(id, callback);
 		
-		observer.log("> "+request);
-		out.println(request);
+		try {
+			byte[] bytes = request.getBytes();
+			socket.getOutputStream().write(bytes);
+			observer.log("> "+request);
+		} catch (SocketException e) {
+			observer.onDisconnected();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	private String generateUniqueId() {

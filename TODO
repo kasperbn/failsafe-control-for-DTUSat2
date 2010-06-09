@@ -4,6 +4,7 @@ TODO:
 + Notify client of token timeouts. Indikér om man er låst eller ej.
 + Async log messages på scripts
 + Autolock
++ Connected status
 - Pause-command
 - Ant-fil
 - Jar-fil
@@ -16,5 +17,41 @@ Command sequences
 - put delete and move buttons to the right
 
 Afhænger af Hans Henrik:
-- Health panel skal laves om
+- Health Panel
+	- batterispaendning
+	- temperatur
+	- interne ting i failsafe softwaren
+	- praesenteres paa en overskuelig maade
+	- green red indikation
 - Upload script
+
+disposition for rapport
+	- opdeling af kapitler i stikord
+	- bred indledning, snaever ind specifikt paa problem, typografiske konventioner, hvad er der i de forskellige kapitler
+	- problemformulering
+	- metode, laeg op til iterativ process, kig loebende paa hvad der fungerer, advar laeseren mod at det ikke bliver helt efter bogen
+	- konklusion skal modsvare indledningen, opsummering af hvad der er lavet, lidt diskusion, resultater, hvad der kan gaas videre med
+
+Send disposition til HHL inden naeste gang
+
+Latex skabelon
+	- Maa gerne lave om i font, men ikke i stoerelse
+
+Tidsplan:
+	09. jun - Disposition for rapport, send til Hans Henrik
+	10. jun - Pause-command, Ant-fil, jar-fil
+	11. jun - Command Sequences
+	12. jun - Test
+	13. jun - Test
+	14. jun - Test
+	15. jun - Møde med Hans Henrik, IO med satellit
+	16. jun - IO med satellit
+	17. jun - Upload Script
+	18. jun - Health Panel
+	19. jun - Rapport
+	20. jun - Rapport
+	21. jun - Rapport
+	22. jun - Rapport
+	23. jun - Rapport
+	24. jun - Rapport Print
+	25. jun - Aflever

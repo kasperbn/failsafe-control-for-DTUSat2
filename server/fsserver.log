@@ -1,7 +1,0 @@
-[07/06/2010 13:30:11] Listening on 0.0.0.0:3000
-[07/06/2010 13:30:24] <127.0.0.1:48485> logged on
-[07/06/2010 13:30:24] <127.0.0.1:48485> requests: {"id":"3rKPfM","data":"lock"}
-[07/06/2010 13:30:24] <127.0.0.1:48485> response: {"type":"response","status":0,"data":"jJ5r5Moee1hhfDGa","id":"3rKPfM"}
-[07/06/2010 13:30:26] <127.0.0.1:48485> requests: {"id":"S46JJd","data":"jJ5r5Moee1hhfDGa wow"}
-[07/06/2010 13:30:56] Token has been reset after 30 seconds of inactivity
-[07/06/2010 13:31:32] <127.0.0.1:48485> logged off

@@ -1,0 +1,10 @@
+\select@language {english}
+\contentsline {chapter}{Summary}{i}{chapter*.1}
+\contentsline {chapter}{Resum\'e}{iii}{chapter*.2}
+\contentsline {chapter}{Preface}{v}{chapter*.3}
+\contentsline {chapter}{Papers included in the thesis}{vii}{chapter*.4}
+\contentsline {chapter}{Acknowledgements}{ix}{chapter*.5}
+\contentsline {chapter}{\numberline {1}This is chapter one}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}This is a new section}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}This is a new subsection}{6}{subsection.1.1.1}
+\contentsline {chapter}{\numberline {A}Tracking time-varying coefficient-functions}{9}{appendix.A}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DTUSat-2 Failsafe GUI" default="World" basedir=".">
+	<property name="HelloText" value="Hello"/>
+	<property name="WorldText" value="World"/>
+	<target name="Hello">
+	<echo>${HelloText}</echo>
+	</target>
+	
+	<target name="World" depends="Hello">
+		<echo>${WorldText}</echo>
+	</target>
+</project>
