@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="DTUSat-2 Failsafe GUI" default="World" basedir=".">
-	<property name="HelloText" value="Hello"/>
-	<property name="WorldText" value="World"/>
-	<target name="Hello">
-	<echo>${HelloText}</echo>
-	</target>
-	
-	<target name="World" depends="Hello">
-		<echo>${WorldText}</echo>
-	</target>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project DTUSat Failsafe GUI">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/home/kbn/Code/bachelor/gui/fs_gui.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="dtusat.Driver"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/home/kbn/Code/bachelor/gui/bin"/>
+        </jar>
+    </target>
 </project>
