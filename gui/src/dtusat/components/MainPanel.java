@@ -2,6 +2,7 @@ package dtusat.components;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.FlowLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -33,7 +34,8 @@ public class MainPanel extends JPanel implements Logger {
 	
 		// Toolbars
 		toolBar = new JToolBar();
-		add(toolBar, BorderLayout.PAGE_START);
+		//toolBar.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		add(toolBar, BorderLayout.PAGE_END);
 	
 		// Connected status
 		connectedStatus = new JLabel();

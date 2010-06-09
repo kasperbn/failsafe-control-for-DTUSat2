@@ -10,7 +10,7 @@ public class MainTabs extends JTabbedPane {
 		
 		addTab("Server Scripts", new ServerScriptsPanel());
 		addTab("Local Scripts", new LocalScriptsPanel());
-		addTab("Linear Command Sequences", new CommandSequencesPanel());
+		addTab("Command Sequences", new CommandSequencesPanel());
 		addTab("Health Status", new HealthPanel());
 	}
 

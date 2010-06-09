@@ -10,8 +10,8 @@ TODO:
 + Jar-fil
 
 Command sequences
-- Gem scripts
 - Forklaring af argumenter.
+- Gem scripts
 - Export to script
 - Move up and down buttons
 - put delete and move buttons to the right
@@ -38,9 +38,9 @@ Latex skabelon
 	- Maa gerne lave om i font, men ikke i stoerelse
 
 Tidsplan:
-	09. jun - Disposition for rapport, send til Hans Henrik
-	10. jun - Pause-command, Ant-fil, jar-fil
-	11. jun - Command Sequences
+	09. jun - Disposition for rapport, send til Hans Henrik, Pause-command, Ant-fil, jar-fil
+	10. jun - Command Sequences
+	11. jun - Test
 	12. jun - Test
 	13. jun - Test
 	14. jun - Test
