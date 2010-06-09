@@ -9,13 +9,10 @@ public class FSResponse {
 	public String type;
 	public String id;
 	public int status;
-	private String raw;
 	private JSONObject parsed;
 	public boolean partial;
 	
 	public FSResponse(String raw) {
-		this.raw = raw;
-		
 		try {
 			parsed = new JSONObject(raw);
 			this.type = parsed.getString("type");

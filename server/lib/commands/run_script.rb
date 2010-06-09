@@ -12,20 +12,17 @@ module Commands
 
     def execute(caller, id)
      	Dir.glob(ROOT_DIR+"/scripts/**/*").each do |f|
-
 				cmd = File.expand_path(f)
-    		if cmd == File.expand_path(@script)
-
-					PTY.spawn(cmd, token, *@args) do |sr, sw, spid|
+    		if cmd == File.expand_path(@script) # Does the script exists?
+					PTY.spawn(cmd, token, *@args) do |sr, sw, spid| # Open up a pseudo tty
 						begin
-							loop do
+							loop do # Read line from stdout until tty is closed
+								# Send output immediately to client
 								caller.send(response(:id => id, :status => STATUS_OK, :data => sr.readline, :partial => true).to_json)
 							end
-						rescue => e
-							# Done
+						rescue => e # Done
 						end
 					end
-
 					return response(:status => STATUS_OK, :data => "End of script")
     		end
     	end

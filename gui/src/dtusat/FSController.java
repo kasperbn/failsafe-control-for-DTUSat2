@@ -14,9 +14,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JSeparator;
 
-import dtusat.panels.ConnectPanel;
-import dtusat.panels.MainPanel;
-import dtusat.panels.MainTabs;
+import dtusat.components.ConnectPanel;
+import dtusat.components.FSMenu;
+import dtusat.components.MainPanel;
+import dtusat.components.MainTabs;
 
 public class FSController implements Logger, FSSocketObserver {
 
@@ -43,6 +44,7 @@ public class FSController implements Logger, FSSocketObserver {
 	public MainPanel mainPanel;
 	public ConnectPanel connectPanel;
 	public MainTabs mainTabs;
+	public FSMenu menu;
 	
 	Hashtable<String, IncomingDataHandler> incomingDataHandlers;
 	Hashtable<String, FSCallback> requestCallbacks;
@@ -52,7 +54,7 @@ public class FSController implements Logger, FSSocketObserver {
 	// ---- Intitialization -----------------------------------------
 	
 	public void start() {
-		isAutoLocked = false;
+		isAutoLocked = true;
 		isConnected = false;
 		isServerLocked = false;
 		
@@ -60,12 +62,14 @@ public class FSController implements Logger, FSSocketObserver {
 		mainPanel = new MainPanel();
 		mainTabs = new MainTabs();
 		connectPanel = new ConnectPanel();
+		menu = new FSMenu();
 		
 		incomingDataHandlers = new Hashtable<String, IncomingDataHandler>();
 		requestCallbacks = new Hashtable<String, FSCallback>();
 		
 		setupIncomingDataHandlers();
 		setupWindow();
+		showConnectPanel();
 	}
 
 	// --- Incoming Data Handlers -------------------------------
@@ -74,7 +78,7 @@ public class FSController implements Logger, FSSocketObserver {
 
 		// Response Handler
 		incomingDataHandlers.put("response", new IncomingDataHandler() {
-			public void handle(FSResponse response) {
+			public void onData(FSResponse response) {
 				
 				try {
 					
@@ -105,7 +109,7 @@ public class FSController implements Logger, FSSocketObserver {
 		
 		// Server Unlocked Handler
 		incomingDataHandlers.put("server_unlocked", new IncomingDataHandler() {
-			public void handle(FSResponse response) {
+			public void onData(FSResponse response) {
 				isServerLocked = false;
 				setIsLocked(false);
 			}
@@ -113,39 +117,21 @@ public class FSController implements Logger, FSSocketObserver {
 	}
 		
 	public void setupWindow() {
-		// Frame
 		frame = new JFrame("Failsafe Control GUI");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setContentPane(mainPanel);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+		frame.setContentPane(mainPanel);
+		frame.setJMenuBar(menu);
 		frame.setVisible(true);
-		
-		// Menu
-		JMenuBar menuBar = new JMenuBar();
-		JMenu fileMenu = new JMenu("File");
-		JMenuItem disconnectMenuItem = new JMenuItem("Disconnect", new ImageIcon("src/dtusat/icons/disconnect.png"));
-		disconnectMenuItem.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent arg0) {getSocket().disconnect();}});		
-		JMenuItem quitMenuItem = new JMenuItem("Quit");
-		
-		quitMenuItem.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent ae) {System.exit(0);}});
-		fileMenu.add(disconnectMenuItem);
-		fileMenu.add(new JSeparator());
-		fileMenu.add(quitMenuItem);
-		menuBar.add(fileMenu);
-		frame.setJMenuBar(menuBar);
-		
-		showConnectPanel();
 	}
 	
 	// --- Views -------------------------------
 	
 	public void showConnectPanel() {
-		mainPanel.hideLockButtons();
 		mainPanel.setTopPanel(connectPanel);
 	}
 	
 	public void showMainPanel() {
-		mainPanel.showLockButtons();
 		mainPanel.setTopPanel(mainTabs);
 	}
 	
@@ -176,14 +162,16 @@ public class FSController implements Logger, FSSocketObserver {
 	}
 	
 	public void onDisconnected() {
-		setIsConnected(false);
-		showConnectPanel();
+		if(isConnected) {
+			setIsConnected(false);
+			showConnectPanel();
+		}
 	}
 	
 	public void onIncomingData(String s) {
 		log("< "+s);
 		FSResponse response = new FSResponse(s);
-		incomingDataHandlers.get(response.type).handle(response);
+		incomingDataHandlers.get(response.type).onData(response);
 	}
 	
 	public void onRegisterCallback(String id, FSCallback callback) {
@@ -224,7 +212,7 @@ public class FSController implements Logger, FSSocketObserver {
 		isAutoLocked = selected;
 
 		connectPanel.autoLockCheckBox.setSelected(selected);
-		mainPanel.autoLockCheckBox.setSelected(selected);
+		menu.autoLockItem.setSelected(selected);
 		
 		if(!isLocked && isAutoLocked && isConnected)
 			lock();

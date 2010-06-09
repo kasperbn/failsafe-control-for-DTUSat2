@@ -5,7 +5,7 @@ TODO:
 + Async log messages på scripts
 + Autolock
 + Connected status
-- Pause-command
++ Sleep-command
 - Ant-fil
 - Jar-fil
 

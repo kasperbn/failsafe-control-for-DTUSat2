@@ -91,18 +91,14 @@ module EMClient
 	end
 
 	def prepend_token(request)
-		if(@token.nil? || request == 'lock')
-			request
-		else
-			"#{@token} #{request}"
-		end
+		(@token.nil?) ? request : "#{@token} #{request}";
 	end
 
 	def remember_or_forget_token(request, response)
 		if(request =~ /^lock/ && response['status'] == 0)
 			puts "Token remembered and will be send automatically before any command."
 			response['data']
-		elsif response['data'] =~ /^Server has been unlocked/
+		elsif response['data'] =~ /^Server has been unlocked/ # TODO: Use the STATUS_HAS_BEEN_UNLOCKED instead
 			nil
 		else
 			@token

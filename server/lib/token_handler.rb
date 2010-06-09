@@ -16,11 +16,7 @@ class TokenHandler
 
 	def token=(token)
 		@token = token
-		if free?
-			stop_timer
-		else
-			start_timer
-		end
+		(free?) ? stop_timer : start_timer
 	end
 
 	def free?
@@ -39,7 +35,6 @@ class TokenHandler
 		@timer = @timeout
 	end
 
-  private
 	def start_timer
 		reset_timer
 		@timer_thread = Thread.new do
