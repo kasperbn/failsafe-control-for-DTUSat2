@@ -8,6 +8,7 @@ TODO:
 + Sleep-command
 + Ant-fil
 + Jar-fil
+- Validate arguments in server
 
 Command sequences
 - Forklaring af argumenter.
@@ -15,6 +16,7 @@ Command sequences
 - Export to script
 - Move up and down buttons
 - put delete and move buttons to the right
+- Stop if status is other than 0
 
 Afhænger af Hans Henrik:
 - Health Panel
@@ -40,10 +42,10 @@ Latex skabelon
 Tidsplan:
 	09. jun - Disposition for rapport, send til Hans Henrik, Pause-command, Ant-fil, jar-fil
 	10. jun - Command Sequences
-	11. jun - Test
-	12. jun - Test
-	13. jun - Test
-	14. jun - Test
+	11. jun - Rapport, Test
+	12. jun - Rapport, Test
+	13. jun - Rapport, Test
+	14. jun - Rapport, Test
 	15. jun - Møde med Hans Henrik, IO med satellit
 	16. jun - IO med satellit
 	17. jun - Upload Script
@@ -53,5 +55,5 @@ Tidsplan:
 	21. jun - Rapport
 	22. jun - Rapport
 	23. jun - Rapport
-	24. jun - Rapport Print
+	24. jun - Rapport, Print
 	25. jun - Aflever

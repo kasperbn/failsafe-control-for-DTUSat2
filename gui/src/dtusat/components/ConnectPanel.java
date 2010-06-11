@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -17,8 +18,9 @@ import javax.swing.event.ChangeListener;
 public class ConnectPanel extends JPanel {
 	
 	public FSController controller;
-	JTextField hostTextField, portTextField;
+	public JTextField hostTextField, portTextField;
 	public JCheckBox autoLockCheckBox;
+	public JButton connectButton;
 	
 	public ConnectPanel() {
 		
@@ -45,7 +47,7 @@ public class ConnectPanel extends JPanel {
 			}
 		});
 		
-		JButton connectButton = new JButton("Connect");
+		connectButton = new JButton("Connect", new ImageIcon("src/dtusat/icons/connect.png"));
 		connectButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				controller.getSocket().connect(hostTextField.getText(), portTextField.getText());				

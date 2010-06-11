@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.util.Enumeration;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
@@ -44,7 +45,7 @@ public class LocalScriptsPanel extends JPanel implements TreeSelectionListener {
 	
 		// Refresh
 		refreshPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		refreshButton = new JButton("Set script directory");
+		refreshButton = new JButton("Set Dir",new ImageIcon("src/dtusat/icons/folder_explore.png"));
 		refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
 		
 		refreshPanel.add(refreshButton);

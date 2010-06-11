@@ -2,6 +2,14 @@ require 'pty'
 
 module Commands
   class RunScript < AbstractCommand
+		HELP = {
+				:description => "Run a server script",
+				:arguments => [
+					{:name => "script_path", :type => "string", :description => "The path to the server script"},
+					{:name => "*script_args", :type => "unknown", :description => "Any arguments seperated by a space"},
+				]
+			}
+
 		attr_accessor :token
 
     def initialize(script, *args)

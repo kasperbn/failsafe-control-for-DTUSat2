@@ -1,14 +1,9 @@
 require ROOT_DIR+'/lib/translate'
+require ROOT_DIR+'/lib/camelize'
 require ROOT_DIR+'/lib/commands/abstract_command'
 require ROOT_DIR+'/lib/response_helpers'
 require ROOT_DIR+'/lib/messages_and_statuses'
 Dir.glob(ROOT_DIR+"/lib/commands/*.rb").each {|f| require f }
-
-class String
-  def camelize
-    self.split(/[^a-z0-9]/i).map{|w| w.capitalize}.join
-  end
-end
 
 class CommandParser
 	include ResponseHelpers

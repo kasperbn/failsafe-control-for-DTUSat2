@@ -25,7 +25,7 @@ public class FSMenu extends JMenuBar implements ActionListener {
 		controller = FSController.getInstance();
 		
 		JMenu fileMenu = new JMenu("File");
-		quitMenuItem = new JMenuItem("Quit");
+		quitMenuItem = new JMenuItem("Quit", new ImageIcon("src/dtusat/icons/door_out.png"));
 		quitMenuItem.addActionListener(this);
 		fileMenu.add(quitMenuItem);
 		add(fileMenu);

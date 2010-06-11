@@ -1,5 +1,12 @@
 module Commands
   class Sleep < AbstractCommand
+		HELP = {
+				:description => "Put the server to sleep",
+				:arguments => [
+					{:name => "seconds", :type => "integer", :description => "Seconds to sleep"},
+				]
+			}
+
 		def initialize(seconds)
 			@seconds = seconds.to_i
 		end

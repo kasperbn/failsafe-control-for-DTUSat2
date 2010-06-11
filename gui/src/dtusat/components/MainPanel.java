@@ -29,12 +29,10 @@ public class MainPanel extends JPanel implements Logger {
 	
 	public MainPanel() {	
 		controller = FSController.getInstance();
-		
 		setLayout(new BorderLayout());
 	
 		// Toolbars
 		toolBar = new JToolBar();
-		//toolBar.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		add(toolBar, BorderLayout.PAGE_END);
 	
 		// Connected status
@@ -52,12 +50,9 @@ public class MainPanel extends JPanel implements Logger {
 		add(splitPane, BorderLayout.CENTER);
 		
 		// Log
-		JPanel logPanel = new JPanel(new BorderLayout());
-		logPanel.setBorder(BorderFactory.createTitledBorder("Log"));
 		logArea = new JTextArea();
-		logScrollPane = new JScrollPane(logArea);
-		logPanel.add(logScrollPane , BorderLayout.CENTER);
-		splitPane.setRightComponent(logPanel);
+		logArea.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
+		splitPane.setRightComponent(new JScrollPane(logArea));
 		
 	}	
 

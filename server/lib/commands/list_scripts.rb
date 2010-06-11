@@ -1,5 +1,8 @@
 module Commands
   class ListScripts < AbstractCommand
+		HELP = {
+				:description => "Get a list of available server scripts"
+			}
 
     def execute(caller, id)
 			list = Dir.glob("scripts/**/*").select do |f|
