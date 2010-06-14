@@ -1,0 +1,1 @@
+[{"arguments":["maintenance/reset",""],"command":"run_script"},{"arguments":["0x123123"],"command":"execute"},{"arguments":["2"],"command":"sleep"},{"arguments":[],"command":"reset"}]

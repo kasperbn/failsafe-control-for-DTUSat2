@@ -14,7 +14,7 @@ public class ServerScriptPanel extends ScriptPanel {
 		outputArea.setText("");
 		FSController.getInstance().getSocket().request("run_script "+path+" "+getArguments(), new FSCallback() {
 			public void onResponse(FSResponse response) {
-				if(response.partial)
+				if(response.isPartial())
 					outputArea.append(response.dataAsString());
 			}
 		});

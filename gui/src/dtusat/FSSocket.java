@@ -67,9 +67,9 @@ public class FSSocket {
 			observer.onRegisterCallback(id, callback);
 		
 		try {
+			observer.log("> "+request);
 			byte[] bytes = request.getBytes();
 			socket.getOutputStream().write(bytes);
-			observer.log("> "+request);
 		} catch (SocketException e) {
 			observer.onDisconnected();
 		} catch (IOException e) {

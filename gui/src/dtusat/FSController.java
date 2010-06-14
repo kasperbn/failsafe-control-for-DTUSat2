@@ -92,13 +92,13 @@ public class FSController implements Logger, FSSocketObserver {
 						isServerLocked = true;
 						setIsLocked(true);
 					
-					// No lock errors, execute callback
-					} else { 
-						requestCallbacks.get(response.id).onResponse(response);
-					}
+					
+					} 
+					
+					requestCallbacks.get(response.id).onResponse(response);
 					
 					// Forget callback unless partial
-					if(!response.partial)
+					if(!response.isPartial())
 						requestCallbacks.remove(response.id);
 					
 				} catch(NullPointerException e) {

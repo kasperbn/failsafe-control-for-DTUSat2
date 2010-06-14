@@ -12,7 +12,6 @@ class Client
 		@auto_lock = auto_lock
 		@interactive = interactive
 		@data_only = data_only
-		@requests = {}
 
 		EventMachine::run do
 			EventMachine::connect host, port, EMClient
@@ -44,26 +43,26 @@ module EMClient
   end
 
   def receive_data(data)
-		# Parse string response to json
-		data = data.delete("\0")
-		@response = JSON.parse(data)
+		data.split("\0").each do |raw|
+			@response = JSON.parse(raw)
 
-		# Print to screen
-		if @verbose
-			if @data_only
-				puts @response["data"]
-			else
-				puts data
+			if @verbose
+				if @data_only
+					puts @response["data"]
+				else
+					puts raw
+				end
 			end
-		end
-		# Remember token?
-		@token = remember_or_forget_token(@request, @response)
 
-		# Wait for new request
-		if @exit
-			unbind
-		else
-			wait_for_user_request
+			if @response['partial'].nil?
+				@token = remember_or_forget_token(@request, @response)
+
+				if @exit
+					unbind
+				else
+					wait_for_user_request
+				end
+			end
 		end
   end
 

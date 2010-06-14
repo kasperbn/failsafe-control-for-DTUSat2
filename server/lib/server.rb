@@ -61,8 +61,7 @@ module EMServer
 		}
 		callback = proc {|response|
 			begin
-				r = response.merge!({:id => id}).to_json # Add id
-				send(r)
+				send(response.merge!({:id => id}).to_json) # Add id
 			rescue => e
 				log "Error in callback: #{e}"
 			end

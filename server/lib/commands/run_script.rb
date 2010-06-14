@@ -1,4 +1,5 @@
 require 'pty'
+require 'expect'
 
 module Commands
   class RunScript < AbstractCommand
@@ -21,17 +22,19 @@ module Commands
     def execute(caller, id)
      	Dir.glob(ROOT_DIR+"/scripts/**/*").each do |f|
 				cmd = File.expand_path(f)
-    		if cmd == File.expand_path(@script) # Does the script exists?
-					PTY.spawn(cmd, token, *@args) do |sr, sw, spid| # Open up a pseudo tty
-						begin
-							loop do # Read line from stdout until tty is closed
-								# Send output immediately to client
-								caller.send(response(:id => id, :status => STATUS_OK, :data => sr.readline, :partial => true).to_json)
-							end
-						rescue => e # Done
+    		if cmd == File.expand_path(File.join("scripts/",@script)) # Does the script exists?
+
+					begin
+						PTY.spawn(cmd, token, *@args) do |r, w, pid|
+							loop {
+								out = r.expect(%r/^.+\n$/io)
+								caller.send(response(:id => id, :status => STATUS_OK, :data => out[0], :partial => true).to_json) unless out.nil?
+							}
 						end
+					rescue PTY::ChildExited => e
+						return response(:status => e.status.to_i, :data => "End of script")
 					end
-					return response(:status => STATUS_OK, :data => "End of script")
+
     		end
     	end
     	response(:status => STATUS_ERROR, :data => "Unknown script")

@@ -9,14 +9,16 @@ TODO:
 + Ant-fil
 + Jar-fil
 - Validate arguments in server
+- Move setdir and refresh list buttons into splitter as in command sequences
 
 Command sequences
-- Forklaring af argumenter.
-- Gem scripts
-- Export to script
-- Move up and down buttons
-- put delete and move buttons to the right
-- Stop if status is other than 0
++ Move up and down buttons
++ put delete and move buttons to the right
++ Gem scripts
++ Disable gui when executing
++ Stop if status is other than 0
++ Export to script
++ Forklaring af argumenter
 
 Afhænger af Hans Henrik:
 - Health Panel

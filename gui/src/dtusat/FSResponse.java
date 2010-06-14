@@ -10,7 +10,7 @@ public class FSResponse {
 	public String id;
 	public int status;
 	private JSONObject parsed;
-	public boolean partial;
+	private boolean partial;
 	
 	public FSResponse(String raw) {
 		try {
@@ -55,6 +55,10 @@ public class FSResponse {
 	
 	public boolean isSuccess() {
 		return (status == 0);
+	}
+
+	public boolean isPartial() {
+		return partial;
 	}
 	
 }

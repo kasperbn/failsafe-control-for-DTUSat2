@@ -12,8 +12,16 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import dtusat.FSController;
 
@@ -28,13 +36,17 @@ public class CommandPanel extends JPanel implements ActionListener {
 				{"sleep","seconds"},
 				{"unlock"}
 			};
-	private JComboBox commandList;
+	public JComboBox commandList;
 	private JButton removeButton;
 	private AbstractButton upButton;
 	private JButton downButton;
-	private JPanel argumentsPanel;
+	public JPanel argumentsPanel;
+	private int index;
+	public JTextArea outputArea;
 	
-	public CommandPanel() {
+	public CommandPanel(int index) {
+		this.index = index;
+		
 		setLayout(new BorderLayout());
 		setBorder(BorderFactory.createCompoundBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY),BorderFactory.createEmptyBorder(5,5,5,5)));
 		
@@ -46,7 +58,7 @@ public class CommandPanel extends JPanel implements ActionListener {
 			for(int i=0;i<commandsAndArguments.length ; i++) {
 				commands[i] = commandsAndArguments[i][0];
 			}
-		
+			
 			commandList = new JComboBox(commands);
 			commandList.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
 			commandList.addActionListener(this);
@@ -72,6 +84,39 @@ public class CommandPanel extends JPanel implements ActionListener {
 			removeButton.addActionListener(this); 
 			east.add(removeButton);
 		
+		// South
+		JPanel south = new JPanel(new BorderLayout());
+		add(south, BorderLayout.SOUTH);
+		
+			outputArea = new JTextArea();
+			outputArea.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+			outputArea.setWrapStyleWord(true);
+			outputArea.setVisible(false);
+			south.add(outputArea, BorderLayout.CENTER);
+	}
+
+	public CommandPanel(int index, JSONObject entry) {
+		this(index);
+		try {
+			String command = entry.getString("command");
+			
+			for(int i=0; i < commandsAndArguments.length;i++) {
+				if(commandsAndArguments[i][0].equals(command)) {
+					commandList.setSelectedIndex(i);
+					break;
+				}
+			}
+			
+			argumentsPanel.removeAll();
+			JSONArray arguments = entry.getJSONArray("arguments");
+			for(int i=0;i<arguments.length();i++) {
+				argumentsPanel.add(newArgumentField(arguments.getString(i)));
+			}
+			
+			FSController.getInstance().mainPanel.repaint();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private JTextField newArgumentField(String name) {
@@ -92,6 +137,24 @@ public class CommandPanel extends JPanel implements ActionListener {
 			getParent().remove(this);	
 			FSController.getInstance().mainPanel.repaint();
 		}
+		
+		if(e.getSource() == downButton) {
+			if(index < getParent().getComponentCount()-1) {
+				index++;
+				((CommandPanel) getParent().getComponent(index)).index--;
+				getParent().add(this, index);	
+				FSController.getInstance().mainPanel.repaint();
+			}
+		}
+		
+		if(e.getSource() == upButton) {
+			if(index > 0) {
+				index--;
+				((CommandPanel) getParent().getComponent(index)).index++;
+				getParent().add(this, index);	
+				FSController.getInstance().mainPanel.repaint();
+			}
+		}
 	}
 
 	private void updateArguments() {
@@ -110,5 +173,15 @@ public class CommandPanel extends JPanel implements ActionListener {
 			cmd += " "+((JTextField) a).getText();
 		
 		return cmd;
+	}
+
+	public void setGUIEnabled(boolean b) {
+		commandList.setEnabled(b);
+		upButton.setEnabled(b);
+		downButton.setEnabled(b);
+		removeButton.setEnabled(b);
+		for(Component c : argumentsPanel.getComponents())
+			c.setEnabled(b);
+		
 	}
 }
