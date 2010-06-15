@@ -10,6 +10,7 @@ TODO:
 + Jar-fil
 - Validate arguments in server
 - Move setdir and refresh list buttons into splitter as in command sequences
+- Timeout on requests... individual for each command.
 
 Command sequences
 + Move up and down buttons
@@ -59,3 +60,20 @@ Tidsplan:
 	23. jun - Rapport
 	24. jun - Rapport, Print
 	25. jun - Aflever
+
+
+
+
+Seriel forbindelse
+Update subversion
+Find protokol
+Ruby seriel-pakke
+Konstruer pakke
+send pakke paa dev
+
+
+
+
+int 16
+short 8
+char
