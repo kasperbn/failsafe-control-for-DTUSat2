@@ -24,7 +24,7 @@ class Server
 			# Setup serial request handler
 			SerialRequestHandler.instance.connect(options)
 			EM.start_server options[:host], options[:port], EMServer
-			log LISTENING_ON.translate("#{options[:host]}:#{options[:port]}")
+			log "Listening on #{options[:host]}:#{options[:port]}"
 		end
   end
 end
@@ -42,7 +42,7 @@ module EMServer
 
 		# Setup token_reset broadcast
 		TokenHandler.instance.reset_callback ||= Proc.new {
-			broadcast(message(:type => "server_unlocked", :data => MESSAGE_SERVER_UNLOCKED).to_json+"\0")
+			broadcast(message("server_unlocked", STATUS_SERVER_UNLOCKED).to_json+"\0")
 		}
 
 		port, ip = Socket.unpack_sockaddr_in(get_peername)
@@ -56,13 +56,13 @@ module EMServer
 
 		if TokenHandler.instance.taken?
 			if TokenHandler.instance.token != token
-				send(response(:id => id, :status => STATUS_IS_LOCKED, :data => MESSAGE_IS_LOCKED))
+				send(response(id, STATUS_IS_LOCKED))
 				return;
 			end
 			TokenHandler.instance.reset_timer
 		else
 			unless command.is_a?(Commands::Lock)
-				send(response(:id => id, :status => STATUS_MUST_LOCK, :data => MESSAGE_MUST_LOCK))
+				send(response(id,STATUS_MUST_LOCK))
 				return;
 			end
 		end
@@ -75,10 +75,14 @@ module EMServer
 
 		if command.valid?
 			# Execute command
-			operation = proc { command.execute(id, self) }
+			operation = proc {
+				puts_errors {
+					command.execute(id, self)
+				}
+			}
 			EventMachine.defer(operation)
 		else
-			send(response(:id => id, :status => STATUS_VALIDATION_ERROR, :data => command.validation_errors))
+			send(response(id,STATUS_VALIDATION_ERROR, command.validation_errors))
 		end
 	end
 

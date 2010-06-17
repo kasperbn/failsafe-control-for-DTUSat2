@@ -1,6 +1,6 @@
 module Commands
   class CalculateCheckSum < AbstractCommand
-			TIMEOUT = 5
+			TIMEOUT = 10
 
 			def initialize(start_address, length)
 				@start_address = start_address
@@ -22,18 +22,7 @@ module Commands
 							"CD"
 				].flatten
 
-				TokenHandler.instance.stop_timer
-				SerialRequestHandler.instance.request(input, TIMEOUT) do |return_code, downlink, data_length, data|
-					d = if(return_code == FS_ADDRESS_ERROR)
-						"Address Error!"
-					else
-						data
-					end
-
-					caller.send response(:id => id, :status => return_code, :data => d)
-					TokenHandler.instance.start_timer
-				end
-
+				SerialRequestHandler.instance.request(input, TIMEOUT, id, caller)
 			end
   end
 end

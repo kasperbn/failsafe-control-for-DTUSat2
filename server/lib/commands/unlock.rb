@@ -2,7 +2,7 @@ module Commands
   class Unlock < AbstractCommand
     def execute(id, caller)
       TokenHandler.instance.token = nil
-      caller.send response(:id => id, :status => STATUS_OK, :data => "Server has been unlocked")
+      caller.send response(id,STATUS_SERVER_UNLOCKED)
     end
   end
 end

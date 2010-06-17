@@ -2,11 +2,13 @@ require 'singleton'
 require 'serialport'
 require ROOT_DIR + '/lib/constants'
 require ROOT_DIR + '/lib/fs_logger'
+require ROOT_DIR + '/lib/response_helpers'
 
 class SerialRequestHandler
 	include Singleton
 	include Constants
   include Loggable
+	include ResponseHelpers
 
 	def initialize
 		@mutex = Mutex.new
@@ -18,8 +20,13 @@ class SerialRequestHandler
 		@sp = SerialPort.new(options[:serialport], options[:baud], options[:data_bits], options[:stop_bits], options[:parity])
 	end
 
-	def request(req, timeout, &callback)
+	def request(req, timeout, id=nil, caller=nil, &callback)
 		@mutex.synchronize {
+			unless block_given? || id.nil? || caller.nil?
+				callback = proc {|return_code,downlink,length,data|
+					caller.send response(id,return_code,data)
+				}
+			end
 			@queue << {:command => req, :timeout => timeout, :callback => callback}
 		}
 
@@ -50,29 +57,30 @@ class SerialRequestHandler
 
 				# Read thread
 				read = Thread.new do
-					return_code 		= @sp.getc# ;puts "Return Code: #{return_code}"
-					downlink 				= @sp.getc# ;puts "Downlink: #{downlink}"
-					data_length_raw = @sp.read(2)#  ;puts "Data Length: #{data_length}" # Unpack as short, little endian byte order
-					data_length 		= data_length_raw.unpack("v").first
-					data_raw 				= @sp.read(data_length)#  ;puts "Data: #{data}" # Unpack as shorts, little endian byte order
-					data 						= data_raw.unpack("v"*(data_length/2))
-#					log "Serial read: #{return_code.to_s(16)} #{downlink.to_s(16)} #{data_length_raw.bytes.map{|s| s.to_i.to_s(16)}.join(" ")} #{data_raw.bytes.map{|s| s.to_i.to_s(16)}.join(" ")}"
+					return_code 		= @sp.getc #;puts "Return Code: #{return_code}"
+					downlink 				= @sp.getc #;puts "Downlink: #{downlink}"
+					data_length_raw = @sp.read(2)
+					data_length 		= data_length_raw.unpack("v").first #;puts "Data Length: #{data_length}" # Unpack as short, little endian byte order
+					data_raw 				= @sp.read(data_length)
+					data 						= data_raw.unpack("v"*(data_length/2)) #;puts "Data: #{data}" # Unpack as shorts, little endian byte order
+					log "Serial read: #{return_code.to_s(16)} #{downlink.to_s(16)} #{data_length_raw.bytes.map{|s| s.to_i.to_s(16)}.join(" ")} #{data_raw.bytes.map{|s| s.to_i.to_s(16)}.join(" ")}"
 				end
 
 				# Timeout thread
 				sleep_step = 0.5
-				Thread.new do
+				timeout = Thread.new do
 					(0..(request[:timeout]/sleep_step)).each do
 						sleep(sleep_step)
-						return unless return_code.nil?
+						Thread.current.kill! unless return_code.nil?
 					end
+					read.kill!
 					log 'Serial read timedout'
 					return_code = STATUS_TIMEOUT
-					read.kill!
 				end
 
-				# Wait for read thread or timeout
+				# Wait for read thread and timeout
 				read.join
+				timeout.join
 			end
 		end
 

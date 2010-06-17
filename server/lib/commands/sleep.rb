@@ -8,7 +8,7 @@ module Commands
     	TokenHandler.instance.stop_timer
 	    sleep(@seconds)
     	TokenHandler.instance.start_timer
-			caller.send response(:id => id, :status => STATUS_OK, :data => "Slept #{@seconds} seconds.")
+			caller.send response(id,STATUS_OK,"Slept #{@seconds} seconds.")
     end
   end
 end

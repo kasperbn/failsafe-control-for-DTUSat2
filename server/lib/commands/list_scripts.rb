@@ -9,7 +9,7 @@ module Commands
 					:help => `#{File.expand_path(f)} --help`
 				}
     	end
-			caller.send response(:id => id, :status => STATUS_OK, :data => list)
+			caller.send response(id, STATUS_OK, list)
     end
   end
 end

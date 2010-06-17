@@ -9,7 +9,7 @@ class AbstractCommand
 	attr_accessor :validation_errors
 
   def execute(id, caller)
-    caller.send response(:id => id, :status => STATUS_OK, :data => "Execute #{self.class.to_s} command")
+    caller.send response(id, STATUS_OK)
   end
 
 	def validate

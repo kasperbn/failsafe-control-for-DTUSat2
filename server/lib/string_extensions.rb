@@ -15,11 +15,11 @@ class String
 		r[1..-1] # Remove first space
 	end
 
-	def translate(*subs)
-		s = self.clone
-		subs.each_index do |i|
-			s.gsub!("$#{i}",subs[i].to_s)
+	def int_or_hex
+		if self[0..1] == "0x"
+			self.hex
+		else
+			self.to_i
 		end
-		s
 	end
 end

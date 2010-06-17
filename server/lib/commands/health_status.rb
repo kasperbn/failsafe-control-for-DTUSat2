@@ -1,10 +1,11 @@
 module Commands
   class HealthStatus < AbstractCommand
-			TIMEOUT = 5
+		TIMEOUT = 5
+		def execute(id, caller)
+			input = "13 00 00 00 CD".split
 
-			def execute(id, caller)
-				TokenHandler.instance.stop_timer
-				SerialRequestHandler.instance.request("13 00 00 00 CD".split, TIMEOUT) do |return_code,downlink,data_length,data|
+			SerialRequestHandler.instance.request(input, TIMEOUT) do |return_code,downlink,data_length,data|
+				if return_code == FS_HEALTH_STATUS
 					d = {
 						:auto_reset_status 	=> data[0],
 						:boot_count 				=> data[1],
@@ -17,10 +18,10 @@ module Commands
 						:reg_voltage 				=> data[8],
 						:reg_current 				=> data[9]
 					}
-
-					caller.send response(:id => id, :status => return_code, :data => d)
-					TokenHandler.instance.start_timer
+					data = d
 				end
+				caller.send response(id, return_code, data)
 			end
+		end
   end
 end

@@ -20,17 +20,17 @@ module Commands
 						PTY.spawn(cmd, token, *@args) do |r, w, pid|
 							loop {
 								out = r.expect(%r/^.+\n$/io)
-								caller.send response(:id => id, :status => STATUS_OK, :data => out[0], :partial => true) unless out.nil?
+								caller.send response(id,STATUS_OK,out[0], :partial => true) unless out.nil?
 							}
 						end
 					rescue PTY::ChildExited => e
-						caller.send response(:id => id, :status => e.status.to_i, :data => "End of script")
+						caller.send response(id,e.status.to_i)
 						return;
 					end
 
     		end
     	end
-    	caller.send response(:id => id, :status => STATUS_ERROR, :data => "Unknown script")
+    	caller.send response(id,STATUS_UNKNOWN_SCRIPT)
     end
   end
 end

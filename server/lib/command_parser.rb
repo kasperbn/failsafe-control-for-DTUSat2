@@ -22,18 +22,18 @@ class CommandParser
 					command_obj = begin
 						eval("Commands::#{command.camelize}.new(*arguments)")
 					rescue ArgumentError => e
-						response(:status => STATUS_WRONG_ARGUMENTS, :data => MESSAGE_WRONG_ARGUMENTS.translate(command))
+						response(id, STATUS_WRONG_ARGUMENTS)
 					rescue => e
 						c = (command.nil?) ? token : command;
-						response(:status => STATUS_UNKNOWN_COMMAND, :data => MESSAGE_UNKNOWN_COMMAND.translate(c))
+						response(id, STATUS_UNKNOWN_COMMAND)
 					end
 
 					return id, token, command_obj
     		end
     	end
-			return id, token, response(:status => STATUS_UNKNOWN_COMMAND, :data => MESSAGE_UNKNOWN_COMMAND.translate(command))
+			return id, token, response(id, STATUS_UNKNOWN_COMMAND)
 		rescue JSON::ParserError => e
-  		return nil,nil, response(:status => STATUS_INVALID_FORMAT, :data => MESSAGE_INVALID_FORMAT.translate(raw))
+  		return nil,nil, response(nil, STATUS_UNKNOWN_COMMAND)
   	end
   end
 

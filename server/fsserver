@@ -49,6 +49,9 @@ ROOT_DIR = File.dirname(__FILE__)
 # Helpers
 require ROOT_DIR+"/lib/helpers"
 
+# Setup thread abort
+Thread.abort_on_exception = true
+
 # Setup log
 require ROOT_DIR+"/lib/fs_logger"
 $LOG = FSLogger.new(options[:logfile])
