@@ -1,22 +1,17 @@
-require ROOT_DIR+'/lib/translate'
-require ROOT_DIR+'/lib/camelize'
+require ROOT_DIR+'/lib/string_extensions'
 require ROOT_DIR+'/lib/commands/abstract_command'
 require ROOT_DIR+'/lib/response_helpers'
-require ROOT_DIR+'/lib/messages_and_statuses'
+require ROOT_DIR+'/lib/constants'
 Dir.glob(ROOT_DIR+"/lib/commands/*.rb").each {|f| require f }
 
 class CommandParser
 	include ResponseHelpers
-	include MessagesAndStatuses
+	include Constants
 
-	def initialize(raw)
-		@raw = raw
-	end
-
-  def parse
+  def parse(raw)
 
 		begin
-	  	request = JSON.parse(@raw)
+	  	request = JSON.parse(raw)
 
 			id = request["id"]
 			token, command, *arguments = *request["data"].split(" ")
@@ -36,9 +31,9 @@ class CommandParser
 					return id, token, command_obj
     		end
     	end
-			return id, nil, response(:status => STATUS_UNKNOWN_COMMAND, :data => MESSAGE_UNKNOWN_COMMAND.translate(command))
+			return id, token, response(:status => STATUS_UNKNOWN_COMMAND, :data => MESSAGE_UNKNOWN_COMMAND.translate(command))
 		rescue JSON::ParserError => e
-  		return nil,nil, response(:status => STATUS_INVALID_FORMAT, :data => MESSAGE_INVALID_FORMAT.translate(@raw))
+  		return nil,nil, response(:status => STATUS_INVALID_FORMAT, :data => MESSAGE_INVALID_FORMAT.translate(raw))
   	end
   end
 

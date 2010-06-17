@@ -1,10 +1,6 @@
 module Commands
   class ListScripts < AbstractCommand
-		HELP = {
-				:description => "Get a list of available server scripts"
-			}
-
-    def execute(caller, id)
+    def execute(id, caller)
 			list = Dir.glob("scripts/**/*").select do |f|
 				File.executable?(f) && !File.directory?(f)
     	end.sort.map do |f|
@@ -13,7 +9,7 @@ module Commands
 					:help => `#{File.expand_path(f)} --help`
 				}
     	end
-			response(:status => STATUS_OK, :data => list)
+			caller.send response(:id => id, :status => STATUS_OK, :data => list)
     end
   end
 end

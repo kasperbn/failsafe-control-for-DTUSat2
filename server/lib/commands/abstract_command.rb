@@ -1,11 +1,23 @@
 require ROOT_DIR+'/lib/response_helpers'
-require ROOT_DIR+'/lib/messages_and_statuses'
+require ROOT_DIR+'/lib/constants'
+require ROOT_DIR+'/lib/string_extensions'
 
 class AbstractCommand
 	include ResponseHelpers
-	include MessagesAndStatuses
+	include Constants
 
-  def execute(caller, id)
-    response(:status => STATUS_OK, :data => "Execute #{self.class.to_s} command")
+	attr_accessor :validation_errors
+
+  def execute(id, caller)
+    caller.send response(:id => id, :status => STATUS_OK, :data => "Execute #{self.class.to_s} command")
+  end
+
+	def validate
+	end
+
+  def valid?
+  	@validation_errors = []
+		validate
+		@validation_errors.empty?
   end
 end

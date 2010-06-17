@@ -1,12 +1,8 @@
 module Commands
   class Lock < AbstractCommand
-		HELP = {
-				:description => "Attempts to lock the server"
-			}
-
-    def execute(caller, id)
-      TokenHandler.instance.token = generate_token
-			response(:status => STATUS_OK, :data => TokenHandler.instance.token)
+    def execute(id, caller)
+	    TokenHandler.instance.token = generate_token
+			caller.send response(:id => id, :status => STATUS_OK, :data => TokenHandler.instance.token)
     end
 
     private

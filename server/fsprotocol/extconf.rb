@@ -1,2 +1,2 @@
 require 'mkmf'
-create_makefile('fsprotocol')
+create_makefile('fs_commands')

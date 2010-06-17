@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 require 'pty'
 require 'expect'
 
@@ -15,5 +17,5 @@ def fsclient(*args)
 	end
 end
 
-fsclient('execute', '0x123123')
-fsclient('sleep', '2')
+fsclient('health_status')
+fsclient('health_status')

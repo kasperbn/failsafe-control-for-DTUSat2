@@ -1,13 +1,31 @@
 #!/usr/bin/ruby
 require 'optparse'
+require 'rubygems'
+require 'serialport'
 
-options = {:host => '0.0.0.0', :port => 3000, :logfile => STDOUT, :timeout => 30}
+options = {
+	:host => '0.0.0.0',
+	:port => 3000,
+	:logfile => STDOUT,
+	:token_timeout => 30,
+	:serialport => "/dev/ttyUSB0",
+	:baud => 9600,
+	:data_bits => 8,
+	:stop_bits => 1,
+	:parity => SerialPort::NONE
+}
+
 op = OptionParser.new do |opts|
   opts.banner = "Usage: fsserver [options]"
-  opts.on("--host=HOST", String, "Server host ('0.0.0.0' is default)") {|h| options[:host] = h}
-  opts.on("--port=PORT", Integer, "Server port (3000 is default)") {|p| options[:port] = p}
-  opts.on("--timeout=TIMEOUT", Integer, "Token timeout in seconds (30 is default)") {|t| options[:timeout] = t}
-  opts.on("--logfile=LOGFILE", String, "Logfile to be used (stdout is default)") {|l| options[:logfile] = l}
+  opts.on("--host=HOST", String, "('0.0.0.0')") 									{|o| options[:host] = o}
+  opts.on("--port=PORT", Integer, "(3000)") 											{|o| options[:port] = o}
+  opts.on("--token_timeout=TIMEOUT", Integer, "(30)") 						{|o| options[:token_timeout] = o}
+  opts.on("--logfile=LOGFILE", String, "(stdout)") 								{|o| options[:logfile] = o}
+  opts.on("--serialport=SERIALPORT", String, "('/dev/ttyUSB0')") 	{|o| options[:serialport] = o}
+  opts.on("--baud=BAUD", Integer, "(9600)") 											{|o| options[:baud] = o}
+  opts.on("--data_bits=DATA_BITS", Integer, "(8)") 								{|o| options[:data_bits] = o}
+  opts.on("--stop_bits=STOP_BITS", Integer, "(1)") 								{|o| options[:stop_bits] = o}
+  opts.on("--parity=PARITY", Integer, "(None)") 									{|o| options[:parity] = o}
 
   opts.separator ""
   opts.separator "Common options:"
@@ -28,10 +46,13 @@ op.parse!
 # Setup root dir
 ROOT_DIR = File.dirname(__FILE__)
 
+# Helpers
+require ROOT_DIR+"/lib/helpers"
+
 # Setup log
 require ROOT_DIR+"/lib/fs_logger"
 $LOG = FSLogger.new(options[:logfile])
 
 # Run server
 require ROOT_DIR+"/lib/server"
-Server.instance.start(options[:host], options[:port], options[:timeout])
+Server.instance.start(options)
