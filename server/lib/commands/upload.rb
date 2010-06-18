@@ -1,31 +1,30 @@
 module Commands
   class Upload < AbstractCommand
-		TIMEOUT = 5
-		MAXIMUM_LENGTH = FS_MAX_DATA_SIZE - 4
-
-		def initialize(address,data)
+		def initialize(address,data,timeout=DEFAULT_TIMEOUT)
 			@address = address
 			@data = data
 			@length = data.spaced_hex.split.size
+			@timeout = timeout
 		end
 
 		def validate
-			@validation_errors << "Address must be 4 bytes long" if @address.size != 8
-			@validation_errors << "Data must be 4 bytes long" if @data.size != 8
-			@validation_errors << "Data is too long (>= #{MAXIMUM_LENGTH})" if @length > MAXIMUM_LENGTH
+			validate_addressable "Address", @address
+			validate_length "Data length", @length, (FS_MAX_DATA_SIZE - 4)
 		end
 
-		def execute(id, caller)
+		def execute
 			input  = [
 						"08", 				 # cmd
 						"00", 				 # uplink
-						(@length+4).to_s(16).spaced_hex.split, # data length
-						@address.spaced_hex.split,
-						@data.spaced_hex.split,
+						(@length+4).to_s(16).spaced_hex, # data length
+						@address.spaced_hex,
+						@data.spaced_hex,
 						"CD"
-			].flatten
+			]
 
-			SerialRequestHandler.instance.request(input, TIMEOUT, id, caller)
+			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+				@client.send response(@id, return_code, data)
+			end
 		end
   end
 end

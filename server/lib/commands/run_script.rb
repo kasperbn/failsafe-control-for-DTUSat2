@@ -11,26 +11,30 @@ module Commands
     	@token = TokenHandler.instance.token
     end
 
-    def execute(id, caller)
-     	Dir.glob(ROOT_DIR+"/scripts/**/*").each do |f|
+		def validate
+			script_exists = false
+			Dir.glob(ROOT_DIR+"/scripts/**/*").each do |f|
 				cmd = File.expand_path(f)
     		if cmd == File.expand_path(File.join("scripts/",@script)) # Does the script exists?
-
-					begin
-						PTY.spawn(cmd, token, *@args) do |r, w, pid|
-							loop {
-								out = r.expect(%r/^.+\n$/io)
-								caller.send response(id,STATUS_OK,out[0], :partial => true) unless out.nil?
-							}
-						end
-					rescue PTY::ChildExited => e
-						caller.send response(id,e.status.to_i)
-						return;
-					end
-
+    			@cmd = cmd
+    			script_exists = true
     		end
     	end
-    	caller.send response(id,STATUS_UNKNOWN_SCRIPT)
+			@validation_errors << "Unknown script" unless script_exists
+		end
+
+    def execute
+			begin
+				PTY.spawn(@cmd, @token, *@args) do |r, w, pid|
+					loop {
+						out = r.expect(%r/^.+\n$/io)
+						@client.send response(@id,STATUS_OK,out[0],:partial => true) unless out.nil?
+					}
+				end
+			rescue PTY::ChildExited => e
+				@client.send response(@id,e.status.to_i)
+				return;
+			end
     end
   end
 end

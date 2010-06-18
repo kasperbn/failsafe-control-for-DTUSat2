@@ -1,28 +1,35 @@
 module Commands
   class CalculateCheckSum < AbstractCommand
-			TIMEOUT = 10
+		def initialize(address, length, timeout=DEFAULT_TIMEOUT)
+			@address = address
+			@length = length
+			@timeout = timeout
+		end
 
-			def initialize(start_address, length)
-				@start_address = start_address
-				@length = length
+		def validate
+			validate_addressable "Address", @address
+			validate_positive "Length", @length
+			validate_length "Length", @length
+		end
+
+		def execute
+			input  = [
+				"0a", 								# cmd
+				"00", 								# uplink
+				"08 00",							# data length
+				@address.spaced_hex,	# address
+				@length.spaced_hex,		# length
+				"CD"
+			]
+
+			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+				if return_code == FS_CALCULATE_CHECK_SUM
+					# Unpack as one 4 char little-endian long
+					data = data.unpack("V").first
+				end
+
+				@client.send response(@id, return_code, data)
 			end
-
-			def validate
-				@validation_errors << "Start address must be 4 bytes long" 	if @start_address.size != 8
-				@validation_errors << "Length must be 4 bytes long" 				if @length.size != 8
-			end
-
-			def execute(id, caller)
-				input  = [
-							"0a", 														# cmd
-							"00", 														# uplink
-							"08 00".split,										# data length
-							@start_address.spaced_hex.split,	# start address
-							@length.spaced_hex.split,					# length
-							"CD"
-				].flatten
-
-				SerialRequestHandler.instance.request(input, TIMEOUT, id, caller)
-			end
+		end
   end
 end

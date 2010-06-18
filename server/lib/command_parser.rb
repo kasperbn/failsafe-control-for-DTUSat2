@@ -1,4 +1,4 @@
-require ROOT_DIR+'/lib/string_extensions'
+require ROOT_DIR+'/lib/ext/string'
 require ROOT_DIR+'/lib/commands/abstract_command'
 require ROOT_DIR+'/lib/response_helpers'
 require ROOT_DIR+'/lib/constants'

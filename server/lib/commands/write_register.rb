@@ -1,21 +1,23 @@
 module Commands
-  class Execute < AbstractCommand
-
-		def initialize(address,timeout=DEFAULT_TIMEOUT)
+  class WriteRegister < AbstractCommand
+		def initialize(address, data, timeout=DEFAULT_TIMEOUT)
 			@address = address
+			@data = data
 			@timeout = timeout
 		end
 
 		def validate
 			validate_addressable "Address", @address
+			validate_length "Data", @data
 		end
 
 		def execute
 			input  = [
-				"02", 								# cmd
+				"0d", 								# cmd
 				"00", 								# uplink
-				"04 00",							# data length
+				"08 00",							# data length
 				@address.spaced_hex,	# address
+				@data.spaced_hex,	# data
 				"CD"
 			]
 

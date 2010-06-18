@@ -1,7 +1,6 @@
 module Commands
-  class Execute < AbstractCommand
-
-		def initialize(address,timeout=DEFAULT_TIMEOUT)
+  class DeleteFlashBlock < AbstractCommand
+		def initialize(address, timeout=DEFAULT_TIMEOUT)
 			@address = address
 			@timeout = timeout
 		end
@@ -12,7 +11,7 @@ module Commands
 
 		def execute
 			input  = [
-				"02", 								# cmd
+				"0b", 								# cmd
 				"00", 								# uplink
 				"04 00",							# data length
 				@address.spaced_hex,	# address

@@ -1,8 +1,8 @@
 module Commands
   class Lock < AbstractCommand
-    def execute(id, caller)
+    def execute
 	    TokenHandler.instance.token = generate_token
-			caller.send response(id,STATUS_OK,TokenHandler.instance.token)
+			@client.send response(@id,STATUS_OK,TokenHandler.instance.token)
     end
 
     private

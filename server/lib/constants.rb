@@ -1,5 +1,8 @@
 module Constants
 
+	# Default timeout in seconds for a serialport request
+	DEFAULT_TIMEOUT						= "5"
+
 	# Server Status Codes
 	STATUS_OK 								= 100
 	STATUS_ERROR 							= 101
@@ -11,6 +14,7 @@ module Constants
 	STATUS_VALIDATION_ERROR 	= 107
 	STATUS_SERVER_UNLOCKED		= 108
 	STATUS_UNKNOWN_SCRIPT			= 109
+	STATUS_SERIALPORT_NOT_CONNECTED = 110
 
 	# FS
 	FS_MAX_DATA_SIZE 					= 1024
@@ -79,6 +83,7 @@ module Constants
 		STATUS_VALIDATION_ERROR		=> "Validation error",
 		STATUS_SERVER_UNLOCKED		=> "Server has been unlocked",
 		STATUS_UNKNOWN_SCRIPT			=> "Unknown script",
+		STATUS_SERIALPORT_NOT_CONNECTED => "Serial port not connected",
 
 		FS_RESET								=> "ACK",
 		FS_EXECUTE							=> "ACK",

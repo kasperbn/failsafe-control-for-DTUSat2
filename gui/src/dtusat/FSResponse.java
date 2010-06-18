@@ -54,11 +54,21 @@ public class FSResponse {
 	}
 	
 	public boolean isSuccess() {
-		return (status == 0);
+		return (status == FSController.STATUS_OK);
 	}
 
 	public boolean isPartial() {
 		return partial;
+	}
+
+	public String messageAsString() {
+		String r = null;
+		try {
+			r = parsed.getString("message");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return r;
 	}
 	
 }

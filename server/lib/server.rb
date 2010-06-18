@@ -4,7 +4,8 @@ require 'singleton'
 require 'socket'
 
 require ROOT_DIR+"/lib/fs_logger"
-require ROOT_DIR+"/lib/string_extensions"
+require ROOT_DIR+"/lib/ext/string"
+require ROOT_DIR+"/lib/ext/fixnum"
 require ROOT_DIR+"/lib/command_parser"
 require ROOT_DIR+'/lib/response_helpers'
 require ROOT_DIR+'/lib/constants'
@@ -20,9 +21,16 @@ class Server
 
   def start(options)
 		EM.run do
+			# Set token timeout
 			TokenHandler.instance.timeout = options[:token_timeout]
+
 			# Setup serial request handler
-			SerialRequestHandler.instance.connect(options)
+			begin
+				SerialRequestHandler.instance.connect(options)
+			rescue Errno::ENOENT => e
+				log "Could not connect to the serialport"
+			end
+
 			EM.start_server options[:host], options[:port], EMServer
 			log "Listening on #{options[:host]}:#{options[:port]}"
 		end
@@ -74,12 +82,9 @@ module EMServer
 		end
 
 		if command.valid?
-			# Execute command
-			operation = proc {
-				puts_errors {
-					command.execute(id, self)
-				}
-			}
+			command.id = id
+			command.client = self
+			operation = proc {command.execute}
 			EventMachine.defer(operation)
 		else
 			send(response(id,STATUS_VALIDATION_ERROR, command.validation_errors))

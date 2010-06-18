@@ -101,8 +101,8 @@ public class ServerScriptsPanel extends JPanel implements TreeSelectionListener 
 		String[] splittedPath = path.split("/");
 		String scriptName = splittedPath[splittedPath.length-1];
 		
-		// Skip "scripts" folder and stop before the actual script
-		for(int i=1;i<splittedPath.length-1;i++) {
+		// Stop before the actual script
+		for(int i=0;i<splittedPath.length-1;i++) {
 			String dirName = splittedPath[i];
 			boolean isInserted = false;
 			

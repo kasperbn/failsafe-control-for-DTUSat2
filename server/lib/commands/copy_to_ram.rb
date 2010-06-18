@@ -1,31 +1,34 @@
 module Commands
   class CopyToRam < AbstractCommand
-		TIMEOUT = 5
 
-		def initialize(from,to,length)
+		def initialize(from,to,length,timeout=DEFAULT_TIMEOUT)
 			@from = from
 			@to = to
 			@length = length
+			@timeout = timeout
 		end
 
 		def validate
-			@validation_errors << "From address must be 4 bytes long" if @from.size != 8
-			@validation_errors << "To address must be 4 bytes long" if @to.size != 8
-			@validation_errors << "Length must be 4 bytes long" if @to.size != 8
+			validate_addressable "From address", @from
+			validate_addressable "To address", @to
+			validate_positive "Length", @length
+			validate_length "Length", @length
 		end
 
-		def execute(id, caller)
+		def execute
 			input  = [
-						"07", 				 # cmd
-						"00", 				 # uplink
-						"0c 00".split, # data length
-						@from.spaced_hex.split,
-						@to.spaced_hex.split,
-						@length.spaced_hex.split,
-						"CD"
-			].flatten
+				"07", 				 	# cmd
+				"00", 				 	# uplink
+				"0c 00", 				# data length
+				@from.spaced_hex,
+				@to.spaced_hex,
+				@length.spaced_hex,
+				"CD"
+			]
 
-			SerialRequestHandler.instance.request(input, TIMEOUT, id, caller)
+			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+				@client.send response(@id, return_code, data)
+			end
 		end
   end
 end

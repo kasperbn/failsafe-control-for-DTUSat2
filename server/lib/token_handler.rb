@@ -42,7 +42,7 @@ class TokenHandler
 				sleep(1)
 				@timer -= 1
 				if @timer < 1
-					log TOKEN_HAS_BEEN_RESET.translate(@timeout)
+					log TOKEN_HAS_BEEN_RESET
 					@token = nil
 					@reset_callback.call
 					stop_timer

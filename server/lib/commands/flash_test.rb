@@ -1,7 +1,6 @@
 module Commands
-  class Execute < AbstractCommand
-
-		def initialize(address,timeout=DEFAULT_TIMEOUT)
+  class FlashTest < AbstractCommand
+		def initialize(address, timeout=DEFAULT_TIMEOUT)
 			@address = address
 			@timeout = timeout
 		end
@@ -12,7 +11,7 @@ module Commands
 
 		def execute
 			input  = [
-				"02", 								# cmd
+				"0f", 								# cmd
 				"00", 								# uplink
 				"04 00",							# data length
 				@address.spaced_hex,	# address
@@ -20,6 +19,7 @@ module Commands
 			]
 
 			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+				data = data.unpack("V")
 				@client.send response(@id, return_code, data)
 			end
 		end

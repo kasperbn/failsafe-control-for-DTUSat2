@@ -1,11 +1,15 @@
 module Commands
   class HealthStatus < AbstractCommand
-		TIMEOUT = 5
-		def execute(id, caller)
-			input = "13 00 00 00 CD".split
 
-			SerialRequestHandler.instance.request(input, TIMEOUT) do |return_code,downlink,data_length,data|
+		def execute
+			input = "13 00 00 00 CD"
+
+			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
 				if return_code == FS_HEALTH_STATUS
+
+					# Unpack as 4 chars and 6 little-endian shorts
+					data = data.unpack("CCCCvvvvvv")
+
 					d = {
 						:auto_reset_status 	=> data[0],
 						:boot_count 				=> data[1],
@@ -20,7 +24,8 @@ module Commands
 					}
 					data = d
 				end
-				caller.send response(id, return_code, data)
+
+				@client.send response(@id, return_code, data)
 			end
 		end
   end

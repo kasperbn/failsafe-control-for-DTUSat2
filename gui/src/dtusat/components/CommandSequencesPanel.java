@@ -269,7 +269,7 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 			controller.getSocket().request(commandsToExecute[currentCommandIndex].getFullCommand(), new FSCallback() {
 				public void onResponse(FSResponse response) {
 					CommandPanel cp = getCurrentCommandPanel();
-					cp.outputArea.append(response.dataAsString());
+					cp.outputArea.append(response.messageAsString()+": "+response.dataAsString());
 					
 					if(response.status != FSController.STATUS_OK) {
 						setGUIEnabled(true);
@@ -312,14 +312,17 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 	}
 	
 	private void export() {
-		doSave(sequenceToRuby());
+		File f = doSave(sequenceToRuby());
+		f.setExecutable(true);
 	}
 	
-	private void doSave(String data) {
+	private File doSave(String data) {
+		File f = null;
 		try {
 			final JFileChooser fc = new JFileChooser(new File(currentDir));
 			if(fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-				FileWriter fstream = new FileWriter(fc.getSelectedFile().getAbsolutePath());
+				f = new File(fc.getSelectedFile().getAbsolutePath());
+				FileWriter fstream = new FileWriter(f);
 		        BufferedWriter out = new BufferedWriter(fstream);
 			    out.write(data);
 			    out.close();
@@ -328,6 +331,7 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+		return f;
 	}
 	
 	private CommandPanel getCurrentCommandPanel() {
@@ -370,6 +374,8 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 	
 	private String sequenceToRuby() {
 		String ruby = "";
+		ruby += "#!/usr/bin/ruby\n";
+		ruby += "\n";
 		ruby += "require 'pty'\n";
 		ruby += "require 'expect'\n";
 		ruby += "\n";
@@ -377,13 +383,13 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 		ruby += "\n";
 		ruby += "def fsclient(*args)\n";
 		ruby += "	begin\n";
-		ruby += "		PTY.spawn('fsclient', '-d', $token, *args) do |r, w, pid|\n";
+		ruby += "		PTY.spawn('fsclient', $token, *args) do |r, w, pid|\n";
 		ruby += "			loop {\n";
 		ruby += "				out = r.expect(%r/^.+\\n$/io)\n";
 		ruby += "				puts out unless out.nil?\n";
 		ruby += "			}\n";
 		ruby += "		end\n";
-		ruby += "	rescue PTY::ChildExited => e\n";
+		ruby += "	rescue PTY::ChildExited => e\n";		
 		ruby += "	end\n";
 		ruby += "end\n";
 		ruby += "\n";

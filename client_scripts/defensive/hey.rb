@@ -7,7 +7,7 @@ $token = ARGV[0]
 
 def fsclient(*args)
 	begin
-		PTY.spawn('fsclient', '-d', $token, *args) do |r, w, pid|
+		PTY.spawn('fsclient', $token, *args) do |r, w, pid|
 			loop {
 				out = r.expect(%r/^.+\n$/io)
 				puts out unless out.nil?
@@ -17,5 +17,7 @@ def fsclient(*args)
 	end
 end
 
-fsclient('health_status')
-fsclient('health_status')
+fsclient('run_script', 'maintenance/reset', '')
+fsclient('execute', '0x123123')
+fsclient('sleep', '2')
+fsclient('reset')

@@ -1,14 +1,18 @@
 module Commands
   class Sleep < AbstractCommand
 		def initialize(seconds)
-			@seconds = seconds.to_i
+			@seconds = seconds
 		end
 
-    def execute(id, caller)
+		def validate
+			validate_positive_integer "Seconds", @seconds
+		end
+
+    def execute
     	TokenHandler.instance.stop_timer
-	    sleep(@seconds)
+	    sleep(@seconds.to_i)
     	TokenHandler.instance.start_timer
-			caller.send response(id,STATUS_OK,"Slept #{@seconds} seconds.")
+			@client.send response(@id,STATUS_OK,nil)
     end
   end
 end

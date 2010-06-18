@@ -28,13 +28,31 @@ import dtusat.FSController;
 public class CommandPanel extends JPanel implements ActionListener {
 	
 	String[][] commandsAndArguments = {
+				{"calculate_check_sum", "address", "length"},
+				{"call_function", "address", "parameter"},
+				{"copy_to_flash", "from", "to", "length"},
+				{"copy_to_ram", "from", "to", "length"},
+				{"delete_flash_block", "address"},
+				{"download", "address", "length"},
+				{"download_sib"},
 				{"execute", "address"},
+				{"flash_test", "address"},
+				{"health_status"},
 				{"list_scripts"},
 				{"lock"},
+				{"ram_test", "address", "length"},
+				{"read_register", "address"},
+				{"read_sensor", "address"},
 				{"reset"},
+				{"reset_sib"},
 				{"run_script","script_path","script_arguments"},
+				{"set_autoreset","value"},
 				{"sleep","seconds"},
-				{"unlock"}
+				{"unlock"},
+				{"unlock_flash"},
+				{"upload", "address", "data"},
+				{"upload_sib", "sib"},
+				{"write_register", "address", "data"}
 			};
 	public JComboBox commandList;
 	private JButton removeButton;

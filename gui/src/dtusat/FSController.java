@@ -30,14 +30,17 @@ public class FSController implements Logger, FSSocketObserver {
 	
 	// ---- Fields -----------------------------------------
 
-	public final static int STATUS_OK = 0;
-	public final static int STATUS_ERROR = 1; 
-	public final static int STATUS_SERVER_IS_LOCKED = 2;
-	public final static int STATUS_MUST_LOCK = 3;
-	public final static int STATUS_ALREADY_LOCKED = 4;
-	public final static int STATUS_WRONG_ARGUMENTS = 5;
-	public final static int STATUS_UNKNOWN_COMMAND = 6;
-	public final static int STATUS_INVALID_FORMAT = 7;
+	public final static int STATUS_OK 						= 100;
+	public final static int STATUS_ERROR 					= 101;
+	public final static int STATUS_IS_LOCKED 				= 102;
+	public final static int STATUS_MUST_LOCK 				= 103;
+	public final static int STATUS_WRONG_ARGUMENTS 			= 104;
+	public final static int STATUS_UNKNOWN_COMMAND 			= 105;
+	public final static int STATUS_TIMEOUT 					= 106;
+	public final static int STATUS_VALIDATION_ERROR 		= 107;
+	public final static int STATUS_SERVER_UNLOCKED			= 108;
+	public final static int STATUS_UNKNOWN_SCRIPT			= 109;
+	public final static int STATUS_SERIALPORT_NOT_CONNECTED = 110;
 	
 	private FSSocket socket;
 	public JFrame frame;
@@ -85,14 +88,9 @@ public class FSController implements Logger, FSSocketObserver {
 					// Check for lock errors
 					if(response.status == STATUS_MUST_LOCK) {
 						setIsLocked(false);
-					} else if(response.status == STATUS_SERVER_IS_LOCKED) {
+					} else if(response.status == STATUS_IS_LOCKED) {
 						isServerLocked = true;
 						setIsLocked(false);
-					} else if(response.status == STATUS_ALREADY_LOCKED) {
-						isServerLocked = true;
-						setIsLocked(true);
-					
-					
 					} 
 					
 					requestCallbacks.get(response.id).onResponse(response);
