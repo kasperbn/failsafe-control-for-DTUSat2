@@ -16,9 +16,9 @@ module Commands
 			input  = [
 						"08", 				 # cmd
 						"00", 				 # uplink
-						(@length+4).to_s(16).spaced_hex, # data length
-						@address.spaced_hex,
-						@data.spaced_hex,
+						(@length+4).to_s(16).spaced_hex.split.reverse, # data length
+						@address.spaced_hex.split.reverse,
+						@data.spaced_hex.split.reverse,
 						"CD"
 			]
 

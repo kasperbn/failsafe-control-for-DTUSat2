@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+require 'optparse'
+
+op = OptionParser.new do |opts|
+  opts.banner = "Usage: count"
+  opts.separator "Description: Count to five"
+end
+op.parse!
+
+5.times do |n|
+	sleep(1)
+  puts "Counted to #{(n+1)}"
+end
+
+exit(0)

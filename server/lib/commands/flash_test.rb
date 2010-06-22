@@ -14,11 +14,12 @@ module Commands
 				"0f", 								# cmd
 				"00", 								# uplink
 				"04 00",							# data length
-				@address.spaced_hex,	# address
+				@address.spaced_hex.split.reverse,	# address
 				"CD"
 			]
 
 			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+				# Unpack as 4 bytes little-endian
 				data = data.unpack("V")
 				@client.send response(@id, return_code, data)
 			end

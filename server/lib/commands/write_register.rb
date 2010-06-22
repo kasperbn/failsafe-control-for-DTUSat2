@@ -13,11 +13,11 @@ module Commands
 
 		def execute
 			input  = [
-				"0d", 								# cmd
-				"00", 								# uplink
-				"08 00",							# data length
-				@address.spaced_hex,	# address
-				@data.spaced_hex,	# data
+				"0d", 															# cmd
+				"00", 															# uplink
+				"08 00",														# data length
+				@address.spaced_hex.split.reverse,	# address
+				@data.spaced_hex.split.reverse,			# data
 				"CD"
 			]
 

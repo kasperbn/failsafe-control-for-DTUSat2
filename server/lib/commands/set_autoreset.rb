@@ -13,7 +13,7 @@ module Commands
 			input  = [
 						"04", 				 # cmd
 						"00", 				 # uplink
-						"01 00", # data length
+						"01 00", 			 # data length
 						@value,				 # value
 						"CD"
 			]

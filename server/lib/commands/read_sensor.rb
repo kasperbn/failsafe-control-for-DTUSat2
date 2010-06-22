@@ -13,8 +13,8 @@ module Commands
 			input  = [
 				"14", 								# cmd
 				"00", 								# uplink
-				"02 00",							# data length
-				@address.spaced_hex,	# address
+				"04 00",							# data length
+				@address.spaced_hex.split.reverse,	# address
 				"CD"
 			]
 

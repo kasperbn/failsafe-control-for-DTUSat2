@@ -1,57 +1,52 @@
-require 'singleton'
 require 'serialport'
-require ROOT_DIR + '/lib/constants'
-require ROOT_DIR + '/lib/fs_logger'
-require ROOT_DIR + '/lib/response_helpers'
+require 'singleton'
+require ROOT_DIR + "/lib/constants"
+require ROOT_DIR + "/lib/fs_logger"
+require ROOT_DIR + "/lib/response_helpers"
+require ROOT_DIR + "/lib/processing_queue"
 
 class SerialRequestHandler
 	include Singleton
 	include Constants
   include Loggable
 	include ResponseHelpers
+	include ProcessingQueue
 
 	def initialize
-		@mutex = Mutex.new
-		@queue = []
-		@started = false
-		@connected = false
+		setup_processing_queue
 	end
 
 	def connect(options)
-		@sp = SerialPort.new(options[:serialport], options[:baud], options[:data_bits], options[:stop_bits], options[:parity])
-		@connected = true
-	end
-
-	def request(req, timeout, &callback)
-		if @connected
-			req = req.to_a.flatten.join(" ").split
-			@mutex.synchronize {
-				@queue << {:command => req, :timeout => timeout.to_i, :callback => callback}
-			}
-
-			execute unless @started
-		else
-			callback.call(STATUS_SERIALPORT_NOT_CONNECTED,0,nil)
+		begin
+			@sp = SerialPort.new(options[:serialport], options[:baud], options[:data_bits], options[:stop_bits], options[:parity])
+			@connected = true
+		rescue Errno::ENOENT => e
+			log "Could not connect to the serialport"
 		end
 	end
 
-	private
-	def execute
-		@mutex.synchronize do
-			request = @queue.shift
-			@started = !request.nil?
+	def ready?
+		@connected
+	end
 
-			begin
-				request[:callback].call(write_read(request)) if @started
-			rescue Errno::EIO => e
-				@connected = false
-				@started = false
-				log "Serialport has been disconnected"
-				request[:callback].call(STATUS_SERIALPORT_NOT_CONNECTED, 0, nil)
-			end
+	def not_ready
+		[STATUS_SERIALPORT_NOT_CONNECTED,0,nil]
+	end
+
+	def request(request, timeout, &callback)
+		req = request.to_a.flatten.join(" ").split(" ")
+		enqueue({:command => req, :timeout => timeout.to_i},&callback)
+	end
+
+	def process(request, &callback)
+		begin
+			callback.call(write_read(request))
+		rescue Errno::EIO => e
+			@connected = false
+			log "Serialport has been disconnected"
+			callback.call(STATUS_SERIALPORT_NOT_CONNECTED, 0, nil)
+			raise ProcessingError
 		end
-
-		execute if @started && @connected
 	end
 
 	def write_read(request)

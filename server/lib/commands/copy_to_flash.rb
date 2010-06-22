@@ -31,9 +31,9 @@ module Commands
 				"06", 				 # cmd
 				"00", 				 # uplink
 				"0c 00",			 # data length
-				@from.spaced_hex,
-				@to.spaced_hex,
-				@length.spaced_hex,
+				@from.spaced_hex.split.reverse,
+				@to.spaced_hex.split.reverse,
+				@length.spaced_hex.split.reverse,
 				"CD"
 			]
 

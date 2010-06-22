@@ -10,6 +10,7 @@ require ROOT_DIR+"/lib/command_parser"
 require ROOT_DIR+'/lib/response_helpers'
 require ROOT_DIR+'/lib/constants'
 require ROOT_DIR+'/lib/token_handler'
+require ROOT_DIR+'/lib/processing_queue'
 require ROOT_DIR+'/lib/serial_request_handler'
 
 class Server
@@ -22,14 +23,10 @@ class Server
   def start(options)
 		EM.run do
 			# Set token timeout
-			TokenHandler.instance.timeout = options[:token_timeout]
+			TokenHandler.instance.timeout = options[:timeout]
 
 			# Setup serial request handler
-			begin
-				SerialRequestHandler.instance.connect(options)
-			rescue Errno::ENOENT => e
-				log "Could not connect to the serialport"
-			end
+			SerialRequestHandler.instance.connect(options)
 
 			EM.start_server options[:host], options[:port], EMServer
 			log "Listening on #{options[:host]}:#{options[:port]}"
@@ -50,7 +47,7 @@ module EMServer
 
 		# Setup token_reset broadcast
 		TokenHandler.instance.reset_callback ||= Proc.new {
-			broadcast(message("server_unlocked", STATUS_SERVER_UNLOCKED).to_json+"\0")
+			broadcast message("server_unlocked", STATUS_SERVER_UNLOCKED)
 		}
 
 		port, ip = Socket.unpack_sockaddr_in(get_peername)
@@ -103,9 +100,10 @@ module EMServer
 	end
 
 	def broadcast(data)
+		data = data.to_json if data.is_a?(Hash)
 		log "Broadcasting: #{data}"
 		$clients_list.values.each do |client|
-			client.send_data(data)
+			client.send_data(data+"\0")
 		end
 	end
 end

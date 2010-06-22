@@ -7,7 +7,7 @@ options = {
 	:host => '0.0.0.0',
 	:port => 3000,
 	:logfile => STDOUT,
-	:token_timeout => 30,
+	:timeout => 30,
 	:serialport => "/dev/ttyUSB0",
 	:baud => 9600,
 	:data_bits => 8,
@@ -19,7 +19,7 @@ op = OptionParser.new do |opts|
   opts.banner = "Usage: fsserver [options]"
   opts.on("--host=HOST", String, "('0.0.0.0')") 									{|o| options[:host] = o}
   opts.on("--port=PORT", Integer, "(3000)") 											{|o| options[:port] = o}
-  opts.on("--token_timeout=TIMEOUT", Integer, "(30)") 						{|o| options[:token_timeout] = o}
+  opts.on("--timeout=TIMEOUT", Integer, "(30)") 									{|o| options[:timeout] = o}
   opts.on("--logfile=LOGFILE", String, "(stdout)") 								{|o| options[:logfile] = o}
   opts.on("--serialport=SERIALPORT", String, "('/dev/ttyUSB0')") 	{|o| options[:serialport] = o}
   opts.on("--baud=BAUD", Integer, "(9600)") 											{|o| options[:baud] = o}

@@ -8,7 +8,7 @@ module Constants
 	STATUS_ERROR 							= 101
 	STATUS_IS_LOCKED 					= 102
 	STATUS_MUST_LOCK 					= 103
-	STATUS_WRONG_ARGUMENTS 		= 104
+	STATUS_WRONG_NUMBER_OF_ARGUMENTS 		= 104
 	STATUS_UNKNOWN_COMMAND 		= 105
 	STATUS_TIMEOUT 						= 106
 	STATUS_VALIDATION_ERROR 	= 107
@@ -77,7 +77,7 @@ module Constants
 		STATUS_ERROR 							=> "Error",
 		STATUS_IS_LOCKED 					=> "Server is locked",
 		STATUS_MUST_LOCK 					=> "You must lock the server before executing commands",
-		STATUS_WRONG_ARGUMENTS		=> "Wrong number of arguments",
+		STATUS_WRONG_NUMBER_OF_ARGUMENTS		=> "Wrong number of arguments",
 		STATUS_UNKNOWN_COMMAND		=> "Unknown command",
 		STATUS_TIMEOUT						=> "Timeout",
 		STATUS_VALIDATION_ERROR		=> "Validation error",

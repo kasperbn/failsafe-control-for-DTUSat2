@@ -271,7 +271,7 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 					CommandPanel cp = getCurrentCommandPanel();
 					cp.outputArea.append(response.messageAsString()+": "+response.dataAsString());
 					
-					if(response.status != FSController.STATUS_OK) {
+					if(response.status == FSController.STATUS_ERROR) {
 						setGUIEnabled(true);
 						cp.outputArea.setBackground(Color.RED);
 					} else {

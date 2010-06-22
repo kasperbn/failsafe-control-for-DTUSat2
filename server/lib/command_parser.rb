@@ -9,32 +9,22 @@ class CommandParser
 	include Constants
 
   def parse(raw)
+		id = nil
+		token = nil
+		command = Commands::Unknown.new
 
 		begin
 	  	request = JSON.parse(raw)
-
 			id = request["id"]
-			token, command, *arguments = *request["data"].split(" ")
-			command = token if token =~ /lock/
-
-			Dir.glob(ROOT_DIR+"/lib/commands/*").each do |f|
-    		if command == File.basename(f).split(".")[0] # Does the command exist?
-					command_obj = begin
-						eval("Commands::#{command.camelize}.new(*arguments)")
-					rescue ArgumentError => e
-						response(id, STATUS_WRONG_ARGUMENTS)
-					rescue => e
-						c = (command.nil?) ? token : command;
-						response(id, STATUS_UNKNOWN_COMMAND)
-					end
-
-					return id, token, command_obj
-    		end
-    	end
-			return id, token, response(id, STATUS_UNKNOWN_COMMAND)
-		rescue JSON::ParserError => e
-  		return nil,nil, response(nil, STATUS_UNKNOWN_COMMAND)
+			token = request["token"]
+			cmd_string, *arguments = *request["data"].split(" ")
+			command = eval("Commands::#{cmd_string.camelize}.new(*arguments)")
+		rescue ArgumentError => e
+			command = Commands::WrongNumberOfArguments.new
+		rescue => e
   	end
+
+		return id, token, command
   end
 
 end

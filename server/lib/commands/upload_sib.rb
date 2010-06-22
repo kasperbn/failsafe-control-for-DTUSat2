@@ -15,7 +15,7 @@ module Commands
 			input = [
 				"11",
 				"1c 00",
-				@sib.spaced_hex,
+				@sib.spaced_hex.split.reverse,
 				"CD"
 			]
 			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|

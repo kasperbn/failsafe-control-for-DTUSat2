@@ -6,7 +6,7 @@ require 'open3'
 
 op = OptionParser.new do |opts|
   opts.banner = "Usage: upload token filepath address"
-  opts.separator "Description: Upload a file a address in the satellites memory"
+  opts.separator "Description: Upload a file to an address in the satellites memory"
   opts.separator "Arguments:"
   opts.separator "\tfilepath (string)"
   opts.separator "\taddress (hexadecimal)"

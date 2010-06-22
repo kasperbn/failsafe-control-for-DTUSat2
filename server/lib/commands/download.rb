@@ -18,8 +18,8 @@ module Commands
 				"09", 				# cmd
 				"00", 				# uplink
 				"08 00",			# data length
-				@address.spaced_hex,
-				@length.spaced_hex,
+				@address.spaced_hex.split.reverse,
+				@length.spaced_hex.split.reverse,
 				"CD"
 			]
 

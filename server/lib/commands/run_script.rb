@@ -32,7 +32,8 @@ module Commands
 					}
 				end
 			rescue PTY::ChildExited => e
-				@client.send response(@id,e.status.to_i)
+				status = (e.status.to_i == 0) ? 100 : 101
+				@client.send response(@id,status)
 				return;
 			end
     end

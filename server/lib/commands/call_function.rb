@@ -17,14 +17,14 @@ module Commands
 				"03", 									# cmd
 				"00", 									# uplink
 				"08 00",								# data length
-				@address.spaced_hex,		# address
-				@parameter.spaced_hex,	# parameter
+				@address.spaced_hex.split.reverse,		# address
+				@parameter.spaced_hex.split.reverse,	# parameter
 				"CD"
 			]
 
 			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
 				if return_code == FS_CALL_FUNCTION
-					# Unpack as one 4 char little-endian long
+					# Unpack as 4 bytes little-endian
 					data = data.unpack("V").first
 				end
 

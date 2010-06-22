@@ -59,9 +59,8 @@ public class FSSocket {
 	}
 	
 	public void request(String command, FSCallback callback) {
-		String data = (token == "") ? command : token+" "+command;
 		String id = generateUniqueId();
-		String request = "{\"id\":\""+id+"\", \"data\":\""+data+"\"}";
+		String request = "{\"id\":\""+id+"\", \"data\":\""+command+"\", \"token\":\""+token+"\"}";
 		
 		if(callback != null)
 			observer.onRegisterCallback(id, callback);
