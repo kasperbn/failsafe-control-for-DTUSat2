@@ -23,7 +23,7 @@ module ProcessingQueue
 
 	private
 	def process_next
-		@process_queue_mutex.synchronize do
+		@process_queue_mutex.synchronize {
 			item = @process_queue.shift
 			@process_queue_started = !item.nil?
 			if @process_queue_started
@@ -33,7 +33,7 @@ module ProcessingQueue
 					@process_queue_started = false
 				end
 			end
-		end
+		}
 		process_next if @process_queue_started
 	end
 

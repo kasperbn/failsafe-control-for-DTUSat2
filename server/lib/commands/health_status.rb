@@ -4,7 +4,7 @@ module Commands
 		def execute
 			input = "13 00 00 00 CD"
 
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				if return_code == FS_HEALTH_STATUS
 
 					# Unpack as 4 chars and 6 little-endian shorts

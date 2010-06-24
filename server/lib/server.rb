@@ -79,7 +79,6 @@ module EMServer
 		end
 
 		if command.valid?
-			command.id = id
 			command.client = self
 			operation = proc {command.execute}
 			EventMachine.defer(operation)

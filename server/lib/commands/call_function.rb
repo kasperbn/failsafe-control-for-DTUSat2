@@ -1,9 +1,8 @@
 module Commands
   class CallFunction < AbstractCommand
-		def initialize(address, parameter, timeout=DEFAULT_TIMEOUT)
+		def initialize(address, parameter)
 			@address = address
 			@parameter = parameter
-			@timeout = timeout
 		end
 
 		def validate
@@ -22,7 +21,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				if return_code == FS_CALL_FUNCTION
 					# Unpack as 4 bytes little-endian
 					data = data.unpack("V").first

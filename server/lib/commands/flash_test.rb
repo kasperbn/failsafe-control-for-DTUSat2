@@ -1,8 +1,7 @@
 module Commands
   class FlashTest < AbstractCommand
-		def initialize(address, timeout=DEFAULT_TIMEOUT)
+		def initialize(address)
 			@address = address
-			@timeout = timeout
 		end
 
 		def validate
@@ -18,7 +17,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				# Unpack as 4 bytes little-endian
 				data = data.unpack("V")
 				@client.send response(@id, return_code, data)

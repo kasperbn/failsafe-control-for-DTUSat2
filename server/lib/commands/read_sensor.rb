@@ -1,8 +1,7 @@
 module Commands
   class ReadSensor < AbstractCommand
-		def initialize(address, timeout=DEFAULT_TIMEOUT)
+		def initialize(address)
 			@address = address
-			@timeout = timeout
 		end
 
 		def validate
@@ -18,7 +17,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				if return_code == FS_READ_SENSOR
 					# Unpack as one 4 char little-endian long
 					data = data.unpack("V").first

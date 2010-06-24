@@ -1,11 +1,10 @@
 module Commands
   class CopyToRam < AbstractCommand
 
-		def initialize(from,to,length,timeout=DEFAULT_TIMEOUT)
+		def initialize(from,to,length)
 			@from = from
 			@to = to
 			@length = length
-			@timeout = timeout
 		end
 
 		def validate
@@ -26,7 +25,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				@client.send response(@id, return_code, data)
 			end
 		end

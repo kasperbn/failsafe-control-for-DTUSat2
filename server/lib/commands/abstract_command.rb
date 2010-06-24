@@ -7,7 +7,7 @@ class AbstractCommand
 	include ResponseHelpers
 	include Constants
 
-	attr_accessor :validation_errors, :timeout, :client, :id
+	attr_accessor :validation_errors, :timeout, :client, :id, :options
 
   def execute
     caller.send response(@id, STATUS_OK)
@@ -18,10 +18,7 @@ class AbstractCommand
 
   def valid?
   	@validation_errors = []
-
-  	@timeout ||= DEFAULT_TIMEOUT
-		validate_positive_integer "Timeout", @timeout
-
+		validate_positive_integer "Timeout", @options["timeout"]
 		validate
 		@validation_errors.empty?
   end

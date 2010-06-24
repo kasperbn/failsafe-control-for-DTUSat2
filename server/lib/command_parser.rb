@@ -18,7 +18,22 @@ class CommandParser
 			id = request["id"]
 			token = request["token"]
 			cmd_string, *arguments = *request["data"].split(" ")
-			command = eval("Commands::#{cmd_string.camelize}.new(*arguments)")
+
+			opts = arguments.map {|a| a[0].chr == "-" ? a : nil};opts.delete(nil)
+			options = {}
+			opts.each do |o|
+				key,val = o.split("=")
+				options[key[2..-1]] = val || true
+			end
+			arguments = arguments.delete_if {|a| a[0].chr == "-"}
+
+			if cmd_string[0].chr.match(/[a-zA-Z]/)
+				command = eval("Commands::#{cmd_string.camelize}.new(*arguments)")
+				options["timeout"] ||= DEFAULT_TIMEOUT
+				options["noresponse"] ||= false
+				command.options = options
+				command.id = id
+			end
 		rescue ArgumentError => e
 			command = Commands::WrongNumberOfArguments.new
 		rescue => e

@@ -1,10 +1,9 @@
 module Commands
   class UploadSib < AbstractCommand
 
-		def initialize(sib,timeout=DEFAULT_TIMEOUT)
+		def initialize(sib)
 			@sib = sib
 			@sib_length = @sib.spaced_hex.split.size
-			@timeout = timeout
 		end
 
 		def validate
@@ -18,7 +17,7 @@ module Commands
 				@sib.spaced_hex.split.reverse,
 				"CD"
 			]
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				@client.send response(@id, return_code, data)
 			end
 		end

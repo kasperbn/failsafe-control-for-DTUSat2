@@ -33,14 +33,15 @@ class SerialRequestHandler
 		[STATUS_SERIALPORT_NOT_CONNECTED,0,nil]
 	end
 
-	def request(request, timeout, &callback)
+	def request(request, options, &callback)
 		req = request.to_a.flatten.join(" ").split(" ")
-		enqueue({:command => req, :timeout => timeout.to_i},&callback)
+		enqueue({:command => req, :timeout => options["timeout"].to_i, :noresponse => options["noresponse"]},&callback)
 	end
 
 	def process(request, &callback)
 		begin
-			callback.call(write_read(request))
+			write(request)
+			callback.call(read(request)) unless request["noresponse"]
 		rescue Errno::EIO => e
 			@connected = false
 			log "Serialport has been disconnected"
@@ -50,17 +51,19 @@ class SerialRequestHandler
 	end
 
 	def write_read(request)
-		done_reading = false
-		return_code = nil
-		data_length = nil
-		data = nil
-
 		# Write
 		request[:command].each do |s|
 			sleep(0.2)
 			@sp.putc s.hex
 		end
 		log "Serial write: #{request[:command].join(' ')}"
+	end
+
+	def read(request)
+		done_reading = false
+		return_code = nil
+		data_length = nil
+		data = nil
 
 		# Read thread
 		read = Thread.new do
@@ -92,4 +95,5 @@ class SerialRequestHandler
 
 		return return_code, data_length, data
 	end
+
 end

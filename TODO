@@ -4,7 +4,6 @@ TODO:
 - Server
 	- Serialport c interface
 	- Upload script
-	- Option for no response for satellite commands
 - Gui
 	- Cleanup
 		- Move setdir and refresh list buttons into splitter as in command sequences
@@ -20,10 +19,28 @@ TODO:
 	- Server
 	- Gui
 	- Client
-- Report
 
-Questions for HHL
-	- Option for no response for satellite commands
-	- Health Panel
-	- This is achieved by constantly rebooting the software after a given interval.
-	- The satellite will boot into a failsafe mode if it was not reset cleanly. In this mode it is possible to investigate what went wrong and to upload new software.
+- Report
+	- Frontpage
+	+ Abstract
+	+ Preface
+	+ Introduction
+	+ General Analysis and Design
+	+ FSServer
+		+ Design
+		+ Implementation
+	+ FSClient
+		+ Design
+		+ Implementation
+	- FSGui
+		- Design
+		- Implementaiton
+	- Test
+		- How have I tested this and why
+		- Testplan
+	- Conclusion
+
+
+
+- BSC nr i receptionen
+- Receptionist Kunu skal have en pdf

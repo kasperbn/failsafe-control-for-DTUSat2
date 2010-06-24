@@ -1,9 +1,8 @@
 module Commands
   class RamTest < AbstractCommand
-		def initialize(address, length, timeout=DEFAULT_TIMEOUT)
+		def initialize(address, length)
 			@address = address
 			@length = length
-			@timeout = timeout
 		end
 
 		def validate
@@ -21,7 +20,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				# Unpack as 4 bytes little-endian
 				data = data.unpack("V")
 				@client.send response(@id, return_code, data)

@@ -1,10 +1,9 @@
 module Commands
   class Upload < AbstractCommand
-		def initialize(address,data,timeout=DEFAULT_TIMEOUT)
+		def initialize(address,data)
 			@address = address
 			@data = data
 			@length = data.spaced_hex.split.size
-			@timeout = timeout
 		end
 
 		def validate
@@ -22,7 +21,7 @@ module Commands
 						"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @timeout) do |return_code,length,data|
+			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
 				@client.send response(@id, return_code, data)
 			end
 		end
