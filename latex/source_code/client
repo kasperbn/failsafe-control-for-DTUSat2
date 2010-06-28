@@ -1,0 +1,4 @@
+\textbf{fsclient}
+\lstinputlisting[language={ruby},tabsize=2,breaklines=true,numbers=left,stepnumber=1,frame=single,stringstyle={\ttfamily}]{../server/fsclient}
+\textbf{lib/client.rb}
+\lstinputlisting[language={ruby},tabsize=2,breaklines=true,numbers=left,stepnumber=1,frame=single,stringstyle={\ttfamily}]{../server/lib/client.rb}

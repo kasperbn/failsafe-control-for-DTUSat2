@@ -1,15 +1,23 @@
-\chapter{Upload Script}
+\chapter{Upload File Script - an example of a user script}
 \label{chap:upload_script}
 This chapter analyses the requirements and discuss various design alternatives of the upload script. The implementation details of the chosen design will follow.
 
 \section{Analysis and Design}
-The upload script should take a filepath and a memory address as parameters. It must be smart enough to divide the file in parts of the maximum data size and upload them to the satellite starting from the given memory address.
+
+The upload file is an example of a user script. It must take a filepath as parameters and upload it to the flash on the satellite. There are no failsafe command to upload a file to the flash, so a script must written that uses several failsafe commands to achieve to overall goal.
+
+Firstly the script must be divide the file in parts of the maximum data size and upload them to the satellite ram memory. After uploading to ram it must copy the data from the ram to the flash and lastly calculate the checksums to ensure that everything got copied correctly.
+
+The staff typically wants to upload a new version of the nominal mode. There are different ways of storing the nominal mode in a file. It can be stored as binary data in a file or as hex formatted data in a file.
+
+This script will assume that the data is stored as a binary file. Therefore addresses to the ram and flash memory must also be given as arguments.
+
 During upload the user must be notified with the overall progress.
 
 \section{Implementation}
 The script is an executable file written in ruby with the following path \texttt{"scripts/upload\_file"}.
 
-It takes three arguments: token, filepath and address.
+It takes three arguments: token, filepath and ram\_address flash\_address.
 
 It validates that these three arguments have been given, that the file exists and that the address is a valid address.
 
@@ -22,6 +30,10 @@ The progress is printed.
 If the upload went well the next part of the file will be uploaded.
 
 If the upload went bad the script is stopped and the user is notified.
+
+When the upload has finished it will start the copying from ram to flash.
+
+When the copying is done the checksum will be calculated to ensure that everything is OK.
 
 \textbf{Maximum data size of 20 bytes} \\
 The upload script has a maximum data size of 20 B instead of the allowed 1020 B. This is because the current implementation of the failsafe software has some problems with data being send too fast. The current workaround is to sleep for 0.2 seconds inbetween each byte written. It will takes 204 seconds to upload 1020 bytes and in that time space the satellite will reset and the command will fail. In contrast it takes 4 seconds to upload 20 bytes.

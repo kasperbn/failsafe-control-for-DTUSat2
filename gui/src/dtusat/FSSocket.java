@@ -14,10 +14,12 @@ public class FSSocket {
 	public FSSocketObserver observer;
 	public FSSocketReader socketReader;
 	private Thread inThread;
+	private int lastId;
 	
 	public FSSocket() {
 		observer = FSController.getInstance();
 		token = "";
+		lastId = 0;
 	}
 	
 	public void connect(String host, String port) {
@@ -59,7 +61,7 @@ public class FSSocket {
 	}
 	
 	public void request(String command, FSCallback callback) {
-		String id = generateUniqueId();
+		String id = nextId();
 		String request = "{\"id\":\""+id+"\", \"data\":\""+command+"\", \"token\":\""+token+"\"}";
 		
 		if(callback != null)
@@ -79,9 +81,8 @@ public class FSSocket {
 		
 	}
 	
-	private String generateUniqueId() {
-		SecureRandom random = new SecureRandom();
-		return new BigInteger(16, random).toString(6);
+	synchronized private String nextId() {
+		return ""+(lastId++);
 	}
 	
 }

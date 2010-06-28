@@ -13,32 +13,62 @@ require ROOT_DIR + "/lib/constants"
 include Constants
 
 op = OptionParser.new do |opts|
-  opts.banner = "Usage: upload_file token filepath address"
+  opts.banner = "Usage: upload_file token filepath ram_address flash_address"
   opts.separator "Description: Upload a file to an address in the satellites memory"
   opts.separator "Arguments:"
   opts.separator "\tfilepath (string)"
-  opts.separator "\taddress (hexadecimal)"
+  opts.separator "\tram_address (hexadecimal)"
+  opts.separator "\tflash_address (hexadecimal)"
 end
 op.parse!
 
-if ARGV.length != 3
+if ARGV.length != 4
 	puts "Not enough arguments"
 	exit(1)
 end
 
-token = ARGV[0]
+$token = ARGV[0]
 filepath = ARGV[1]
-address = ARGV[2]
+ram_address = ARGV[2]
+flash_address = ARGV[3]
 
 unless File.exists?(filepath)
-	puts "File not found"
+	puts "File not found"; exit(1)
+end
+
+unless ram_address.addressable?
+	puts "Ram address is not addressable"; exit(1)
+end
+
+unless flash_address.addressable?
+	puts "Flash address is not addressable"; exit(1)
+end
+
+# Helper method
+$out = ""
+$err = ""
+def fsclient(*args)
+	stdin, stdout, stderr = Open3.popen3("fsclient", "--token=#{$token}", *args)
+	$out = stdout.readlines.join
+	$err = stdout.readlines.join
+	if $err == ""
+		begin
+			return JSON.parse($out);
+		rescue => e
+			puts "JSON Parse error: #{e}"
+			puts "Raw: #{$out}"
+			exit(1)
+		end
+	else
+		puts "Fsclient stderror: #{$err}"
+		exit(1)
+	end
+end
+def error_exit
+	puts "Error: #{$out}"
 	exit(1)
 end
 
-unless address.addressable?
-	puts "Address is not addressable"
-	exit(1)
-end
 
 file = File.new(filepath, "r")
 size = File.size(filepath)
@@ -48,23 +78,87 @@ total_uploads += 1 unless size % max_data_size == 0
 puts "Max data size is: #{max_data_size} B"
 puts "File size is #{size} B and will be split over #{total_uploads} uploads."
 
-address = address.int_or_hex
+# Upload
+address = ram_address.int_or_hex
 total_uploads.times do |i|
 	data = "0x"
 	file.read(max_data_size).each_byte {|b| data << b.spaced_hex(1) }
 	puts "#{i*100/total_uploads}% Done. Uploading part #{i+1}/#{total_uploads} ..."
-
-	stdin, stdout, stderr = Open3.popen3("fsclient", "--token=#{token}", "upload", address.to_s, data)
-	raw = stdout.readlines.join
-
-	response = JSON.parse(raw);
-	unless response['status'] == 255
-		puts "Upload Failed: #{raw}"
-		exit(1)
-	end
-
+	response = fsclient("upload", address.to_s, data)
+	error_exit unless response['status'] == 255
 	address += (max_data_size)
 end
 file.close
 puts "100% Done. Upload succeeded"
+
+
+# Ram Checksum
+puts "Calculating checksum in ram ... "
+response = fsclient("calculate_check_sum", ram_address, size.to_s)
+error_exit unless response['status'] == 10
+ram_checksum = response["data"]
+puts "Ram checksum is: #{ram_checksum}"
+
+# Copy to Flash
+puts "Unlock flash ... "
+error_exit unless fsclient("unlock_flash")['status'] == 255
+
+
+puts "Copying to flash ... "
+
+flash_size = 512
+flash_size = 1024 if size > 512
+flash_size = 2048 if size > 1024
+flash_size = 4096 if size > 4096
+
+max_length = 4096
+
+unless flash_size > max_length
+
+	error_exit unless fsclient("copy_to_flash", ram_address, flash_address, flash_size.to_s)['status'] == 255
+
+else
+	total_uploads = size / max_length
+	last_length = size % max_length
+	total_uploads += 1 unless last_length == 0
+	last_length = max_length if last_length == 0
+
+	puts "Must split copy in #{total_uploads} parts."
+
+	current_ram_address 	= ram_address.int_or_hex
+	current_flash_address = flash_address.int_or_hex
+	total_uploads.times do |i|
+		puts "#{i*100/total_uploads}% Done. Copying part #{i+1}/#{total_uploads} ..."
+
+		length = if(1+i == total_uploads) # Is it the last part
+			last_length
+		else
+			max_length
+		end
+
+		response = fsclient("copy_to_flash", current_ram_address.to_s, current_flash_address.to_s, length)
+		error_exit unless response['status'] == 255
+
+		current_ram_address += max_length
+		current_flash_address += max_length
+	end
+
+end
+
+# Flash Checksum
+puts "Calculating checksum in flash ... "
+response = fsclient("calculate_check_sum", flash_address, size.to_s)
+error_exit unless response['status'] == 10
+flash_checksum = response["data"]
+puts "Flash checksum is: #{ram_checksum}"
+
+# Check Checksums
+if ram_checksum == flash_checksum
+	puts "The checksums are identical."
+	puts "The upload succeeded"
+else
+	puts "The checksums are not identical"
+	puts "The upload failed"
+end
+
 exit(0)

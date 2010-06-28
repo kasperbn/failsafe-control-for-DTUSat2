@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2010.6.20)  28 JUN 2010 13:40
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.20)  28 JUN 2010 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -32,17 +32,99 @@ Package: inputenc 2008/03/30 v1.1d Input encoding file
 
 (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
-)) (./immphddef.sty
-(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+))
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2009/02/07 v0.4g Insert pages of external PDF documents (AM)
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count89
+\calc@Bcount=\count90
+\calc@Adimen=\dimen105
+\calc@Bdimen=\dimen106
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count91
+\calc@Cskip=\skip45
+)
+(/usr/share/texmf-texlive/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
+
+(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box26
+\AM@toc@title=\toks17
+\c@AM@survey=\count92
+\AM@templatesizebox=\box27
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count93
+\lst@gtempboxa=\box28
+\lst@token=\toks18
+\lst@length=\count94
+\lst@currlwidth=\dimen107
+\lst@column=\count95
+\lst@pos=\count96
+\lst@lostspace=\dimen108
+\lst@width=\dimen109
+\lst@newlines=\count97
+\lst@lineno=\count98
+\lst@maxwidth=\dimen110
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count99
+\lst@skipnumbers=\count100
+\lst@framebox=\box29
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+) (./immphddef.sty
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode not detected.
+Package ifpdf Info: pdfTeX in pdf mode detected.
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
@@ -58,9 +140,9 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen103
-\Hy@linkcounter=\count88
-\Hy@pagecounter=\count89
+\@linkdim=\dimen111
+\Hy@linkcounter=\count101
+\Hy@pagecounter=\count102
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -125,10 +207,10 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count90
-\Field@Width=\dimen104
-\Fld@charsize=\dimen105
-\Field@toks=\toks17
+\Fld@menulength=\count103
+\Field@Width=\dimen112
+\Fld@charsize=\dimen113
+\Field@toks=\toks19
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -140,22 +222,15 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count91
-\c@Item=\count92
-\c@Hfootnote=\count93
+\Hy@abspage=\count104
+\c@Item=\count105
+\c@Hfootnote=\count106
 )
-*hyperref using driver hdvips*
-(/usr/share/texmf-texlive/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2009/10/09 v6.79a Hyperref driver for dvips
-
-(/usr/share/texmf-texlive/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2009/10/09 v6.79a Hyperref definitions for pdfmark specials
-\pdf@docset=\toks18
-\pdf@box=\box26
-\pdf@toks=\toks19
-\pdf@defaulttoks=\toks20
-\Fld@listcount=\count94
-))
+*hyperref using default driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
+\Fld@listcount=\count107
+)
 Package hyperref Info: Option `breaklinks' set `true' on input line 14.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 14.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 14.
@@ -168,8 +243,8 @@ Language: english 2005/03/30 v3.3o English support from the babel system
 
 (/usr/share/texmf-texlive/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count95
-\U@D=\dimen106
+\babel@savecnt=\count108
+\U@D=\dimen114
 )
 \l@british = a dialect from \language\l@english 
 \l@UKenglish = a dialect from \language\l@english 
@@ -177,15 +252,15 @@ File: babel.def 2008/07/06 v3.8l Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )) (./fancyheadings.sty
-\headrulewidth=\dimen107
-\footrulewidth=\dimen108
-\plainheadrulewidth=\dimen109
-\plainfootrulewidth=\dimen110
-\headwidth=\dimen111
+\headrulewidth=\dimen115
+\footrulewidth=\dimen116
+\plainheadrulewidth=\dimen117
+\plainfootrulewidth=\dimen118
+\headwidth=\dimen119
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip43
+\@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
@@ -193,51 +268,51 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks21
-\ex@=\dimen112
+\@emptytoks=\toks20
+\ex@=\dimen120
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen113
+\pmbraise@=\dimen121
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count96
+\inf@bad=\count109
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count97
-\leftroot@=\count98
+\uproot@=\count110
+\leftroot@=\count111
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count99
-\DOTSCASE@=\count100
+\classnum@=\count112
+\DOTSCASE@=\count113
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
-\big@size=\dimen114
+\Mathstrutbox@=\box30
+\strutbox@=\box31
+\big@size=\dimen122
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count101
-\c@MaxMatrixCols=\count102
+\macc@depth=\count114
+\c@MaxMatrixCols=\count115
 \dotsspace@=\muskip11
-\c@parentequation=\count103
-\dspbrk@lvl=\count104
-\tag@help=\toks22
-\row@=\count105
-\column@=\count106
-\maxfields@=\count107
-\andhelp@=\toks23
-\eqnshift@=\dimen115
-\alignsep@=\dimen116
-\tagshift@=\dimen117
-\tagwidth@=\dimen118
-\totwidth@=\dimen119
-\lineht@=\dimen120
-\@envbody=\toks24
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks25
+\c@parentequation=\count116
+\dspbrk@lvl=\count117
+\tag@help=\toks21
+\row@=\count118
+\column@=\count119
+\maxfields@=\count120
+\andhelp@=\toks22
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks23
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
@@ -259,75 +334,57 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 )
 (/usr/share/texmf-texlive/tex/latex/eepic/epic.sty
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
-\@@multicnt=\count108
-\d@lta=\count109
-\@delta=\dimen121
-\@@delta=\dimen122
-\@gridcnt=\count110
-\@joinkind=\count111
-\@dotgap=\dimen123
-\@ddotgap=\dimen124
-\@x@diff=\count112
-\@y@diff=\count113
-\x@diff=\dimen125
-\y@diff=\dimen126
-\@dotbox=\box29
-\num@segments=\count114
-\num@segmentsi=\count115
+\@@multicnt=\count121
+\d@lta=\count122
+\@delta=\dimen129
+\@@delta=\dimen130
+\@gridcnt=\count123
+\@joinkind=\count124
+\@dotgap=\dimen131
+\@ddotgap=\dimen132
+\@x@diff=\count125
+\@y@diff=\count126
+\x@diff=\dimen133
+\y@diff=\dimen134
+\@dotbox=\box32
+\num@segments=\count127
+\num@segmentsi=\count128
 \@datafile=\read1
 ) (/usr/share/texmf-texlive/tex/latex/eepic/eepic.sty
 Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
-\@gphlinewidth=\count116
-\@eepictcnt=\count117
-\@tempdimc=\dimen127
-\maxovaldiam=\dimen128
-\@filltype=\box30
+\@gphlinewidth=\count129
+\@eepictcnt=\count130
+\@tempdimc=\dimen135
+\maxovaldiam=\dimen136
+\@filltype=\box33
 ) (/usr/share/texmf-texlive/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: dvips.def on input line 91.
-
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-))
-\Gin@req@height=\dimen129
-\Gin@req@width=\dimen130
-)
-\epsfxsize=\dimen131
-\epsfysize=\dimen132
+\epsfxsize=\dimen137
+\epsfysize=\dimen138
 )
 (/usr/share/texmf-texlive/tex/latex/psfrag/psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
-\pfg@pcount=\count118
-\pfg@scount=\count119
+\pfg@pcount=\count131
+\pfg@scount=\count132
 \pfg@temp=\write3
 )
 (/usr/share/texmf-texlive/tex/latex/tools/theorem.sty
 Package: theorem 1995/11/23 v2.2c Theorem extension package (FMi)
-\theorem@style=\toks26
-\theorem@bodyfont=\toks27
-\theorempreskipamount=\skip46
-\theorempostskipamount=\skip47
+\theorem@style=\toks25
+\theorem@bodyfont=\toks26
+\theorempreskipamount=\skip49
+\theorempostskipamount=\skip50
 
 (/usr/share/texmf-texlive/tex/latex/tools/thp.sty
 File: thp.sty 1995/11/23 v2.2c Theorem extension package (FMi)
 )) (./immthesislayout.sty
-\c@lemma=\count120
-\c@Exa=\count121
+\c@lemma=\count133
+\c@Exa=\count134
 )
-(./phdthesis.aux (./appendixB.aux))
+(./phdthesis.aux (./introduction.aux) (./requirements.aux)
+(./general_analysis.aux) (./fsserver.aux) (./fsgui.aux) (./fsclient.aux)
+(./upload_script.aux) (./test.aux) (./conclusion.aux) (./appendixA.aux)
+(./appendixB.aux) (./appendixC.aux) (./appendixD.aux))
 \openout1 = `phdthesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -344,6 +401,29 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count135
+\scratchdimen=\dimen139
+\scratchbox=\box34
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen140
+\MPnumerator=\count139
+\everyMPtoPDFconversion=\toks28
+) ABD: EveryShipout initializing macros
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+\c@lstlisting=\count140
 Package hyperref Info: Link coloring OFF on input line 53.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
@@ -352,7 +432,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count122
+\c@section@level=\count141
 )
 LaTeX Info: Redefining \ref on input line 53.
 LaTeX Info: Redefining \pageref on input line 53.
@@ -361,13 +441,15 @@ LaTeX Info: Redefining \pageref on input line 53.
 \@outlinefile=\write4
 \openout4 = `phdthesis.out'.
 
-\AtBeginShipoutBox=\box31
+\AtBeginShipoutBox=\box35
  [1
+Non-PDF special ignored!
 
-] [2]) (./abstract.tex
+
+Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2]) (./abstract.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+ (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 1.
@@ -384,48 +466,821 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 ] [2
 
+]
+Overfull \hbox (0.64246pt too wide) in paragraph at lines 3--4
+\OT1/cmr/m/n/10 Math-e-mat-i-cal Mod-elling (IMM), at the Tech-ni-cal Uni-ver-s
+ity of Den-mark (DTU),
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 7--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--41
+
+ []
+
+[3] [4] (./phdthesis.toc [5
+
 ])
-Underfull \hbox (badness 10000) in paragraph at lines 7--38
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--38
-
- []
-
-[3] [4] (./phdthesis.toc)
 \tf@toc=\write5
 \openout5 = `phdthesis.toc'.
 
- [5
+ [6]
+\openout2 = `introduction.aux'.
 
-] [6
+ (./introduction.tex
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--11
+
+ []
+
+
+Underfull \vbox (badness 1755) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.14 \begin{itemize}
+                     [1
+
+
 
 ]
-\openout2 = `appendixB.aux'.
-
- (./appendixB.tex
-Appendix A.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
+ (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
- [1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
 
 
-]) [2]
+Overfull \hbox (4.69832pt too wide) in paragraph at lines 34--57
+\OT1/cmr/m/n/10 Chapter []2[]  \OT1/cmr/bx/n/10 Re-quire-ments Spec-i-fi-ca-tio
+n\OT1/cmr/m/n/10 , states the re-quire-ments of the project. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--57
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.57 \include{introduction}
+                            [2] [3]
+\openout2 = `requirements.aux'.
+
+ (./requirements.tex [4
+
+
+
+]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--8
+
+ []
+
+[5]) [6]
+\openout2 = `general_analysis.aux'.
+
+ (./general_analysis.tex
+Chapter 3.
+[7
+
+
+
+] <img/interaction_via_console.png, id=307, 252.945pt x 337.26pt>
+File: img/interaction_via_console.png Graphic file (type png)
+
+<use img/interaction_via_console.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8] <img/tcp_interface_to_the_radio.png, id=315, 255.95625pt x 486.31688pt>
+File: img/tcp_interface_to_the_radio.png Graphic file (type png)
+
+<use img/tcp_interface_to_the_radio.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9 <./img/interaction_via_console.png>] [10 <./img/tcp_interface_to_the_radio.p
+ng>]
+File: img/tcp_interface_to_the_radio.png Graphic file (type png)
+ <use img/tcp_interface_to_the_radio.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12] <img/chosen_design.png, id=342, 355.3275pt x 645.91313pt>
+File: img/chosen_design.png Graphic file (type png)
+
+<use img/chosen_design.png>) [13 <./img/chosen_design.png>]
+\openout2 = `fsserver.aux'.
+
+ (./fsserver.tex
+[14
+
+
+
+]
+Chapter 4.
+[15] [16] <img/one_connection_deadlock.png, id=361, 516.42938pt x 575.14874pt>
+File: img/one_connection_deadlock.png Graphic file (type png)
+
+<use img/one_connection_deadlock.png> [17 <./img/one_connection_deadlock.png>]
+<img/multiple_scripts_no_lock.png, id=369, 514.92375pt x 429.10312pt>
+File: img/multiple_scripts_no_lock.png Graphic file (type png)
+
+<use img/multiple_scripts_no_lock.png> [18 <./img/multiple_scripts_no_lock.png>
+] <img/lock.png, id=376, 513.41812pt x 388.45125pt>
+File: img/lock.png Graphic file (type png)
+ <use img/lock.png>
+<img/partial_responses.png, id=377, 516.42938pt x 391.4625pt>
+File: img/partial_responses.png Graphic file (type png)
+
+<use img/partial_responses.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./img/lock.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 109
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 109.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 109.
+
+[20 <./img/partial_responses.png>]
+Overfull \hbox (32.22464pt too wide) in paragraph at lines 145--146
+[]\OT1/cmr/m/n/10 Req: \OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 "id":"2", "data":"run
+[]script upload filepath", "token":"7KFd"\OMS/cmtt/m/n/10 g 
+ []
+
+
+Overfull \hbox (48.11116pt too wide) in paragraph at lines 146--147
+[]\OT1/cmr/m/n/10 Res: \OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 "type":"response", "i
+d":"2", "data":"50% done", "partial":"true"\OMS/cmtt/m/n/10 g 
+ []
+
+
+Overfull \hbox (53.36111pt too wide) in paragraph at lines 147--148
+[]\OT1/cmr/m/n/10 Res: \OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 "type":"response", "i
+d":"2", "data":"100% done", "partial":"true"\OMS/cmtt/m/n/10 g 
+ []
+
+[21] [22]
+Overfull \hbox (11.69424pt too wide) in paragraph at lines 217--217
+[]\OT1/cmtt/m/n/10 {"id":"1","token":"abcdefg", "data":"run_script filepath arg
+1 arg2"}[] 
+ []
+
+[23] [24]) [25]
+\openout2 = `fsgui.aux'.
+
+ (./fsgui.tex [26
+
+
+
+]
+Chapter 5.
+[27] <img/fsgui_connect.png, id=425, 347.2975pt x 307.1475pt>
+File: img/fsgui_connect.png Graphic file (type png)
+
+<use img/fsgui_connect.png> [28]
+<img/fsgui_sequences.png, id=430, 602.25pt x 128.48pt>
+File: img/fsgui_sequences.png Graphic file (type png)
+
+<use img/fsgui_sequences.png>
+Overfull \hbox (76.26947pt too wide) in paragraph at lines 60--61
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[29 <./img/fsgui_connect.png (PNG copy)>]
+<img/fsgui_health.png, id=437, 505.89pt x 503.8825pt>
+File: img/fsgui_health.png Graphic file (type png)
+
+<use img/fsgui_health.png>
+Overfull \hbox (8.81793pt too wide) in paragraph at lines 70--71
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/fsgui_local.png, id=438, 441.65pt x 188.705pt>
+File: img/fsgui_local.png Graphic file (type png)
+ <use img/fsgui_local.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/fsgui_server.png, id=439, 444.66125pt x 161.60374pt>
+File: img/fsgui_server.png Graphic file (type png)
+
+<use img/fsgui_server.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/fsgui_autolock.png, id=440, 497.86pt x 215.80624pt>
+File: img/fsgui_autolock.png Graphic file (type png)
+
+<use img/fsgui_autolock.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[30 <./img/fsgui_sequences.png>] [31 <./img/fsgui_health.png>]
+Underfull \vbox (badness 5939) has occurred while \output is active []
+
+ [32 <./img/fsgui_local.png> <./img/fsgui_server.png> <./img/fsgui_autolock.png
+ (PNG copy)>] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+[][][]\OT1/cmr/m/n/8 A good in-tro-duc-tion to UUID's can be found at wikipedia
+:
+ []
+
+) [34]
+\openout2 = `fsclient.aux'.
+
+ (./fsclient.tex
+Chapter 6.
+[35
+
+
+
+]) [36] [37]
+\openout2 = `upload_script.aux'.
+
+ (./upload_script.tex [38
+
+
+
+]
+Chapter 7.
+[39]
+Overfull \hbox (65.06021pt too wide) in paragraph at lines 18--19
+\OT1/cmr/m/n/10 The script is an ex-e-cutable file writ-ten in ruby with the fo
+l-low-ing path \OT1/cmtt/m/n/10 "scripts/upload[]file"\OT1/cmr/m/n/10 . 
+ []
+
+) [40]
+\openout2 = `test.aux'.
+
+ (./test.tex
+Chapter 8.
+[41
+
+
+
+]
+Overfull \hbox (10.3036pt too wide) in paragraph at lines 29--40
+ [] 
+ []
+
+[42] [43]) [44]
+\openout2 = `conclusion.aux'.
+
+ (./conclusion.tex
+Chapter 9.
+
+Underfull \vbox (badness 1968) has occurred while \output is active []
+
+ [45
+
+
+
+])
+[46]
+\openout2 = `appendixA.aux'.
+
+ (./appendixA.tex
+Appendix A.
+[47
+
+
+
+] [48]) [49]
+\openout2 = `appendixB.aux'.
+
+ (./appendixB.tex [50
+
+
+
+]
+Appendix B.
+[51]) [52]
+\openout2 = `appendixC.aux'.
+
+ (./appendixC.tex
+Appendix C.
+[53
+
+
+
+] <tests.pdf, id=563, page=1, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 1>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 1>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 1>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 1>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 1> [54 <./tests.pdf>]
+<tests.pdf, id=609, page=2, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 2>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 2>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 2> [55 <./tests.pdf>]
+<tests.pdf, id=615, page=3, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 3>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 3>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 3> [56 <./tests.pdf>]
+<tests.pdf, id=621, page=4, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 4>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 4>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 4> [57 <./tests.pdf>]
+<tests.pdf, id=627, page=5, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 5>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 5>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 5> [58 <./tests.pdf>]
+<tests.pdf, id=633, page=6, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 6>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 6>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 6> [59 <./tests.pdf>]
+<tests.pdf, id=640, page=7, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 7>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 7>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 7> [60 <./tests.pdf>]
+<tests.pdf, id=646, page=8, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 8>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 8>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 8> [61 <./tests.pdf>]
+<tests.pdf, id=652, page=9, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 9>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 9>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 9> [62 <./tests.pdf>]
+<tests.pdf, id=658, page=10, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 10>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 10>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 10>
+[63 <./tests.pdf>] <tests.pdf, id=664, page=11, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 11>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 11>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 11>
+[64 <./tests.pdf>] <tests.pdf, id=670, page=12, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 12>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 12>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 12>
+[65 <./tests.pdf>] <tests.pdf, id=677, page=13, 597.23125pt x 845.1575pt>
+File: tests.pdf Graphic file (type pdf)
+
+<use tests.pdf, page 13>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 13>
+File: tests.pdf Graphic file (type pdf)
+ <use tests.pdf, page 13>
+[66 <./tests.pdf>])
+\openout2 = `appendixD.aux'.
+
+ (./appendixD.tex
+Appendix D.
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+) (../server/fsdaemon) (../server/fsserver
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 7.
+ (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 7.
+
+[67
+
+
+
+]) [68] (../server/lib/command_parser.rb
+Underfull \vbox (badness 2165) has occurred while \output is active []
+
+ [69])
+(../server/lib/commands/abstract_command.rb [70]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71])
+(../server/lib/commands/calculate_check_sum.rb) [72]
+(../server/lib/commands/call_function.rb)
+(../server/lib/commands/copy_to_flash.rb [73]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74])
+(../server/lib/commands/copy_to_ram.rb)
+(../server/lib/commands/delete_flash_block.rb [75])
+(../server/lib/commands/download.rb [76])
+(../server/lib/commands/download_sib.rb) (../server/lib/commands/execute.rb
+[77]) (../server/lib/commands/flash_test.rb [78])
+(../server/lib/commands/health_status.rb)
+(../server/lib/commands/list_scripts.rb
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+) [79] (../server/lib/commands/lock.rb)
+(../server/lib/commands/ram_test.rb [80])
+(../server/lib/commands/read_register.rb [81])
+(../server/lib/commands/read_sensor.rb) (../server/lib/commands/reset.rb
+[82]) (../server/lib/commands/reset_sib.rb)
+(../server/lib/commands/run_script.rb [83])
+(../server/lib/commands/set_autoreset.rb [84]) (../server/lib/commands/sleep.rb
+) (../server/lib/commands/unknown.rb) (../server/lib/commands/unlock.rb
+[85]) (../server/lib/commands/unlock_flash.rb)
+(../server/lib/commands/upload.rb [86]) (../server/lib/commands/upload_sib.rb)
+(../server/lib/commands/write_register.rb [87])
+(../server/lib/commands/wrong_number_of_arguments.rb)
+(../server/lib/constants.rb [88]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [89]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [90])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91]
+(../server/lib/ext/fixnum.rb) (../server/lib/ext/string.rb [92])
+(../server/lib/logger.rb [93]) (../server/lib/processing_queue.rb [94])
+(../server/lib/response_helpers.rb
+Underfull \vbox (badness 6364) has occurred while \output is active []
+
+ [95])
+(../server/lib/serial_request_handler.rb [96]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [97])
+(../server/lib/server.rb [98]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [99]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [100])
+(../server/lib/token_handler.rb [101]) (../server/link_fs/link_fs_devel.rb
+[102]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [103])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [104]
+(../server/scripts/count) (../server/scripts/upload_file [105]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [106]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [107]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [108])
+(../server/test/download_chars.rb) (../server/test/greeting.txt)
+(../server/test/lib/command_parser_test.rb [109]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [110])
+(../server/test/lib/ext/string_test.rb [111]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [112])
+(../server/test/test_helpers.rb) (../client/fsclient [113])
+(../client/lib/client.rb [114]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [115]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [116])
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [117]
+(../gui/src/dtusat/Driver.java) (../gui/src/dtusat/FSCallback.java)
+(../gui/src/dtusat/FSController.java [118]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [119]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [120]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [121]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [122]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [123])
+(../gui/src/dtusat/FSResponse.java [124]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [125])
+(../gui/src/dtusat/FSSocket.java [126]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [127])
+(../gui/src/dtusat/FSSocketObserver.java [128])
+(../gui/src/dtusat/FSSocketReader.java [129])
+(../gui/src/dtusat/IncomingDataHandler.java) (../gui/src/dtusat/Logger.java)
+(../gui/src/dtusat/components/CommandPanel.java [130]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [131]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [132]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [133]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [134]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [135])
+(../gui/src/dtusat/components/CommandSequencesPanel.java [136]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [137]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [138]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [139]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [140]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [141]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [142]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [143]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [144]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [145]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [146]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [147])
+(../gui/src/dtusat/components/ConnectPanel.java [148]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [149])
+(../gui/src/dtusat/components/FSMenu.java [150]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [151])
+(../gui/src/dtusat/components/FileTree.java [152])
+(../gui/src/dtusat/components/HealthImagePanel.java [153]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [154])
+[155] (../gui/src/dtusat/components/HealthPanel.java
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [156]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [157])
+(../gui/src/dtusat/components/LocalScriptPanel.java [158])
+(../gui/src/dtusat/components/LocalScriptsPanel.java [159]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [160]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [161]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [162]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [163])
+(../gui/src/dtusat/components/MainPanel.java [164]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [165])
+(../gui/src/dtusat/components/MainTabs.java [166])
+(../gui/src/dtusat/components/ScriptPanel.java [167]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [168])
+(../gui/src/dtusat/components/ScriptTreeNode.java)
+(../gui/src/dtusat/components/ServerScriptPanel.java [169])
+(../gui/src/dtusat/components/ServerScriptsPanel.java [170]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [171]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [172]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [173])
+(../gui/src/dtusat/components/SubSystemPanel.java [174]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [175])
+(../gui/src/dtusat/components/UnknownStatusException.java)) [176]
 No file phdthesis.bbl.
-(./phdthesis.aux (./appendixB.aux)) ) 
-Here is how much of TeX's memory you used:
- 5461 strings out of 495062
- 75517 string characters out of 1182644
- 146494 words of memory out of 3000000
- 8503 multiletter control sequences out of 15000+50000
- 14998 words of font info for 61 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 40i,10n,24p,406b,375s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on phdthesis.dvi (10 pages, 12224 bytes).
+Overfull \hbox (38.44617pt too wide) in paragraph at lines 90--91
+[]\OT1/cmr/m/n/10 Eventmachine Doc-u-men-ta-tion. 28-06-2010 \OT1/cmtt/m/n/10 <
+http://eventmachine.rubyforge.org> 
+ []
+
+[177
+
+
+
+] (./phdthesis.aux (./introduction.aux) (./requirements.aux)
+(./general_analysis.aux) (./fsserver.aux) (./fsgui.aux) (./fsclient.aux)
+(./upload_script.aux) (./test.aux) (./conclusion.aux) (./appendixA.aux)
+(./appendixB.aux) (./appendixC.aux) (./appendixD.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 14237 strings out of 495061
+ 209296 string characters out of 1182621
+ 527651 words of memory out of 3000000
+ 12426 multiletter control sequences out of 15000+50000
+ 19438 words of font info for 79 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 40i,16n,45p,500b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
+ssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on phdthesis.pdf (185 pages, 1748809 bytes).
+PDF statistics:
+ 6285 PDF objects out of 7423 (max. 8388607)
+ 4442 named destinations out of 5155 (max. 500000)
+ 493 words of extra memory for PDF output out of 10000 (max. 10000000)
+

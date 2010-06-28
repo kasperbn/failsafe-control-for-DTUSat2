@@ -1,2 +1,121 @@
 \chapter{Tests and Results}
 \label{chap:test}
+Now that the implementation is complete, we should test that it meets the requirements of the system and ultimately give us an idea of the success of the project.
+
+This chapter will start by stating the test stragedy. Then the test setup is described along with an example of a test case. Then all test cases are outlined. The chapter ends with a summary of the test results.
+
+All test cases can be found in Appendix \ref{appendix:C}.
+
+\section{Test Stragedy}
+The stragedy has been to perform functional tests of all requirements. The tests are combined in integration tests as some requirements span over the individual subsystems.
+
+Unit tests have been performed on the command validations.
+
+Lastly all failsafe commands have been tested with fsclient.
+
+\section{Test Setup}
+The setup has consisted of two, sometimes three, terminals. FSServer ran in the first terminal logging to standard out. Commands was then send via FSClient in the other terminals and the outcome of the test was determined based on the response and log messages of FSServer.
+
+Unit tests was implemented in ruby with the built-in UnitTest library. To run the validation tests for example type \texttt{ruby test/lib/string\_test.rb}
+
+\section{List of Test Cases}
+The test cases all follow the same format:
+
+	ACTION, EXPECTED, RESULT
+
+If it makes sense a test case will have more data. For example, a failsafe command test case also states what has been written and read on the datalink:
+
+\begin{center}
+    \begin{tabular}{ | p{3cm} | l |}
+    \hline
+
+		\textbf{FSClient args} & \texttt{calculate\_check\_sum 0 128} \\ \hline
+		\textbf{Datalyer write} & \texttt{0a 00 08 00 00 00 00 00 80 00 00 00 CD} \\ \hline
+		\textbf{Expected} & Return code = \texttt{0x0a} \\ \hline
+		\textbf{Datalayer read} & \texttt{0a ff 04 00 15 04 92 a7} \\ \hline
+		\textbf{Response} & \texttt{\{"status":10,"data":2811364373,"message":"ACK"\}} \\ \hline
+		\textbf{Result} & \texttt{success} \\ \hline
+
+    \end{tabular}
+\end{center}
+
+
+Here is a list of all the test cases:
+\begin{itemize}
+	\item FSServer
+
+	\begin{itemize}
+		\item Daemonization
+		\item Custom logfile
+		\item Multiple tcp clients, lock mechanism, token timeout, no-response and broadcast
+		\item Command parsing
+		\item Sequentially executed satellite commands
+		\item Command validation
+		\item Spaced hex
+	\end{itemize}
+
+	\item Commands
+		\begin{itemize}
+			\item Calculate Check Sum
+			\item Call Function
+			\item Copy To Flash
+			\item Copy To Ram
+			\item Delete Flash Block
+			\item Download
+			\item Download Sib
+			\item Execute
+			\item Flash Test
+			\item Health Status
+			\item List Scripts
+			\item Lock
+			\item Ram Test
+			\item Read register
+			\item Read sensor
+			\item Reset
+			\item Reset Sib
+			\item Run Script
+			\item Set Autoreset
+			\item Sleep
+			\item Unlock
+			\item Unlock Flash
+			\item Upload
+			\item Upload Sib
+			\item Write Register
+		\end{itemize}
+
+	\item FSGui
+	\item FSClient
+	\item Upload File Script
+
+\end{itemize}
+
+\section{Test summary}
+This section will summarize the test results.
+
+\textbf{FSServer test results} \\
+All integration tests passed. \\
+All unit tests passed. \\
+All but 3 command tests passed:
+\begin{itemize}
+	\item \textbf{Flash Test} - Does not return a test result in the data.
+	\item \textbf{Health Status} - 20 bytes is read from the datalink instead of 16 bytes.
+	\item \textbf{Upload Sib} - Flash Write Error when uploading a new sib
+\end{itemize}
+FSServer works as expected and according to the requirements, the failsafe commands flash\_test, health\_status and upload\_sib do not however.
+
+\textbf{FSGUI test results} \\
+All tests passed.\\
+FSGui works as expected and according to the requirements
+
+\textbf{FSClient test results} \\
+All tests passed.\\
+Fsclient works as expected and according to the requirements
+
+\textbf{Upload File Script test results} \\
+All tests passed.\\
+The upload scripts works as expected and according to the requirements
+
+\textbf{Overall test results} \\
+All but 3 tests passed. The 3 tests are concerned with the response of some failsafe commands and does not deal with the implementation of this project.
+
+The result is that the overall system works as expected and according to the requirements, but that the documentation of 3 failsafe commands is not uptodate with the implementation or vice verca.

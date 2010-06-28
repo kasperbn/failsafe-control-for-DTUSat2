@@ -23,6 +23,8 @@ module EMClient
   	@data_only = Client.instance.options[:data_only]
 		@token = Client.instance.options[:token]
 		@command_options = Client.instance.options[:command_options]
+		@id_mutex = Mutex.new
+		@last_id = 0
 
 		unless @interactive
 			@exit = true
@@ -108,13 +110,13 @@ module EMClient
 
 	def execute(request,verbose=true)
 		@verbose = verbose
-		send_data({:id => generate_unique_id, :data => request, :token => @token}.to_json)
+		send_data({:id => next_id, :data => request, :token => @token}.to_json)
 	end
 
-	def generate_unique_id(len=6)
-		chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
-		id = ""
-		1.upto(len) { |i| id << chars[rand(chars.size-1)] }
-		id
+	def next_id
+		@id_mutex.synchronize {
+			@last_id += 1
+		}
+		@last_id
 	end
 end

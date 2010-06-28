@@ -257,9 +257,9 @@ It is important that only one command is being sent at any given time to the sat
 
 The queue is when the mutex becomes available and the request is processed. As soon as the processing is done the mutex is released and the processing is started again until there is no more requests left in the queue.
 
-Option for satellite commands:
+Options for satellite commands:
 \begin{itemize}
-	\item \textbf{--timeout=SEC} - There is a timeout for each executing satellite command. It is set to 5 seconds by default but can be changed per request with the timeout options e.g. "reset" and "reset --timeout=20" are both valid commands. The former will timeout after 5 seconds and the latter will timout after 20 seconds.
+	\item \textbf{--timeout=SEC} - There is a timeout for each executing satellite command. It is set to 5 seconds by default but can be changed per request with the timeout options e.g. "reset" and "reset --timeout=20" are both valid commands. The former will timeout after 5 seconds and the latter will timout after 20 seconds. Alternatively each command could have had its own default timeout.
 	\item \textbf{--no-response} - Sometimes we do not care about the response for a command and would like to skip it in order to save execution time and batterylife. The option looks like this: "reset -no-response".
 \end{itemize}
 

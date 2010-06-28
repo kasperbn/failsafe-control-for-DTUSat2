@@ -7,11 +7,14 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.net.ssl.SSLEngineResult.Status;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -27,16 +30,20 @@ public class HealthPanel extends JPanel {
 	private JPanel systemsPanel;
 	private JScrollPane scrollPane;
 	private HealthImagePanel healthImagePanel;
+	private JLabel lastUpdated;
 	
 	public HealthPanel() {
 		setLayout(new BorderLayout());
 		
-		JPanel refreshPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		add(refreshPanel, BorderLayout.NORTH);
+		JPanel northPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		add(northPanel, BorderLayout.NORTH);
 		
 			JButton refreshButton = new JButton("Update status");
 			refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
-			refreshPanel.add(refreshButton);
+			northPanel.add(refreshButton);
+			
+			lastUpdated = new JLabel();
+			northPanel.add(lastUpdated);
 			
 		healthImagePanel = new HealthImagePanel();
 		scrollPane = new JScrollPane(healthImagePanel);
@@ -61,10 +68,16 @@ public class HealthPanel extends JPanel {
 						}
 					}
 					healthImagePanel.data = data;
-					healthImagePanel.repaint();
+					
+					
+					Calendar cal = Calendar.getInstance();
+				    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+				    String time = sdf.format(cal.getTime());
+					
+					lastUpdated.setText("Last updated: "+time);
+					FSController.getInstance().mainPanel.repaint();
 				}
 			}
 		});
-		FSController.getInstance().mainPanel.repaint();
 	}
 }
