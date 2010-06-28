@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2010.6.20)  20 JUN 2010 17:30
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2010.6.20)  28 JUN 2010 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/home/kbn/Code/bachelor/latex/phdthesis.tex
-(/home/kbn/Code/bachelor/latex/phdthesis.tex
+**phdthesis.tex
+(./phdthesis.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -24,13 +24,21 @@ File: bk10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./immphddef.sty
+)
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+)) (./immphddef.sty
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks16
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
@@ -120,7 +128,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 \Fld@menulength=\count90
 \Field@Width=\dimen104
 \Fld@charsize=\dimen105
-\Field@toks=\toks15
+\Field@toks=\toks17
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -142,24 +150,16 @@ File: hdvips.def 2009/10/09 v6.79a Hyperref driver for dvips
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pdfmark.def
 File: pdfmark.def 2009/10/09 v6.79a Hyperref definitions for pdfmark specials
-\pdf@docset=\toks16
+\pdf@docset=\toks18
 \pdf@box=\box26
-\pdf@toks=\toks17
-\pdf@defaulttoks=\toks18
+\pdf@toks=\toks19
+\pdf@defaulttoks=\toks20
 \Fld@listcount=\count94
 ))
 Package hyperref Info: Option `breaklinks' set `true' on input line 14.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 14.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 14.
 
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks19
-\inpenc@posthook=\toks20
-
-(/usr/share/texmf-texlive/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
-))
 (/usr/share/texmf-texlive/tex/generic/babel/babel.sty
 Package: babel 2008/07/06 v3.8l The Babel package
 
@@ -327,7 +327,7 @@ File: thp.sty 1995/11/23 v2.2c Theorem extension package (FMi)
 \c@lemma=\count120
 \c@Exa=\count121
 )
-(./phdthesis.aux (./Chapter1.aux) (./Appendix1.aux) (./paper1.aux))
+(./phdthesis.aux (./appendixB.aux))
 \openout1 = `phdthesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -362,11 +362,9 @@ LaTeX Info: Redefining \pageref on input line 53.
 \openout4 = `phdthesis.out'.
 
 \AtBeginShipoutBox=\box31
-Missing character: There is no Ã in font cmss12!
-Missing character: There is no ¸ in font cmss12!
  [1
 
-] [2]) (./summary.tex
+] [2]) (./abstract.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
@@ -381,88 +379,53 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 1.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)) (./resume.tex [1
+)) (./preface.tex [1
 
 
 ] [2
 
 ])
-(./preface.tex [3] [4
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 20--24
+Underfull \hbox (badness 10000) in paragraph at lines 7--38
 
  []
 
-) (./papers.tex [5] [6
 
-]
-Underfull \hbox (badness 6608) in paragraph at lines 8--13
-[]\OT1/cmr/m/n/10 Henrik Aal-borg Nielsen, Tor-ben Skov Nielsen, Al-fred Karste
-n
+Underfull \hbox (badness 10000) in paragraph at lines 7--38
+
  []
 
-
-Overfull \hbox (0.69978pt too wide) in paragraph at lines 8--13
-\OT1/cmr/m/n/10 Joensen, Hen-rik Mad-sen, and Jan Holst.  Track-ing time-varyin
-g coefficient-
- []
-
-) (./acknowledge.tex [7] [8
-
-]) [9] [10] (./phdthesis.toc)
+[3] [4] (./phdthesis.toc)
 \tf@toc=\write5
 \openout5 = `phdthesis.toc'.
 
- [11
+ [5
 
-] [12
-
-]
-\openout2 = `Chapter1.aux'.
-
-
-(./Chapter1.tex
-Chapter 1.
-[1
-
+] [6
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+\openout2 = `appendixB.aux'.
 
- [2]
-[3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5])
-[6] [7]
-\openout2 = `Appendix1.aux'.
-
-
-No file Appendix1.tex.
-\openout2 = `paper1.aux'.
-
-(./paper1.tex [8
-
-
-
-
-
-]
+ (./appendixB.tex
 Appendix A.
-[9]) [10]
-No file phdthesis.bbl.
-(./phdthesis.aux (./Chapter1.aux) (./Appendix1.aux) (./paper1.aux)) ) 
-Here is how much of TeX's memory you used:
- 5478 strings out of 495062
- 75675 string characters out of 1182644
- 161360 words of memory out of 3000000
- 8500 multiletter control sequences out of 15000+50000
- 15790 words of font info for 63 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 40i,10n,38p,1841b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+ [1
 
-Output written on phdthesis.dvi (24 pages, 48328 bytes).
+
+]) [2]
+No file phdthesis.bbl.
+(./phdthesis.aux (./appendixB.aux)) ) 
+Here is how much of TeX's memory you used:
+ 5461 strings out of 495062
+ 75517 string characters out of 1182644
+ 146494 words of memory out of 3000000
+ 8503 multiletter control sequences out of 15000+50000
+ 14998 words of font info for 61 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 40i,10n,24p,406b,375s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on phdthesis.dvi (10 pages, 12224 bytes).

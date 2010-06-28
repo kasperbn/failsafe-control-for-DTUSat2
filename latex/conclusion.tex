@@ -1,0 +1,20 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+The requirements of the project have been dictated by or based on meetings with the DTUSat-2 staff. Based on these requirements an overall design was chosen among various alternatives. The overall design was broken into four parts, a server part, a command client part, a GUI part and a custom scripts part. Each part was further analysed, discussed and designed before being implemented.
+
+The system was testet with tests cases that covered all requirements. All but 3 tests passed. The 3 tests was concerned with failsafe commands responses. The result is that the overall system works as expected and according to the requirements, but that the documentation of 3 failsafe commands is not uptodate with the implementation or vice verca. Therefore, this project can be considered a success.
+
+Ultimately the staff of the DTUSat-2 project is able to operate the satellite in failsafe mode from their desktop computers with the software of this project.
+
+\section{Perspective}
+\textbf{Authentication} \\
+This projects has not dealt with user access to the server. There is no access constraints to who can log on to the server and send commands to the satellite. This should be considered.
+
+\textbf{Encryption} \\
+The data between the FSServer and the TCP clients are not encrypted. This could fairly easy be achieved by using SSL or TLS.
+
+\textbf{State of the software} \\
+Although the software meet all requirements, some modifications needs to made before the software can be considered production ready.
+The FSServer currently only communicates with the development board via a serialport implementation of the protocol layer. This should be substituted with a radio implementation.
+
+There is an issue when uploading data to the development board that are currently being worked-around with a sleep of 0.2 seconds inbetween each byte being written. This may not be a problem with the radio implementation but should be tested and the sleep should be removed when fixed.

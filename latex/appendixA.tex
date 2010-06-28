@@ -1,0 +1,82 @@
+\chapter{User Guide}
+\label{appendix:A}
+\markboth{\appendixname\ \thechapter}{User Guide}
+Contains installation and operation instructions for the individual subsystems.
+
+\section{FSServer}
+\textbf{Installation instructions on Ubuntu} \\
+FSServer needs ruby and some additional rubygems to run. Here are the commands to install the server.
+\begin{verbatim}
+	sudo apt-get install ruby1.8 ruby1.8-dev rubygems1.8
+	sudo gems install eventmachine json daemons
+\end{verbatim}
+
+\textbf{Operation instructions} \\
+To run FSServer as a normal process, listen on \texttt{localhost:3000} and print the log messages to standard out run this command:
+\begin{verbatim}
+	./fsserver
+\end{verbatim}
+
+You can pass the following options to fsserver:
+\begin{verbatim}
+    --host=HOST (default is '0.0.0.0')
+    --port=PORT (default is 3000)
+    --timeout=TIMEOUT  (default is 30)
+    --logfile=LOGFILE  (default is stdout)
+\end{verbatim}
+
+To run the server as a daemon run this command:
+\begin{verbatim}
+	./fsdaemon start
+\end{verbatim}
+
+options to daemon mode are given after an extra double dash like this:
+\begin{verbatim}
+	./fsdaemon start -- --option1=VALUE1 --options2=VALUE
+\end{verbatim}
+
+\section{FSClient}
+\textbf{'Installation instructions on Ubuntu} \\
+The fsclient needs ruby, the eventmachine gem and the JSON gem. To install run this command:
+\begin{verbatim}
+	sudo apt-get install ruby1.8 ruby1.8-dev rubygems1.8
+	sudo gems install eventmachine json
+\end{verbatim}
+
+It is convenient to add the path of the fsclient executable to the PATH variable and a requirement to do so on the Ground Station in order for the upload script to work properly.
+
+\textbf{Operation instructions} \\
+Fsclient's help:
+\begin{verbatim}
+Usage: fsclient [options] <command [command_args ... ]>
+    --host=HOST                  Server host (default is 0.0.0.0)
+    --port=PORT                  Server port (default is 3000)
+    --token=TOKEN                Token
+    --timeout=SEC                Timeout option to command
+    -i, --interactive            Interactive mode
+    -d, --data-only              Only print data parameter
+    -a, --auto-lock              Auto lock in interactive mode
+    -n, --no-response            No-response option to command
+
+\end{verbatim}
+
+\section{FSClient}
+\textbf{Installation instructions} \\
+Install a Java Virtual Machine for your system.
+
+\textbf{Operation instructions} \\
+Double click the executable jarfile
+
+\section{Upload script}
+\textbf{Installation instructions} \\
+Needs ruby, the JSON gem and a working fsclient that has been added to the PATH environment variable.
+
+\textbf{Operation instructions} \\
+upload\_file's help:
+\begin{verbatim}
+Usage: upload_file token filepath address
+Description: Upload a file to an address in the satellites memory
+Arguments:
+    filepath (string)
+    address (hexadecimal)
+\end{verbatim}

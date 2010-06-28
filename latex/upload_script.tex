@@ -1,0 +1,29 @@
+\chapter{Upload Script}
+\label{chap:upload_script}
+This chapter analyses the requirements and discuss various design alternatives of the upload script. The implementation details of the chosen design will follow.
+
+\section{Analysis and Design}
+The upload script should take a filepath and a memory address as parameters. It must be smart enough to divide the file in parts of the maximum data size and upload them to the satellite starting from the given memory address.
+During upload the user must be notified with the overall progress.
+
+\section{Implementation}
+The script is an executable file written in ruby with the following path \texttt{"scripts/upload\_file"}.
+
+It takes three arguments: token, filepath and address.
+
+It validates that these three arguments have been given, that the file exists and that the address is a valid address.
+
+Then it determines the size of the file, and how many individual uploads there is needed to upload the entire file.
+
+For each upload the bytes to be uploaded are read from the file and uploaded via fsclient.
+
+The progress is printed.
+
+If the upload went well the next part of the file will be uploaded.
+
+If the upload went bad the script is stopped and the user is notified.
+
+\textbf{Maximum data size of 20 bytes} \\
+The upload script has a maximum data size of 20 B instead of the allowed 1020 B. This is because the current implementation of the failsafe software has some problems with data being send too fast. The current workaround is to sleep for 0.2 seconds inbetween each byte written. It will takes 204 seconds to upload 1020 bytes and in that time space the satellite will reset and the command will fail. In contrast it takes 4 seconds to upload 20 bytes.
+
+The maxumum data size should be changed when the issue has been fixed in the failsafe software.

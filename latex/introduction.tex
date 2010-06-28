@@ -1,0 +1,56 @@
+\chapter{Introduction}
+
+The DTUSat-2 is a student satellite project of several departments at DTU. The goal of the project is to implement a spaceborne radio-tracking system capable of locating birds on intercontinental migration routes.
+When the satellite has been launched and is orbiting earth, it is practically impossible to press a reset button in case of a hardware or software failure. Therefore, unforseen failures that make the satellite unresponsive, must be handled. This is achieved by constantly monitoring for failures and unresponsiveness.
+\\ \\
+There are two main programs on the satellite. The nominal mode, which is the full functioning autonomous program that normally runs on the satellite. This mode performs the tasks necessary for tracking birds.
+\\ \\
+If a failure is detected the software will reboot into the unautonomous failsafe mode which is a small program consisting of just 20 commands. In this mode it is possible to investigate what went wrong and to upload new software.
+\\ \\
+Operating software to the satellite's nominal mode have already been developed. There is a console program called fsterm which was used in DTUSat-1 project to operate the failsafe mode, but this program is no longer sufficient as new commands have been added and a graphical user interface (GUI) has become a requirement.
+
+\section{Thesis Statement}
+The purpose of this project is to implement a software solution that makes it possible for the DTUSat-2 staff to operate the satellite when in failsafe mode. Especially it should provide:
+\begin{itemize}
+\item Interaction via a console.
+\item Interaction via a desktop computer via a GUI. The GUI must be easy to get up and running.
+\item Flexible tools for specific tasks, such as uploading new software, running tests and performing diagnostics
+\item A graphical representation of the state of the satellite and its subsystems.
+\end{itemize}
+
+Conditions for the project:
+\begin{itemize}
+\item The final software must run on the Ground Station which is the computer responsible for the radio communication with the satellite.
+\item Communication with the satellite must go through an already given protocol layer written in C.
+\item Strive for platform independence but favor UNIX.
+\end{itemize}
+
+\section{Approach}
+There are many people involved with the DTUSat-2 project, working on different parts at the same time. The failsafe software was not implemented at the start of this project, so no detailed documentation of communication interfaces, byteordeing etc. was available. Furthermore, some feature requirements was added during the implementation process.
+\\ \\
+These conditions make it cumbersome to achieve a satisfying solution with a rigid classical analysis-implement-test approach. Instead the process has been of a more iterative and agile nature. An iteration was typically one week in length and started with a supervisor meeting where we agreed on the next week's workload based on an evaluation of the previous week's work.
+
+\section{Outline of Chapters}
+The report consists of 9 chapters and 3 appendixes. Here is an outline of the individual chapters.
+\\ \\
+Chapter \ref{chap:requirements_specification} \ \textbf{Requirements Specification}, states the requirements of the project.
+\\ \\
+Chapter \ref{chap:general_analysis} \textbf{General analysis and design}, analyses the requirements of the project, discusses alternative designs and presents the chosen design which is divided in four key parts: FSServer, FSClient, FSGui and user scripts.
+\\ \\
+Chapter \ref{chap:fsserver} \textbf{FSServer}, analyses the requirements to the server part, discusses alternative designs and presents the chosen design. Explains non-trivial part of the implementation.
+\\ \\
+Chapter \ref{chap:fsclient} \textbf{FSClient}, analyses the requirements to the client part, discusses alternative designs and presents the chosen design. Explains non-trivial part of the implementation.
+\\ \\
+Chapter \ref{chap:fsgui} \textbf{FSGui}, analyses the requirements to the gui part, discusses alternative designs and presents the chosen design. Explains non-trivial part of the implementation.
+\\ \\
+Chapter \ref{chap:upload_script} \textbf{Upload script}, analyse the requirements to the upload script part, discuss alternative designs and presents the chosen design. Explains the implementation.
+\\ \\
+Chapter \ref{chap:test} \textbf{Tests and Results}, describes the test stragedy, the test cases and the test results
+\\ \\
+Chapter \ref{chap:conclusion} \textbf{Conclusion}, summarizes what has been done, which goals have been met and gives a perspective for the future of the project.
+\\ \\
+Appendix \ref{appendix:A} \textbf{User Guide}, contains installation and operation instructions for the individual subsystems.
+\\ \\
+Appendix \ref{appendix:B} \textbf{Failsafe Commands}, contains a list of the 20 failsafe commands
+\\ \\
+Appendix \ref{appendix:C} \textbf{Source Code}, contains a link to the entire source code

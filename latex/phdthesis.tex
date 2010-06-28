@@ -13,14 +13,14 @@
 %\documentclass[10pt,twoside]{book}
 %  pdflatex phdthesis.tex
 
-
 %%%%%%%%%%% MODIFY THESE LINES ONLY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[latin1]{inputenc}
+
 \def\thesisyear{2010} % Year thesis submitted
 \def\thesisnumber{1}  % Only number no year
-\def\thesisauthor{Kasper BjÃ¸rn Nielsen} % Thesis author
+\def\thesisauthor{Kasper Bjørn Nielsen} % Thesis author
 \def\thesistitle{Failsafe Control for DTUSat2} % Title of thesis
 \def\thesiskeywords{Software technology}
-\def\thesisISBN{} %OBSOBS provide ISBN number for industrial phd students ONLY
 \def\thesisversion{print} %OBSOBS choose this for printed version send to printing
 %\def\thesisversion{net} %OBSOBS choose this for the net version for the web and publication database
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -31,19 +31,12 @@
 
 %%%%%%%PREFACE CHAPTERS INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{summary}
-\markboth{}{}
-\input{resume}
+\input{abstract}
 \markboth{}{}
 \input{preface}
 \markboth{}{}
-\input{papers}
-\markboth{}{}
-\input{acknowledge}
-\markboth{}{}
 
 %%%%%%%PREFACE CHAPTERS INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \newpage\mbox{}\newpage
 \chaptermark{Contents}
@@ -58,21 +51,23 @@
 % Chapter 1, 2, ...
 %%%%%%%MAIN CHAPTERS INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\include{Chapter1}
-%\include{Chapter2}
-%\include{Chapter3}
-%\include{Chapter4}
-%\include{Chapter5}
+%\include{introduction}
+%\include{requirements}
+%\include{general_analysis}
+%\include{fsserver}
+%\include{fsgui}
+%\include{fsclient}
+%\include{upload_script}
+%\include{test}
 %\include{conclusion}
 \appendix
 
 %%%%%%%APPENDIX CHAPTERS INCLUDE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Appendix A, B, ...
-\include{Appendix1}
-\include{paper1}
-%\include{paper2}
-
+%\include{appendixA}
+%\include{appendixB}
+\include{appendixC}
 
 \backmatter
 

@@ -1,0 +1,50 @@
+\chapter{FSClient}
+\label{chap:fsclient}
+
+This chapter will deal with the requirements specification, analysis, design and non-trivial implementation details of FSClient.
+
+\section{Requirements Specification}
+The requirements for FSClient are:
+\begin{itemize}
+	\item must be installed on the staff's desktop computers
+	\item must be a unix program
+	\item must be a TCP client to FSServer
+	\item must forward failsafe commands from other unix scripts to the server
+	\item must have an interactive mode
+\end{itemize}
+In addition to these requirements, the following requirements was identified when the overall design was agreed upon:
+\begin{itemize}
+	\item must have a data\_only mode
+	\item must have an auto\_lock mode
+\end{itemize}
+
+\subsection{Analysis and design}
+Lets go through the requirements one by one. For each requirement we will enhance the design to incorporate the requirement.
+
+\textbf{Must be installed on the staff's desktop computers} \\
+Trivial constraint.
+
+\textbf{Must be a unix program} \\
+Trivial constraint.
+
+\textbf{Must be a TCP client to FSServer} \\
+Trivial constraint
+
+\textbf{Must forward failsafe commands from other unix scripts to the server} \\
+Fsclient will take a failsafe command and its arguments as parameters, send it over TCP to the server and print the response to standard out.
+
+\textbf{Must have an interactive mode} \\
+In interactive mode, it prompts the user for a failsafe command, sends it to the server, retreives the response, prints the response and prompts the user again until the user enters exit. The --interactive option will do this.
+
+\textbf{Must have a data\_only option} \\
+Sometimes we don't want to see the entire response message but just the data field. The \texttt{--data-only} option will do this.
+
+\textbf{Must have an auto\_lock option} \\
+There should also be an option for auto locking when starting the interactive mode. The \texttt{--auto-lock} option will do this.
+
+\subsection{Implementation}
+This section deals with the non-trivial implementation details.
+
+There are no contraints to program speed so the FSClient has been implemented in ruby.
+Fsclient uses rubys standard command "\$stdin.gets" to prompt the user for input.
+The TCP connection has been implemented with eventmachine.

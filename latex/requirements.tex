@@ -1,0 +1,44 @@
+\chapter{Requirements Specification}
+\label{chap:requirements_specification}
+A good way to evaluate the success of a project is to state some measurable requirements that can be tested for when the system has been been implemented. This chapter deals with the requirements of the project.
+\\ \\
+Before stating the requirements they must first be identified. The requirements are directly dictated by or based on meetings with my supervisor who is a member of the DTUSat-2 staff.
+\\ \\
+The requirements to this project are:
+\begin{itemize}
+
+	\item The user must be able to operate the satellite in failsafe mode from a desktop computer via a console program or a GUI.
+
+	\item Command combinations
+	\begin{itemize}
+		\item	must be able to combine several commands in conditionals and loops.
+		\item must be able to save, load and execute these combinations
+		\item	must be flexible to create and change
+	\end{itemize}
+
+	\item Console program
+	\begin{itemize}
+		\item must take a command and its arguments as parameters on the command line
+		\item must have an interactive mode. This mode must prompt the user for a command, execute it, print the result and prompt again.
+	\end{itemize}
+
+	\item GUI
+	\begin{itemize}
+		\item must show a graphical representation of the satellites health status
+		\item must create, save, load, export and execute command combinations
+		\item must provide a graphical tool to put together command sequences (without conditionals and loops)
+		\item must be easy to install and run
+	\end{itemize}
+
+	\item Upload script
+	\begin{itemize}
+		\item must take a file and a memory address as parameters and upload to the satellite at the given memory address.
+		\item must notify the user with the progress
+	\end{itemize}
+
+	\item Protocol layer
+	\begin{itemize}
+		\item must use the protocol layer so that the datalink implementation can be changed later on
+	\end{itemize}
+
+\end{itemize}
