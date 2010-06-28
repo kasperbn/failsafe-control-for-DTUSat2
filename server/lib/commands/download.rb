@@ -9,7 +9,7 @@ module Commands
 		def validate
 			validate_addressable "Address", @address
 			validate_positive "Length", @length
-			validate_length "Length", @length, FS_MAX_DATA_SIZE
+			validate_max_value "Length", @length, FS_MAX_DATA_SIZE
 		end
 
 		def execute
@@ -22,10 +22,9 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
+			satellite_command(input) do |return_code,length,data|
 				if return_code == FS_DOWNLOAD
-					# Unpack as 1 byte chars
-					data = data.unpack("C"*length)
+					data = data.unpack("C"*length) # Unpack as 1 byte chars
 				end
 				@client.send response(@id, return_code, data)
 			end

@@ -1,5 +1,0 @@
-<h2>Add script</h2>
-
-<%form_for(@script) do |f|%>
-
-<%end%>

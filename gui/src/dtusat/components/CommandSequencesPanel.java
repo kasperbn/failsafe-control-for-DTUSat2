@@ -47,7 +47,7 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 	private JPanel leftPanel;
 	private FileTree tree;
 	private JPanel leftNorthPanel;
-	private JButton openButton;
+	private JButton loadButton;
 	private JButton saveButton;
 	private JButton setDirButton;
 	private JPanel rightPanel;
@@ -63,7 +63,6 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 
 	public CommandSequencesPanel() {
 		controller = FSController.getInstance();
-		currentDir = "/home/kbn/Code/bachelor/command_sequences";
 		
 		setLayout(new BorderLayout());
 		
@@ -79,19 +78,19 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 				leftNorthPanel = new JPanel();
 				leftPanel.add(leftNorthPanel, BorderLayout.NORTH);
 				
-					openButton = new JButton("Open", new ImageIcon("src/dtusat/icons/page_edit.png"));
-					openButton.addActionListener(this);
-					leftNorthPanel.add(openButton);
-					
 					setDirButton = new JButton("Set Dir", new ImageIcon("src/dtusat/icons/folder_explore.png"));
 					setDirButton.addActionListener(this);
 					leftNorthPanel.add(setDirButton);
+					
+					loadButton = new JButton("Load", new ImageIcon("src/dtusat/icons/page_edit.png"));
+					loadButton.addActionListener(this);
+					leftNorthPanel.add(loadButton);
 			
-				// Center
-				updateFileTree();
-				//tree = new FileTree("/home/kbn/Code/bachelor/command_sequences/");
-				//leftPanel.add(tree, BorderLayout.CENTER);
-				
+					saveButton = new JButton("Save", new ImageIcon("src/dtusat/icons/script_save.png"));
+					saveButton.addActionListener(this);
+					leftNorthPanel.add(saveButton);
+					
+					
 			// Right Panel
 			rightPanel = new JPanel(new BorderLayout());
 			splitPane.setRightComponent(rightPanel);
@@ -116,22 +115,18 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 						stopButton.addActionListener(this);
 						rightNorthWestPanel.add(stopButton);
 						
-						
 						clearButton = new JButton("Clear Output", new ImageIcon("src/dtusat/icons/table_delete.png"));
 						clearButton.addActionListener(this);
 						rightNorthWestPanel.add(clearButton);
 					
+						newButton = new JButton("New", new ImageIcon("src/dtusat/icons/script_add.png"));
+						newButton.addActionListener(this);
+						rightNorthWestPanel.add(newButton);
+					
+						
 					JPanel rightNorthEastPanel = new JPanel();
 					rightNorthPanel.add(rightNorthEastPanel, BorderLayout.EAST);
 					
-						newButton = new JButton("New", new ImageIcon("src/dtusat/icons/script_add.png"));
-						newButton.addActionListener(this);
-						rightNorthEastPanel.add(newButton);
-						
-						saveButton = new JButton("Save", new ImageIcon("src/dtusat/icons/script_save.png"));
-						saveButton.addActionListener(this);
-						rightNorthEastPanel.add(saveButton);
-						
 						exportButton = new JButton("Export as Ruby", new ImageIcon("src/dtusat/icons/script_go.png"));
 						exportButton.addActionListener(this);
 						rightNorthEastPanel.add(exportButton);
@@ -168,7 +163,7 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == openButton)
+		if(e.getSource() == loadButton)
 			open();
 		else if(e.getSource() == setDirButton)
 			setDir();
@@ -210,7 +205,7 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 	}
 
 	private void setDir() {
-		final JFileChooser fc = new JFileChooser(new File(currentDir));
+		final JFileChooser fc = new JFileChooser();
 		fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		if(fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
 			currentDir = fc.getSelectedFile().getAbsolutePath();
@@ -238,7 +233,7 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 	}
 
 	public void setGUIEnabled(boolean b) {
-		openButton.setEnabled(b);
+		loadButton.setEnabled(b);
 		setDirButton.setEnabled(b);
 		addButton.setEnabled(b);
 		executeButton.setEnabled(b);
@@ -308,30 +303,45 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 	}
 	
 	private void save() {
-		doSave(sequenceToJSON());
+		final JFileChooser fc = new JFileChooser();
+		if(fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+			File f = new File(fc.getSelectedFile().getAbsolutePath());
+			doSave(f, sequenceToJSON());
+		}
 	}
 	
 	private void export() {
-		File f = doSave(sequenceToRuby());
-		f.setExecutable(true);
+		
+		final JFileChooser fc = new JFileChooser(new File(currentDir));
+		if(fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+			File f = new File(fc.getSelectedFile().getAbsolutePath());
+		
+			String description = JOptionPane.showInputDialog(null,
+					  "Description",
+					  "Enter the description of the script",
+					  JOptionPane.QUESTION_MESSAGE);
+			
+			String fsclient_path = JOptionPane.showInputDialog(null,
+					  "Path to fsclient",
+					  "Enter the absolute path to fsclient",
+					  JOptionPane.QUESTION_MESSAGE);
+			
+			String data = sequenceToRuby(fc.getSelectedFile().getName(), description, fsclient_path);
+			doSave(f, data);
+			f.setExecutable(true);
+		}
+		
 	}
 	
-	private File doSave(String data) {
-		File f = null;
+	private void doSave(File f, String data) {
 		try {
-			final JFileChooser fc = new JFileChooser(new File(currentDir));
-			if(fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-				f = new File(fc.getSelectedFile().getAbsolutePath());
-				FileWriter fstream = new FileWriter(f);
-		        BufferedWriter out = new BufferedWriter(fstream);
-			    out.write(data);
-			    out.close();
-				updateFileTree();
-			}
+			FileWriter fstream = new FileWriter(f);
+	        BufferedWriter out = new BufferedWriter(fstream);
+		    out.write(data);
+		    out.close();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		return f;
 	}
 	
 	private CommandPanel getCurrentCommandPanel() {
@@ -358,10 +368,12 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 				// Command
 				entry.put("command", cp.commandList.getSelectedItem().toString());
 				// Arguments
-				JSONArray arguments = new JSONArray();
-				for(Component ac : cp.argumentsPanel.getComponents()) {
-					arguments.put(((JTextField) ac).getText());
+				JSONArray arguments = new JSONArray();				
+				for(Component p : cp.argumentsPanel.getComponents()) {
+					JTextField a = (JTextField) ((JPanel) p).getComponent(1);
+					arguments.put(a.getText());
 				}
+				
 				entry.put("arguments", arguments);
 				
 				data.put(entry);
@@ -372,18 +384,25 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 		return data.toString(); 
 	}
 	
-	private String sequenceToRuby() {
+	private String sequenceToRuby(String filename, String description, String fsclient_path) {
 		String ruby = "";
 		ruby += "#!/usr/bin/ruby\n";
 		ruby += "\n";
+		ruby += "require 'optparse'\n";
 		ruby += "require 'pty'\n";
 		ruby += "require 'expect'\n";
+		ruby += "\n";
+		ruby += "op = OptionParser.new do |opts|\n";
+		ruby += "  opts.banner = \"Usage: "+filename+" token\"\n";
+		ruby += "  opts.separator \"Description: "+description+"\"\n";
+		ruby += "end\n";
+		ruby += "op.parse!\n";
 		ruby += "\n";
 		ruby += "$token = ARGV[0]\n";
 		ruby += "\n";
 		ruby += "def fsclient(*args)\n";
 		ruby += "	begin\n";
-		ruby += "		PTY.spawn('fsclient', $token, *args) do |r, w, pid|\n";
+		ruby += "		PTY.spawn('"+fsclient_path+"', \"--token=#{$token}\", *args) do |r, w, pid|\n";
 		ruby += "			loop {\n";
 		ruby += "				out = r.expect(%r/^.+\\n$/io)\n";
 		ruby += "				puts out unless out.nil?\n";
@@ -397,8 +416,12 @@ public class CommandSequencesPanel extends JPanel implements ActionListener {
 		for(Component c : commandList.getComponents()) {
 			CommandPanel cp = (CommandPanel) c;
 			ruby += "fsclient('"+cp.commandList.getSelectedItem().toString()+"'";
-			for(Component ac : cp.argumentsPanel.getComponents())
-				ruby += ", '"+((JTextField) ac).getText()+"'";
+			
+			for(Component p : cp.argumentsPanel.getComponents()) {
+				JTextField a = (JTextField) ((JPanel) p).getComponent(1);
+				ruby += ", '"+a.getText()+"'";
+			}
+			
 			ruby += ")\n";
 		}
 

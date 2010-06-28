@@ -1,3 +1,0 @@
-The DTUSat2 is a student project at DTU spanning multiple engineering disciplines. The goal of the project is to send a satellite into space and use it to collect bird migration data.
-
-The satellite has a built-in failsafe mode that will get executed if the nominal mode for some reason fails. The DTUSat2 staff needs a simple and flexible way of controlling the failsafe mode. The goal of this project is to analyse the needs of the staff, design and investigate different solutions and finally produce a piece of software based upon the agreed design.

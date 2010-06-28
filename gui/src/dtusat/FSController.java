@@ -28,7 +28,7 @@ public class FSController implements Logger, FSSocketObserver {
 	public static synchronized FSController getInstance() { return instance; }
 	public Object clone() throws CloneNotSupportedException { throw new CloneNotSupportedException(); }
 	
-	// ---- Fields -----------------------------------------
+	// ---- STATUS -----------------------------------------
 
 	public final static int STATUS_OK 						= 100;
 	public final static int STATUS_ERROR 					= 101;
@@ -41,6 +41,12 @@ public class FSController implements Logger, FSSocketObserver {
 	public final static int STATUS_SERVER_UNLOCKED			= 108;
 	public final static int STATUS_UNKNOWN_SCRIPT			= 109;
 	public final static int STATUS_SERIALPORT_NOT_CONNECTED = 110;
+	
+	// Command Codes
+	public final static int FS_HEALTH_STATUS				= 19;
+
+	
+	// ---- Fields -----------------------------------------
 	
 	private FSSocket socket;
 	public JFrame frame;
@@ -136,7 +142,6 @@ public class FSController implements Logger, FSSocketObserver {
 	// --- Log -------------------------------
 	
 	public void log(String msg) {
-		// Datetime
 		Calendar cal = Calendar.getInstance();
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 	    String time = "["+sdf.format(cal.getTime())+"]";

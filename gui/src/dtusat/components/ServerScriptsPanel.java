@@ -38,35 +38,48 @@ public class ServerScriptsPanel extends JPanel implements TreeSelectionListener 
 	JButton refreshButton;
 	private DefaultMutableTreeNode treeTop;
 	private JTree fileTree;
+	private JSplitPane splitPane;
+	private JPanel leftPanel;
+	private JPanel leftNorthPanel;
+	private JPanel rightPanel;
 	
 	public ServerScriptsPanel() {
 		socket = FSController.getInstance().getSocket();
 		
 		setLayout(new BorderLayout());
 	
-		// Refresh
-		refreshPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		refreshButton = new JButton("Refresh List", new ImageIcon("src/dtusat/icons/refresh.png"));
-		refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
+		// Splitpane
+		splitPane = new JSplitPane();
+		add(splitPane, BorderLayout.CENTER);
 		
-		refreshPanel.add(refreshButton);
-		add(refreshPanel, BorderLayout.NORTH);
+		// Left
+		leftPanel = new JPanel(new BorderLayout());		
+		splitPane.setLeftComponent(leftPanel);
 		
-		// File tree
-		treeTop = new DefaultMutableTreeNode("Server Scripts");
-		fileTree = new JTree(treeTop);
-		fileTree.addTreeSelectionListener(this);
-		JScrollPane fileTreeView = new JScrollPane(fileTree);
+			// North
+			leftNorthPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+			leftPanel.add(leftNorthPanel, BorderLayout.NORTH);
 		
-		// Script Panel
-		scriptPanel = new JPanel();
-		scriptPanel.setLayout(new BorderLayout());
-		scriptView = new JScrollPane(scriptPanel);
+				refreshButton = new JButton("Refresh List", new ImageIcon("src/dtusat/icons/refresh.png"));
+				refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
+				leftNorthPanel.add(refreshButton);
 		
-		JSplitPane treeListSplitter = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, fileTreeView, scriptView);
-		treeListSplitter.setDividerLocation(200);
-		
-		add(treeListSplitter);
+			// Center
+			treeTop = new DefaultMutableTreeNode("Server Scripts");
+			fileTree = new JTree(treeTop);
+			fileTree.addTreeSelectionListener(this);
+			leftPanel.add(new JScrollPane(fileTree), BorderLayout.CENTER);
+				
+		// Right Panel
+		rightPanel = new JPanel(new BorderLayout());
+		splitPane.setRightComponent(rightPanel);
+				
+			// Script Panel
+			scriptPanel = new JPanel();
+			scriptPanel.setLayout(new BorderLayout());
+			scriptView = new JScrollPane(scriptPanel);
+			rightPanel.add(scriptView, BorderLayout.CENTER);
+			
 	}
 
 	private void refreshList() {

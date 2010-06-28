@@ -3,14 +3,13 @@ require 'eventmachine'
 require 'singleton'
 require 'socket'
 
-require ROOT_DIR+"/lib/fs_logger"
+require ROOT_DIR+"/lib/logger"
 require ROOT_DIR+"/lib/ext/string"
 require ROOT_DIR+"/lib/ext/fixnum"
 require ROOT_DIR+"/lib/command_parser"
 require ROOT_DIR+'/lib/response_helpers'
 require ROOT_DIR+'/lib/constants'
 require ROOT_DIR+'/lib/token_handler'
-require ROOT_DIR+'/lib/processing_queue'
 require ROOT_DIR+'/lib/serial_request_handler'
 
 class Server
@@ -25,8 +24,8 @@ class Server
 			# Set token timeout
 			TokenHandler.instance.timeout = options[:timeout]
 
-			# Setup serial request handler
-			SerialRequestHandler.instance.connect(options)
+			# Initialize datalink layer
+			SerialRequestHandler.instance
 
 			EM.start_server options[:host], options[:port], EMServer
 			log "Listening on #{options[:host]}:#{options[:port]}"
@@ -88,7 +87,11 @@ module EMServer
 	end
 
 	def send(data)
-		data = data.to_json if data.is_a?(Hash)
+		begin
+			data = data.to_json if data.is_a?(Hash)
+		rescue
+			data = "{\"status\": #{STATUS_JSON_PARSE_ERROR}, \"raw\": #{data}, \"message\":#{MESSAGES[STATUS_JSON_PARSE_ERROR]}}"
+		end
 		log "#{@client} response: #{data}"
 		send_data(data+"\0")
 	end

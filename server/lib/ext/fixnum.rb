@@ -1,5 +1,5 @@
 class Fixnum
-	def spaced_hex(length=8)
-		self.to_s(16).spaced_hex(length)
+	def spaced_hex(bytes=4)
+		"0x#{self.to_s(16)}".spaced_hex(bytes)
 	end
 end

@@ -1,7 +1,7 @@
 module Constants
 
 	# Default timeout in seconds for a serialport request
-	DEFAULT_TIMEOUT						= "5"
+	DEFAULT_TIMEOUT						= "500"
 
 	# Server Status Codes
 	STATUS_OK 								= 100
@@ -15,6 +15,7 @@ module Constants
 	STATUS_SERVER_UNLOCKED		= 108
 	STATUS_UNKNOWN_SCRIPT			= 109
 	STATUS_SERIALPORT_NOT_CONNECTED = 110
+	STATUS_JSON_PARSE_ERROR 	= 111
 
 	# FS
 	FS_MAX_DATA_SIZE 					= 1024
@@ -71,6 +72,17 @@ module Constants
 	FS_ADDRESS_ERROR					= 0xF6
 	FS_UNKONWN_SENSOR					= 0xF5
 
+	# Protocol Codes
+	PRO_OK=                  0
+	PRO_FAILURE=            -1
+	PRO_TIMEOUT=            -2
+	PRO_TOOLARGE=           -3
+	PRO_NOROOM=             -4
+	PRO_FAILSAFE=           -5
+	PRO_NOT_FAILSAFE=       -6
+	PRO_NO_SIGNAL=          -7
+	PRO_NOT_READY=          -8
+
 	# Messages
 	MESSAGES = {
 		STATUS_OK 								=> "OK",
@@ -84,6 +96,7 @@ module Constants
 		STATUS_SERVER_UNLOCKED		=> "Server has been unlocked",
 		STATUS_UNKNOWN_SCRIPT			=> "Unknown script",
 		STATUS_SERIALPORT_NOT_CONNECTED => "Serial port not connected",
+		STATUS_JSON_PARSE_ERROR => "JSON parse error",
 
 		FS_RESET								=> "ACK",
 		FS_EXECUTE							=> "ACK",

@@ -28,31 +28,31 @@ import dtusat.FSController;
 public class CommandPanel extends JPanel implements ActionListener {
 	
 	String[][] commandsAndArguments = {
-				{"calculate_check_sum", "address", "length"},
-				{"call_function", "address", "parameter"},
-				{"copy_to_flash", "from", "to", "length"},
-				{"copy_to_ram", "from", "to", "length"},
-				{"delete_flash_block", "address"},
-				{"download", "address", "length"},
-				{"download_sib"},
-				{"execute", "address"},
-				{"flash_test", "address"},
-				{"health_status"},
-				{"list_scripts"},
-				{"lock"},
-				{"ram_test", "address", "length"},
-				{"read_register", "address"},
-				{"read_sensor", "address"},
-				{"reset"},
-				{"reset_sib"},
-				{"run_script","script_path","script_arguments"},
-				{"set_autoreset","value"},
-				{"sleep","seconds"},
-				{"unlock"},
-				{"unlock_flash"},
-				{"upload", "address", "data"},
-				{"upload_sib", "sib"},
-				{"write_register", "address", "data"}
+				{"calculate_check_sum", "address", "length", "options"},
+				{"call_function", "address", "parameter", "options"},
+				{"copy_to_flash", "from", "to", "length", "options"},
+				{"copy_to_ram", "from", "to", "length", "options"},
+				{"delete_flash_block", "address", "options"},
+				{"download", "address", "length", "options"},
+				{"download_sib", "options"},
+				{"execute", "address", "options"},
+				{"flash_test", "address", "options"},
+				{"health_status", "options"},
+				{"list_scripts", "options"},
+				{"lock", "options"},
+				{"ram_test", "address", "length", "options"},
+				{"read_register", "address", "options"},
+				{"read_sensor", "address", "options"},
+				{"reset", "options"},
+				{"reset_sib", "options"},
+				{"run_script","path","arguments", "options"},
+				{"set_autoreset","value", "options"},
+				{"sleep","seconds", "options"},
+				{"unlock", "options"},
+				{"unlock_flash", "options"},
+				{"upload", "address", "data", "options"},
+				{"upload_sib", "sib", "options"},
+				{"write_register", "address", "data", "options"}
 			};
 	public JComboBox commandList;
 	private JButton removeButton;
@@ -118,8 +118,11 @@ public class CommandPanel extends JPanel implements ActionListener {
 		try {
 			String command = entry.getString("command");
 			
+			String[] caa = null;
+			
 			for(int i=0; i < commandsAndArguments.length;i++) {
 				if(commandsAndArguments[i][0].equals(command)) {
+					caa = commandsAndArguments[i]; 
 					commandList.setSelectedIndex(i);
 					break;
 				}
@@ -128,7 +131,7 @@ public class CommandPanel extends JPanel implements ActionListener {
 			argumentsPanel.removeAll();
 			JSONArray arguments = entry.getJSONArray("arguments");
 			for(int i=0;i<arguments.length();i++) {
-				argumentsPanel.add(newArgumentField(arguments.getString(i)));
+				argumentsPanel.add(newArgumentField(caa[i+1],arguments.getString(i)));
 			}
 			
 			FSController.getInstance().mainPanel.repaint();
@@ -137,13 +140,56 @@ public class CommandPanel extends JPanel implements ActionListener {
 		}
 	}
 
-	private JTextField newArgumentField(String name) {
-		JTextField a = new JTextField();
-		a.setColumns(10);
-		a.setText(name);
+	private JPanel newArgumentField(String name) {
+		return newArgumentField(name, "");
+	}
+	
+	private JPanel newArgumentField(String name, String value) {
+		JPanel p = new JPanel();
+		
+		JLabel l = new JLabel(name);
+		
+		JTextField a = new JTextField(value);
+		a.setColumns(8);
+		//a.setText(name);
 		a.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.BLACK, 1), BorderFactory.createEmptyBorder(5,5,5,5)));
 		a.setToolTipText(name);
-		return a;
+		
+		p.add(l);
+		p.add(a);
+		
+		return p;
+	}
+	
+	private void updateArguments() {
+		argumentsPanel.removeAll();
+		String[] caa = commandsAndArguments[commandList.getSelectedIndex()];
+		for(int i=1;i<caa.length;i++) {
+			argumentsPanel.add(newArgumentField(caa[i]));
+		}
+		
+		FSController.getInstance().mainPanel.repaint();	
+	}
+
+	public String getFullCommand() {
+		String cmd = commandList.getSelectedItem().toString(); 
+		
+		for(Component p : argumentsPanel.getComponents()) {
+			JTextField a = (JTextField) ((JPanel) p).getComponent(1);
+			cmd += " "+ a.getText();
+		}
+		
+		return cmd;
+	}
+
+	public void setGUIEnabled(boolean b) {
+		commandList.setEnabled(b);
+		upButton.setEnabled(b);
+		downButton.setEnabled(b);
+		removeButton.setEnabled(b);
+		for(Component c : argumentsPanel.getComponents())
+			c.setEnabled(b);
+		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -173,33 +219,5 @@ public class CommandPanel extends JPanel implements ActionListener {
 				FSController.getInstance().mainPanel.repaint();
 			}
 		}
-	}
-
-	private void updateArguments() {
-		argumentsPanel.removeAll();
-		String[] caa = commandsAndArguments[commandList.getSelectedIndex()];
-		for(int i=1;i<caa.length;i++) {
-			argumentsPanel.add(newArgumentField(caa[i]));
-		}
-		FSController.getInstance().mainPanel.repaint();	
-	}
-
-	public String getFullCommand() {
-		String cmd = commandList.getSelectedItem().toString(); 
-		
-		for(Component a : argumentsPanel.getComponents())
-			cmd += " "+((JTextField) a).getText();
-		
-		return cmd;
-	}
-
-	public void setGUIEnabled(boolean b) {
-		commandList.setEnabled(b);
-		upButton.setEnabled(b);
-		downButton.setEnabled(b);
-		removeButton.setEnabled(b);
-		for(Component c : argumentsPanel.getComponents())
-			c.setEnabled(b);
-		
 	}
 }

@@ -1,25 +1,24 @@
 module Commands
   class UploadSib < AbstractCommand
 
-		def initialize(sib)
-			@sib = sib
-			@sib_length = @sib.spaced_hex.split.size
+		def initialize(data)
+			@data = data
 		end
 
 		def validate
-			validate_length "Sib length", @sib_length, 0x1c
+			validate_positive_hex "Data", @data
+			validate_byte_length "Data", @data, 28
 		end
 
 		def execute
 			input = [
 				"11",
+				"00",
 				"1c 00",
-				@sib.spaced_hex.split.reverse,
+				@data.spaced_hex(28).split.reverse,
 				"CD"
 			]
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
-				@client.send response(@id, return_code, data)
-			end
+			satellite_command(input)
 		end
   end
 end

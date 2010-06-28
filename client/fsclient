@@ -1,14 +1,16 @@
 #!/usr/bin/ruby
 require 'optparse'
-options = {:host => '0.0.0.0', :port => 3000, :interactive => false, :auto_lock => false, :data_only => false, :token => nil}
+options = {:host => '0.0.0.0', :port => 3000, :interactive => false, :auto_lock => false, :data_only => false, :token => nil, :command_options => []}
 op = OptionParser.new do |opts|
-  opts.banner = "Usage: fsclient [options] <lock | token command [command_args ... ]>"
+  opts.banner = "Usage: fsclient [options] <command [command_args ... ]>"
   opts.on("--host=HOST", String, "Server host (default is 0.0.0.0)") 	{|h| options[:host] = h}
   opts.on("--port=PORT", Integer, "Server port (default is 3000)") 		{|p| options[:port] = p}
   opts.on("--token=TOKEN", String, "Token") {|t| options[:token] = t}
+  opts.on("--timeout=SEC", String, "Timeout option to command") {|t| options[:command_options] << "--timeout=#{t}"}
   opts.on("-i","--interactive", "Interactive mode") {|i| options[:interactive] = true}
   opts.on("-d","--data-only", "Only print data parameter") {|i| options[:data_only] = true}
   opts.on("-a","--auto-lock", "Auto lock in interactive mode") {|i| options[:auto_lock] = true}
+  opts.on("-n","--no-response", "No-response option to command") {|i| options[:command_options] << "--no-response"}
 
   opts.separator ""
   opts.separator "Common options:"

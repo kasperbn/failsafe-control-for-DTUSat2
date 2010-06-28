@@ -1,6 +1,6 @@
 require 'singleton'
 
-require ROOT_DIR+"/lib/fs_logger"
+require ROOT_DIR+"/lib/logger"
 
 class TokenHandler
   include Singleton

@@ -17,7 +17,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
+			satellite_command(input) do |return_code,length,data|
 				if return_code == FS_READ_REGISTER
 					# Unpack as 4 byte little endian
 					data = data.unpack("V").first

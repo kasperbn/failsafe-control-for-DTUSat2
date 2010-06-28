@@ -17,7 +17,7 @@ module ProcessingQueue
 			}
 			process_next unless @process_queue_started
 		else
-			yield(*not_ready)
+			not_ready(request, &callback)
 		end
 	end
 

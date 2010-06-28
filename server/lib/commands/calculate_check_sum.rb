@@ -8,7 +8,7 @@ module Commands
 		def validate
 			validate_addressable "Address", @address
 			validate_positive "Length", @length
-			validate_length "Length", @length
+			validate_byte_length "Length", @length, 4
 		end
 
 		def execute
@@ -21,10 +21,9 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
+			satellite_command(input) do |return_code,length,data|
 				if return_code == FS_CALCULATE_CHECK_SUM
-					# Unpack as 4 bytes little-endian
-					data = data.unpack("V").first
+					data = data.unpack("V").first # Unpack as 4 bytes little-endian
 				end
 
 				@client.send response(@id, return_code, data)

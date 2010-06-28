@@ -22,10 +22,11 @@ module EMClient
   	@interactive = Client.instance.options[:interactive]
   	@data_only = Client.instance.options[:data_only]
 		@token = Client.instance.options[:token]
+		@command_options = Client.instance.options[:command_options]
 
 		unless @interactive
 			@exit = true
-			execute(ARGV.join(' '), true)
+			execute((ARGV << @command_options).join(' '), true)
 		else
 			@token = nil
 			puts "FSClient - Interactive Mode"

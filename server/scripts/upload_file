@@ -1,0 +1,70 @@
+#!/usr/bin/ruby
+require 'optparse'
+require 'rubygems'
+require 'json'
+require 'open3'
+require 'ftools'
+
+ROOT_DIR = File.dirname(__FILE__) + "/.."
+require ROOT_DIR + "/lib/ext/string"
+require ROOT_DIR + "/lib/ext/fixnum"
+require ROOT_DIR + "/lib/constants"
+
+include Constants
+
+op = OptionParser.new do |opts|
+  opts.banner = "Usage: upload_file token filepath address"
+  opts.separator "Description: Upload a file to an address in the satellites memory"
+  opts.separator "Arguments:"
+  opts.separator "\tfilepath (string)"
+  opts.separator "\taddress (hexadecimal)"
+end
+op.parse!
+
+if ARGV.length != 3
+	puts "Not enough arguments"
+	exit(1)
+end
+
+token = ARGV[0]
+filepath = ARGV[1]
+address = ARGV[2]
+
+unless File.exists?(filepath)
+	puts "File not found"
+	exit(1)
+end
+
+unless address.addressable?
+	puts "Address is not addressable"
+	exit(1)
+end
+
+file = File.new(filepath, "r")
+size = File.size(filepath)
+max_data_size = 20#FS_MAX_DATA_SIZE - 4
+total_uploads = size / max_data_size
+total_uploads += 1 unless size % max_data_size == 0
+puts "Max data size is: #{max_data_size} B"
+puts "File size is #{size} B and will be split over #{total_uploads} uploads."
+
+address = address.int_or_hex
+total_uploads.times do |i|
+	data = "0x"
+	file.read(max_data_size).each_byte {|b| data << b.spaced_hex(1) }
+	puts "#{i*100/total_uploads}% Done. Uploading part #{i+1}/#{total_uploads} ..."
+
+	stdin, stdout, stderr = Open3.popen3("fsclient", "--token=#{token}", "upload", address.to_s, data)
+	raw = stdout.readlines.join
+
+	response = JSON.parse(raw);
+	unless response['status'] == 255
+		puts "Upload Failed: #{raw}"
+		exit(1)
+	end
+
+	address += (max_data_size)
+end
+file.close
+puts "100% Done. Upload succeeded"
+exit(0)

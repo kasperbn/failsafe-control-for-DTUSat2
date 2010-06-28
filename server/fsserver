@@ -7,12 +7,7 @@ options = {
 	:host => '0.0.0.0',
 	:port => 3000,
 	:logfile => STDOUT,
-	:timeout => 30,
-	:serialport => "/dev/ttyUSB0",
-	:baud => 9600,
-	:data_bits => 8,
-	:stop_bits => 1,
-	:parity => SerialPort::NONE
+	:timeout => 30
 }
 
 op = OptionParser.new do |opts|
@@ -21,11 +16,6 @@ op = OptionParser.new do |opts|
   opts.on("--port=PORT", Integer, "(3000)") 											{|o| options[:port] = o}
   opts.on("--timeout=TIMEOUT", Integer, "(30)") 									{|o| options[:timeout] = o}
   opts.on("--logfile=LOGFILE", String, "(stdout)") 								{|o| options[:logfile] = o}
-  opts.on("--serialport=SERIALPORT", String, "('/dev/ttyUSB0')") 	{|o| options[:serialport] = o}
-  opts.on("--baud=BAUD", Integer, "(9600)") 											{|o| options[:baud] = o}
-  opts.on("--data_bits=DATA_BITS", Integer, "(8)") 								{|o| options[:data_bits] = o}
-  opts.on("--stop_bits=STOP_BITS", Integer, "(1)") 								{|o| options[:stop_bits] = o}
-  opts.on("--parity=PARITY", Integer, "(None)") 									{|o| options[:parity] = o}
 
   opts.separator ""
   opts.separator "Common options:"
@@ -46,15 +36,12 @@ op.parse!
 # Setup root dir
 ROOT_DIR = File.dirname(__FILE__)
 
-# Helpers
-require ROOT_DIR+"/lib/helpers"
+# Setup log
+require ROOT_DIR+"/lib/logger"
+$LOG = FSLogger.new(options[:logfile])
 
 # Setup thread abort
 Thread.abort_on_exception = true
-
-# Setup log
-require ROOT_DIR+"/lib/fs_logger"
-$LOG = FSLogger.new(options[:logfile])
 
 # Run server
 require ROOT_DIR+"/lib/server"

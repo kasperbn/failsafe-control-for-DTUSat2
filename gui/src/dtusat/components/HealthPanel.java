@@ -1,63 +1,70 @@
 package dtusat.components;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.net.ssl.SSLEngineResult.Status;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import dtusat.FSCallback;
 import dtusat.FSController;
+import dtusat.FSResponse;
 
 public class HealthPanel extends JPanel {
 	
 	private JPanel systemsPanel;
-	private String[][] subSystems = {
-			{"Power (EPS)", "The power sub system provides power for all the other sub systems. The power PCB will monitor the battery health status, manage battery charging and measure the currents flowing to each sub system."},
-			{"On Board Computer (OBC)","The OBC is the \"brain\" of the satellite. It manages dataflow, executes telecommands and may be used for calculations such as attitude data."},
-			{"Radio (COM)","In order to send and receive data an onboard radio is necessary. The PPL requires a separate radio receiver."},
-			{"Attitude Determination and Control System (ACS)","The ACS determines the orientation of the satellite in space and together with the OBC the ACS alters the orientation. I.e. the OBC decides whether alterations are necessary or not."},
-			{"Structure (MECH)","The mechanical structure fixates all the sub systems with respect to each other. It will dimensioned to withstand the stress during the launch phase, provide maximum shielding from the solar radiation and still be as light as possible."},
-			{"Software (OBDH)","On board SW is developed in close collaboration with the OBC group."},
-			{"Ground station (GS)","The ground station will establish radio communication with the satellite at each pass. It will be placed on the roof of one of the buildings at DTU campus."},
-			{"Mission Control", "Mission control is the command center operating the satellite. Since the ground station is placed on DTU campus mission control will most likely merge with the ground station."},
-			{"Payload (PPL)", "The payload to fly on DTUsat was selected on 10th of November by the Jury at the Payload Conference."}
-	};
 	private JScrollPane scrollPane;
-	private JPanel listPanel;
-
+	private HealthImagePanel healthImagePanel;
 	
 	public HealthPanel() {
 		setLayout(new BorderLayout());
 		
-		//systemsPanel = new JPanel();
-		listPanel = new JPanel();
-		listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
-		scrollPane = new JScrollPane(listPanel);
+		JPanel refreshPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		add(refreshPanel, BorderLayout.NORTH);
+		
+			JButton refreshButton = new JButton("Update status");
+			refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
+			refreshPanel.add(refreshButton);
+			
+		healthImagePanel = new HealthImagePanel();
+		scrollPane = new JScrollPane(healthImagePanel);
+		scrollPane.setBackground(Color.white);
+		
 		add(scrollPane, BorderLayout.CENTER);
 		
-		// Refresh
-		JPanel refreshPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		JButton refreshButton = new JButton("Get status");
-		refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
 		
-		refreshPanel.add(refreshButton);
-		add(refreshPanel, BorderLayout.NORTH);
 	}
 
-
 	protected void refreshList() {
-		listPanel.removeAll();
-		for(String[] s : subSystems) {
-			try {
-				listPanel.add(new SubSystemPanel(s[0],SubSystemPanel.GREEN,s[1]));
-			} catch (UnknownStatusException e) {
-				e.printStackTrace();
+		FSController.getInstance().getSocket().request("health_status", new FSCallback() {
+			public void onResponse(FSResponse response) {
+				if(response.status == FSController.FS_HEALTH_STATUS) {
+					JSONArray json_data = response.dataAsArray();
+					Integer[] data = new Integer[json_data.length()];
+					for(int i=0;i<json_data.length();i++) {
+						try {
+							data[i] = json_data.getInt(i);
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+					healthImagePanel.data = data;
+					healthImagePanel.repaint();
+				}
 			}
-		}
+		});
 		FSController.getInstance().mainPanel.repaint();
 	}
 }

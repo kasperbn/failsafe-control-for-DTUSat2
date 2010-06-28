@@ -1,10 +1,7 @@
 module Commands
   class ResetSib < AbstractCommand
 		def execute
-			input = "12 00 00 00 CD"
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
-				@client.send response(@id, return_code, data)
-			end
+			satellite_command("12 00 00 00 CD")
 		end
   end
 end

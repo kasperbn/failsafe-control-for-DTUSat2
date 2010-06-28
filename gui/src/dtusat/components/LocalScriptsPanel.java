@@ -39,33 +39,46 @@ public class LocalScriptsPanel extends JPanel implements TreeSelectionListener {
 	private DefaultMutableTreeNode treeTop;
 	private JTree fileTree;
 	private String scriptsDir;
+	private JSplitPane splitPane;
+	private JPanel leftPanel;
+	private JPanel leftNorthPanel;
+	private JPanel rightPanel;
 	
 	public LocalScriptsPanel() {
 		setLayout(new BorderLayout());
 	
-		// Refresh
-		refreshPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		refreshButton = new JButton("Set Dir",new ImageIcon("src/dtusat/icons/folder_explore.png"));
-		refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
+		// Splitpane
+		splitPane = new JSplitPane();
+		add(splitPane, BorderLayout.CENTER);
 		
-		refreshPanel.add(refreshButton);
-		add(refreshPanel, BorderLayout.NORTH);
+		// Left
+		leftPanel = new JPanel(new BorderLayout());		
+		splitPane.setLeftComponent(leftPanel);
 		
-		// File tree
-		treeTop = new DefaultMutableTreeNode("Local Scripts");
-		fileTree = new JTree(treeTop);
-		fileTree.addTreeSelectionListener(this);
-		JScrollPane fileTreeView = new JScrollPane(fileTree);
+			// North
+			leftNorthPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+			leftPanel.add(leftNorthPanel, BorderLayout.NORTH);
+			
+				refreshButton = new JButton("Set Dir",new ImageIcon("src/dtusat/icons/folder_explore.png"));
+				refreshButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent e) {refreshList();}});
+				leftNorthPanel.add(refreshButton);
 		
-		// Script Panel
-		scriptPanel = new JPanel();
-		scriptPanel.setLayout(new BorderLayout());
-		scriptView = new JScrollPane(scriptPanel);
+			// Center
+			treeTop = new DefaultMutableTreeNode("Local Scripts");
+			fileTree = new JTree(treeTop);
+			fileTree.addTreeSelectionListener(this);
+			leftPanel.add(new JScrollPane(fileTree), BorderLayout.CENTER);
 		
-		JSplitPane treeListSplitter = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, fileTreeView, scriptView);
-		treeListSplitter.setDividerLocation(200);
+		// Right
+		rightPanel = new JPanel(new BorderLayout());
+		splitPane.setRightComponent(rightPanel);
 		
-		add(treeListSplitter);
+			// Center
+			scriptPanel = new JPanel();
+			scriptPanel.setLayout(new BorderLayout());
+			scriptView = new JScrollPane(scriptPanel);
+			rightPanel.add(scriptView, BorderLayout.CENTER);
+		
 	}
 	
 	private void refreshList() {
@@ -76,7 +89,6 @@ public class LocalScriptsPanel extends JPanel implements TreeSelectionListener {
 			
 			treeTop.removeAllChildren();
 			
-			//scriptsDir = "/home/kbn/Code/bachelor/client_scripts/";
 			scriptsDir = fc.getSelectedFile().getAbsolutePath();
 			walkDir(new File(scriptsDir));
 
@@ -93,27 +105,29 @@ public class LocalScriptsPanel extends JPanel implements TreeSelectionListener {
 	    		walkDir(current);
 	    	} else if(current.isFile()) {
 		        File f = listOfFiles[i];
-				
-		        // Get help info
-		        String help = "";
-		        try {
-			        String token = FSController.getInstance().getSocket().token;
-					Process child;				
-					child = new ProcessBuilder(f.getAbsolutePath(), "--help").start();
-					BufferedReader out = new BufferedReader(new InputStreamReader(child.getInputStream()));
-					child.waitFor();
-					 
-					String line;
-					while ((line = out.readLine()) != null)
-						help += line+"\n";
-						
-		        } catch (IOException e) {
-					e.printStackTrace();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				
-				insertScriptAsNode(f.getAbsolutePath(), help);
+		
+		        if(f.canExecute()) {
+			        // Get help info
+			        String help = "";
+			        try {
+				        String token = FSController.getInstance().getSocket().token;
+						Process child;				
+						child = new ProcessBuilder(f.getAbsolutePath(), "--help").start();
+						BufferedReader out = new BufferedReader(new InputStreamReader(child.getInputStream()));
+						child.waitFor();
+						 
+						String line;
+						while ((line = out.readLine()) != null)
+							help += line+"\n";
+							
+			        } catch (IOException e) {
+						e.printStackTrace();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+					insertScriptAsNode(f.getAbsolutePath(), help);
+		        }
 		    }
 	    }
 	}

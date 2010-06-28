@@ -29,15 +29,17 @@ class CommandParser
 
 			if cmd_string[0].chr.match(/[a-zA-Z]/)
 				command = eval("Commands::#{cmd_string.camelize}.new(*arguments)")
-				options["timeout"] ||= DEFAULT_TIMEOUT
-				options["noresponse"] ||= false
-				command.options = options
-				command.id = id
 			end
 		rescue ArgumentError => e
 			command = Commands::WrongNumberOfArguments.new
 		rescue => e
   	end
+
+		# Set defaults
+		options["timeout"] ||= DEFAULT_TIMEOUT
+		options["no-response"] ||= false
+		command.options = options
+		command.id = id
 
 		return id, token, command
   end

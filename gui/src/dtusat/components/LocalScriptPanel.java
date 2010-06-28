@@ -29,18 +29,16 @@ public class LocalScriptPanel extends ScriptPanel {
 			argList[1] = token;
 			for(int i=0;i<args.length;i++)
 				argList[2+i] = args[i];
-			
+		
 			Process child = new ProcessBuilder(argList).start();
 			BufferedReader out = new BufferedReader(new InputStreamReader(child.getInputStream()));
-			
 			child.waitFor();
-			int status = child.exitValue();
-			 
-			String line;
 			
+			String line;
 			while ((line = out.readLine()) != null) {
-				outputArea.append(line);
+				outputArea.append(line+"\n");
 			}
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {

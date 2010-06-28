@@ -17,7 +17,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
+			satellite_command(input) do |return_code,length,data|
 				# Unpack as 4 bytes little-endian
 				data = data.unpack("V")
 				@client.send response(@id, return_code, data)

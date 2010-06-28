@@ -1,7 +1,10 @@
-require 'serialport'
 require 'singleton'
+
+# TODO: REPLACE WITH C EXTENSION TO REAL DATALINK
+require ROOT_DIR + '/link_fs/link_fs_devel'
+
 require ROOT_DIR + "/lib/constants"
-require ROOT_DIR + "/lib/fs_logger"
+require ROOT_DIR + "/lib/logger"
 require ROOT_DIR + "/lib/response_helpers"
 require ROOT_DIR + "/lib/processing_queue"
 
@@ -14,14 +17,12 @@ class SerialRequestHandler
 
 	def initialize
 		setup_processing_queue
-	end
-
-	def connect(options)
-		begin
-			@sp = SerialPort.new(options[:serialport], options[:baud], options[:data_bits], options[:stop_bits], options[:parity])
+		status = Link_fs.link_fs_init("w")
+		if status == PRO_OK
 			@connected = true
-		rescue Errno::ENOENT => e
-			log "Could not connect to the serialport"
+			log "Initialized the datalink"
+		else
+			log "Could not initialize the datalink"
 		end
 	end
 
@@ -29,71 +30,62 @@ class SerialRequestHandler
 		@connected
 	end
 
-	def not_ready
-		[STATUS_SERIALPORT_NOT_CONNECTED,0,nil]
+	def not_ready(request, &callback)
+		callback.call(STATUS_SERIALPORT_NOT_CONNECTED,0,nil)
 	end
 
 	def request(request, options, &callback)
 		req = request.to_a.flatten.join(" ").split(" ")
-		enqueue({:command => req, :timeout => options["timeout"].to_i, :noresponse => options["noresponse"]},&callback)
+		enqueue({"command" => req, "timeout" => options["timeout"].to_i, "no-response" => options["no-response"]},&callback)
 	end
 
 	def process(request, &callback)
 		begin
 			write(request)
-			callback.call(read(request)) unless request["noresponse"]
+			if request["no-response"]
+				return_code, length, data = STATUS_OK, nil, nil
+			else
+				return_code, length, data = read(request)
+			end
+			Thread.new do
+				callback.call(return_code, length, data)
+			end
 		rescue Errno::EIO => e
 			@connected = false
-			log "Serialport has been disconnected"
-			callback.call(STATUS_SERIALPORT_NOT_CONNECTED, 0, nil)
+			log "The datalink has been disconnected"
+			not_ready(request, &callback)
 			raise ProcessingError
 		end
 	end
 
-	def write_read(request)
-		# Write
-		request[:command].each do |s|
-			sleep(0.2)
-			@sp.putc s.hex
+	def write(request)
+		data = request["command"].map{|h| h.hex}
+		log "Datalink writing ... "
+		status = Link_fs.link_fs_send_packet(data, data.length)
+		if status == PRO_OK
+			log "Datalink wrote: #{request["command"].join(' ')}"
+		else
+			log "An failure occured during write to the datalink"
 		end
-		log "Serial write: #{request[:command].join(' ')}"
 	end
 
 	def read(request)
-		done_reading = false
-		return_code = nil
-		data_length = nil
-		data = nil
+		buffer = ""
+		log "Datalink reading ..."
+		buffer, result = Link_fs.link_fs_receive_packet(buffer, FS_MAX_PACKET_SIZE, request["timeout"])
 
-		# Read thread
-		read = Thread.new do
-			return_code 		= @sp.getc #;puts "Return Code: #{return_code}"
-			downlink 				= @sp.getc #;puts "Downlink: #{downlink}"
-			data_length_raw = @sp.read(2)
-			data_length 		= data_length_raw.unpack("v").first #;puts "Data Length: #{data_length}" # Unpack as 2 byte little endian
-			data_raw 				= @sp.read(data_length)
-			data 						= data_raw#.unpack("v"*(data_length/2))#.map {|s| s.to_i.to_s(16)} # Unpack as 2 byte little endian, assemble
-			done_reading = true
-			log "Serial read: #{return_code.to_s(16)} #{downlink.to_s(16)} #{data_length_raw.bytes.map{|s| s.to_i.to_s(16)}.join(" ")} #{data_raw.bytes.map{|s| s.to_i.to_s(16)}.join(" ")}"
+		if result == PRO_OK
+			return_code 		= buffer[0]
+			downlink 				= buffer[1]
+			data_length_raw = buffer[2..3]
+			data_length 		= data_length_raw.unpack("v").first
+			data						= buffer[4..(4+data_length-1)]
+			log "Datalink read: #{return_code.spaced_hex(1)} #{downlink.spaced_hex(1)} #{data_length_raw.bytes.map{|s| s.to_i.spaced_hex(1)}.join(" ")} #{data.bytes.map{|s| s.to_i.spaced_hex(1)}.join(" ")}"
+			return return_code, data_length, data
+		else
+			log 'Datalink read timeout'
+			return STATUS_TIMEOUT,nil,nil
 		end
-
-		# Timeout thread
-		sleep_step = 0.5
-		timeout = Thread.new do
-			(0..(request[:timeout]/sleep_step)).each do
-				sleep(sleep_step)
-				Thread.current.kill! if done_reading
-			end
-			read.kill!
-			log 'Serial read timedout'
-			return_code = STATUS_TIMEOUT
-		end
-
-		# Wait for read thread and timeout
-		read.join
-		timeout.join
-
-		return return_code, data_length, data
 	end
 
 end

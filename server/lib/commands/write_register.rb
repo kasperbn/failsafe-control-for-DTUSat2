@@ -7,7 +7,7 @@ module Commands
 
 		def validate
 			validate_addressable "Address", @address
-			validate_length "Data", @data
+			validate_byte_length "Data", @data, 4
 		end
 
 		def execute
@@ -20,9 +20,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
-				@client.send response(@id, return_code, data)
-			end
+			satellite_command(input)
 		end
   end
 end

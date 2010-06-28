@@ -8,7 +8,7 @@ module Commands
 		def validate
 			validate_addressable "Address", @address
 			validate_positive "Parameter", @parameter
-			validate_length "Parameter", @parameter
+			validate_byte_length "Parameter", @parameter, 4
 		end
 
 		def execute
@@ -21,7 +21,7 @@ module Commands
 				"CD"
 			]
 
-			SerialRequestHandler.instance.request(input, @options) do |return_code,length,data|
+			satellite_command(input) do |return_code,length,data|
 				if return_code == FS_CALL_FUNCTION
 					# Unpack as 4 bytes little-endian
 					data = data.unpack("V").first
