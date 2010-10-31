@@ -1,0 +1,41 @@
+<h3>Observationer</h3>
+
+<p>
+	<%unless admin?%>
+		<%if params[:filter] == 'all'%>
+			<%= link_to 'Vis kun mine', observations_path %>
+		<%else%>
+			<%= link_to 'Vis alle', observations_path(:filter => 'all') %>
+		<%end%>
+		|
+	<%end%>
+	<%= link_to 'Ny observation', new_observation_path %>
+	|
+	<%= link_to 'Exporter til Excel', export_path(:filter => params[:filter]) %>
+</p>
+
+<table class='list'>
+	<tr>
+		<th>Tid</th>
+		<%if admin? || params[:filter] == 'all'%><th>Bruger</th><%end%>
+		<th>Elevation</th>
+		<th>Azimuth</th>
+		<th>Position</th>
+		<th>Optaget som lydfil?</th>
+		<th></th>
+	</tr>
+
+	<%@observations.each do |observation|%>
+	<tr>
+		<td><%= link_to t(observation.time), edit_observation_path(observation) %></td>
+		<%if admin? || params[:filter] == 'all'%>
+		<td><%=observation.user.username%></td>
+		<%end%>
+		<td><%= observation.elevation %></td>
+		<td><%= observation.azimuth %></td>
+		<td><%= observation.position %></td>
+		<td><%= (observation.beacon_recorded?) ? 'Ja' : 'Nej' %></td>
+		<td><%= link_to 'Slet', observation, :method => 'DELETE', :confirm => 'Er du sikker?' if admin? || observation.user_id == current_user.id%></td>
+	</tr>
+	<%end%>
+</table>

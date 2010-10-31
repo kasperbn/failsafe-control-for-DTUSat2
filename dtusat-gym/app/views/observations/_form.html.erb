@@ -1,0 +1,41 @@
+<%form_for @observation do |f|%>
+
+	<%= form_errors(@observation)%>
+
+	<p>
+		<%= f.label :time, 'Tid'%>
+		<%= f.datetime_select :time%>
+	</p>
+
+	<%if admin?%>
+	<p>
+		<%= f.label :user_id, 'Bruger'%>
+		<%= f.select :user_id, User.find(:all,:conditions => ["username != 'admin'"]).map{|u| [u.username, u.id] }%>
+	</p>
+	<%end%>
+
+	<p>
+		<%= f.label :elevation%>
+		<%= f.text_field :elevation%>
+	</p>
+
+	<p>
+		<%= f.label :azimuth%>
+		<%= f.text_field :azimuth%>
+	</p>
+
+	<p>
+		<%= f.label :position%>
+		<%= f.text_field :position%>
+	</p>
+
+	<p>
+		<%= f.label :beacon_recorded, 'Optaget som lydfil?'%>
+		<%= f.check_box :beacon_recorded%>
+	</p>
+
+	<p>
+		<%= f.submit 'Gem' %>
+	</p>
+
+<%end%>
