@@ -7,4 +7,4 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 
 # Admin user
-User.create :username => 'admin', :password => 'secret1234'
+User.create :username => 'admin', :password => 'fler0n'

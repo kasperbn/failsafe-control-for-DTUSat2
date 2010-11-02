@@ -23248,3 +23248,1348 @@ Completed in 101ms (View: 10, DB: 2) | 200 OK [http://localhost/observations/exp
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+/!\ FAILSAFE /!\  Tue Nov 02 20:34:47 +0100 2010
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Tue Nov 02 20:39:55 +0100 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.1.0/lib/sqlite3/encoding.rb:9:in `find'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.1.0/lib/sqlite3/database.rb:98:in `initialize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Tue Nov 02 20:42:04 +0100 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.1.0/lib/sqlite3/encoding.rb:9:in `find'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.1.0/lib/sqlite3/database.rb:98:in `initialize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Tue Nov 02 20:42:05 +0100 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.1.0/lib/sqlite3/encoding.rb:9:in `find'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.1.0/lib/sqlite3/database.rb:98:in `initialize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Tue Nov 02 20:42:41 +0100 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.0.8/lib/sqlite3/encoding.rb:9:in `find'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/sqlite3-0.0.8/lib/sqlite3/database.rb:66:in `initialize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Tue Nov 02 20:43:19 +0100 2010
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+    /Users/kbn/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-02 20:44:53) [GET]
+
+ActiveRecord::StatementInvalid (Could not find table 'sessions'):
+  app/controllers/sessions_controller.rb:10:in `new'
+  app/controllers/sessions_controller.rb:10:in `new'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/kbn/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.2ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "email" varchar(255), "position" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "position" varchar(255), "elevation" varchar(255), "azimuth" varchar(255), "time" datetime, "beacon_recorded" boolean, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "token" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime, "deleted_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("observations")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: INSERT INTO schema_migrations VALUES ('20101102194545')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "email" varchar(255), "position" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "position" varchar(255), "elevation" varchar(255), "azimuth" varchar(255), "time" datetime, "beacon_recorded" boolean, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "token" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime, "deleted_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100421124119')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'admin') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("position", "created_at", "updated_at", "username", "password", "email") VALUES(NULL, '2010-11-02 19:47:01', '2010-11-02 19:47:01', 'admin', 'secret1234', NULL)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("observations")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO schema_migrations VALUES ('20101102194720')[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-02 20:47:28) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 142ms (View: 135, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-02 20:47:35) [POST]
+  Parameters: {"commit"=>"Login", "session"=>{"username"=>"admin", "password"=>"secret1234"}, "authenticity_token"=>"uGQ69rD7kKA5JstE9gCYl+UrKF2ZHDn1VvYR0QxRQw0="}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'admin' AND password = 'secret1234') LIMIT 1[0m
+  [4;35;1mSession Create (0.4ms)[0m   [0mINSERT INTO "sessions" ("created_at", "token", "updated_at", "deleted_at", "user_id") VALUES('2010-11-02 19:47:36', NULL, '2010-11-02 19:47:36', NULL, 1)[0m
+Redirected to http://localhost:3000/observations
+Completed in 35ms (DB: 1) | 302 Found [http://localhost/sessions]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:47:36) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.2ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 56ms (View: 43, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:47:40) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.2ms)[0m   [0;1mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#new (for 127.0.0.1 at 2010-11-02 20:47:41) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering observations/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (126.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 147ms (View: 135, DB: 1) | 200 OK [http://localhost/observations/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-02 20:47:42) [GET]
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-02 20:47:44) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 85ms (View: 13, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-02 20:47:45) [GET]
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 16ms (View: 5, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-11-02 20:47:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (3.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing ObservationsController#new (for 127.0.0.1 at 2010-11-02 20:48:31) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering observations/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (12.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 16, DB: 0) | 200 OK [http://localhost/observations/new]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:48:32) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mObservation Load (0.2ms)[0m   [0;1mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 78ms (View: 5, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#new (for 127.0.0.1 at 2010-11-02 20:48:33) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering observations/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (13.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 29ms (View: 16, DB: 1) | 200 OK [http://localhost/observations/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-02 20:48:36) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-02 20:48:38) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-02 20:48:43) [POST]
+  Parameters: {"commit"=>"Gem", "authenticity_token"=>"uGQ69rD7kKA5JstE9gCYl+UrKF2ZHDn1VvYR0QxRQw0=", "user"=>{"position"=>"", "username"=>"test", "password"=>"UEO0", "email"=>""}}
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 78ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-02 20:49:03) [POST]
+  Parameters: {"commit"=>"Gem", "authenticity_token"=>"uGQ69rD7kKA5JstE9gCYl+UrKF2ZHDn1VvYR0QxRQw0=", "user"=>{"position"=>"2 3 4 D", "username"=>"test", "password"=>"UEO0", "email"=>""}}
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-02 20:49:05) [POST]
+  Parameters: {"commit"=>"Gem", "authenticity_token"=>"uGQ69rD7kKA5JstE9gCYl+UrKF2ZHDn1VvYR0QxRQw0=", "user"=>{"position"=>"2 3 4 D", "username"=>"test", "password"=>"UEO0", "email"=>""}}
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-02 20:49:21) [POST]
+  Parameters: {"commit"=>"Gem", "authenticity_token"=>"uGQ69rD7kKA5JstE9gCYl+UrKF2ZHDn1VvYR0QxRQw0=", "user"=>{"position"=>"2.0 3.0 4.0 D", "username"=>"test", "password"=>"UEO0", "email"=>""}}
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'test') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("position", "created_at", "updated_at", "username", "password", "email") VALUES('2.0 3.0 4.0 D', '2010-11-02 19:49:21', '2010-11-02 19:49:21', 'test', 'UEO0', '')[0m
+Redirected to http://localhost:3000/users
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-02 20:49:21) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 22ms (View: 10, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:49:58) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mObservation Load (0.2ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 17ms (View: 5, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#new (for 127.0.0.1 at 2010-11-02 20:49:59) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering observations/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (12.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 28ms (View: 16, DB: 1) | 200 OK [http://localhost/observations/new]
+
+
+Processing ObservationsController#create (for 127.0.0.1 at 2010-11-02 20:50:02) [POST]
+  Parameters: {"observation"=>{"position"=>"", "elevation"=>"", "beacon_recorded"=>"0", "time(1i)"=>"2010", "azimuth"=>"", "time(2i)"=>"11", "time(3i)"=>"2", "time(4i)"=>"19", "user_id"=>"2", "time(5i)"=>"49"}, "commit"=>"Gem", "authenticity_token"=>"uGQ69rD7kKA5JstE9gCYl+UrKF2ZHDn1VvYR0QxRQw0="}
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering observations/new
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (username != 'admin') [0m
+Rendered observations/_form (11.8ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 31ms (View: 16, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-11-02 20:50:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 74ms (View: 6, DB: 0) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-02 20:50:13) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-02 20:50:14) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-02 20:50:15) [GET]
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-11-02 20:50:17) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" ORDER BY username[0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions".user_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions".user_id = 2) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-11-02 20:50:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/users/2/edit]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-11-02 20:50:20) [GET]
+  [4;35;1mSession Load (0.2ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 1) [0m
+Redirected to http://localhost:3000/sessions/new
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/sessions/logout]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-02 20:50:20) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-11-02 20:50:23) [POST]
+  Parameters: {"commit"=>"Login", "session"=>{"username"=>"test", "password"=>"UEO0"}, "authenticity_token"=>"5cqlXWE+c3JzM0OTHkjRO5/xbO6PeM4buAihnlaKiy8="}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'test' AND password = 'UEO0') LIMIT 1[0m
+  [4;35;1mSession Create (0.3ms)[0m   [0mINSERT INTO "sessions" ("created_at", "token", "updated_at", "deleted_at", "user_id") VALUES('2010-11-02 19:50:23', NULL, '2010-11-02 19:50:23', NULL, 2)[0m
+Redirected to http://localhost:3000/observations
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/sessions]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:23) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mObservation Load (0.2ms)[0m   [0mSELECT * FROM "observations" WHERE ("observations".user_id = 2) [0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:25) [GET]
+  Parameters: {"filter"=>"all"}
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mObservation Load (0.2ms)[0m   [0;1mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 75ms (View: 5, DB: 1) | 200 OK [http://localhost/observations?filter=all]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:27) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mObservation Load (0.2ms)[0m   [0mSELECT * FROM "observations" WHERE ("observations".user_id = 2) [0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 18ms (View: 5, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#new (for 127.0.0.1 at 2010-11-02 20:50:28) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering observations/new
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendered observations/_form (10.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/observations/new]
+
+
+Processing ObservationsController#create (for 127.0.0.1 at 2010-11-02 20:50:31) [POST]
+  Parameters: {"observation"=>{"position"=>"2.0 3.0 4.0 D", "elevation"=>"asd", "beacon_recorded"=>"0", "time(1i)"=>"2010", "azimuth"=>"sdf", "time(2i)"=>"11", "time(3i)"=>"2", "time(4i)"=>"19", "time(5i)"=>"50"}, "commit"=>"Gem", "authenticity_token"=>"5cqlXWE+c3JzM0OTHkjRO5/xbO6PeM4buAihnlaKiy8="}
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mObservation Create (0.3ms)[0m   [0;1mINSERT INTO "observations" ("position", "elevation", "created_at", "beacon_recorded", "azimuth", "updated_at", "time", "user_id") VALUES('2.0 3.0 4.0 D', 'asd', '2010-11-02 19:50:31', 'f', 'sdf', '2010-11-02 19:50:31', '2010-11-02 19:50:00', 2)[0m
+Redirected to http://localhost:3000/observations
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/observations]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:31) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mObservation Load (0.2ms)[0m   [0;1mSELECT * FROM "observations" WHERE ("observations".user_id = 2) [0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 87ms (View: 11, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:34) [GET]
+  Parameters: {"filter"=>"all"}
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mObservation Load (0.2ms)[0m   [0mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/observations?filter=all]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:34) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mObservation Load (0.2ms)[0m   [0mSELECT * FROM "observations" WHERE ("observations".user_id = 2) [0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:37) [GET]
+  Parameters: {"filter"=>"all"}
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mObservation Load (0.2ms)[0m   [0;1mSELECT * FROM "observations" ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/observations?filter=all]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:37) [GET]
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mObservation Load (0.2ms)[0m   [0;1mSELECT * FROM "observations" WHERE ("observations".user_id = 2) [0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 25ms (View: 12, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing ObservationsController#destroy (for 127.0.0.1 at 2010-11-02 20:50:39) [DELETE]
+  Parameters: {"authenticity_token"=>"5cqlXWE+c3JzM0OTHkjRO5/xbO6PeM4buAihnlaKiy8=", "id"=>"1"}
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "observations" WHERE (id = '1' AND user_id = 2) [0m
+  [4;36;1mObservation Load (0.2ms)[0m   [0;1mSELECT * FROM "observations" WHERE ("observations"."id" = 1) [0m
+  [4;35;1mObservation Destroy (0.2ms)[0m   [0mDELETE FROM "observations" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/observations
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/observations/1]
+
+
+Processing ObservationsController#index (for 127.0.0.1 at 2010-11-02 20:50:39) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mObservation Load (0.2ms)[0m   [0mSELECT * FROM "observations" WHERE ("observations".user_id = 2) [0m
+Rendering template within layouts/application
+Rendering observations/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 20ms (View: 6, DB: 1) | 200 OK [http://localhost/observations]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-11-02 20:50:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSession Load (0.1ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/users/2/edit]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-11-02 20:50:42) [GET]
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE ("sessions"."id" = 2) [0m
+Redirected to http://localhost:3000/sessions/new
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/sessions/logout]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-11-02 20:50:42) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/sessions/new]
